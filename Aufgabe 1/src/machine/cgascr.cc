@@ -9,21 +9,9 @@
 #include "machine/cgascr.h"
 #include "machine/io_port.h"
 
-#define VIDEO_BASE_ADDR 0xB8000
 
-const unsigned char TERMINAL_HEIGHT = 25;
-#define TERMINAL_WIDTH 80
-#define CGA_BYTES_PER_CHAR 2
 
-#define BYTES_PER_LINE TERMINAL_WIDTH * CGA_BYTES_PER_CHAR
-#define BYTES_PER_PAGE TERMINAL_WIDTH * TERMINAL_HEIGHT * CGA_BYTES_PER_CHAR
 
-#define CURSOR_POSITION_INDEX_HIGH 14
-#define CURSOR_POSITION_INDEX_LOW 15
-
-unsigned char default_attribute;
-
-unsigned char* regen_buffer;
 
 CGA_Screen::CGA_Screen(){
   // set the pointer to the starting position of the regeneration
@@ -63,7 +51,6 @@ void CGA_Screen::setpos (unsigned short x, unsigned short y) {
   }
 }
 
-/** \todo implement **/
 void CGA_Screen::getpos (unsigned short& x, unsigned short& y) const{
   // get IOPort access
   IO_Port index_reg_cga(0x3D4);
@@ -129,8 +116,8 @@ void CGA_Screen::print (const char* string, unsigned int n) {
 
 void CGA_Screen::scrollup () {
   // copy values from the next line to each line  
-  for(unsigned int y = 0; y < TERMINAL_HEIGHT - 1; y++){
-    for(unsigned short x = 0; x < TERMINAL_WIDTH; x++){
+  for(unsigned char y = 0; y < TERMINAL_HEIGHT - 1; y++){
+    for(unsigned char x = 0; x < TERMINAL_WIDTH; x++){
       regen_buffer[y * BYTES_PER_LINE + x] = 
         regen_buffer[y * (BYTES_PER_LINE + 1) + x];
     }
@@ -150,11 +137,13 @@ void CGA_Screen::clear () {
 }
 
 void CGA_Screen::setAttributes(int fgColor, int bgColor, bool blink){
-  // cap values
-  fgColor = (fgColor & 0x0F);
-  bgColor = (bgColor & 0b111);
-  // avoid true values > 1
-  if(blink) blink = 1;
-  // finally, set default attribute, shifted accoring to docs
-  default_attribute =(char)(fgColor | (bgColor << 4) | (blink << 7));
+  // cap & shift values
+  fgColor = (fgColor & 0b00001111);
+  bgColor = ((bgColor & 0b00000111) << 4);
+  default_attribute = 0;
+  // handle blink values
+  if(blink)
+    default_attribute = (1 << 7);
+  // OR into the default attribute
+  default_attribute =(char)(bgColor | fgColor);
 }

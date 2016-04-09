@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>OOStuBS - Technische Informatik II (TI-II): Aufgabe 1 - Ausgabefunktionen und IO-Ports</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">OOStuBS - Technische Informatik II (TI-II)
+   &#160;<span id="projectnumber">2.4</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.11 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li class="current"><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Aufgabe 1 - Ausgabefunktionen und IO-Ports </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="toc"><h3>Inhaltsverzeichnis</h3>
+<ul><li class="level1"><a href="#task1_sec1">Ziele</a></li>
+<li class="level1"><a href="#task1_sec2">Aufgabe</a></li>
+<li class="level1"><a href="#task1_sec3">Implementierung</a></li>
+<li class="level1"><a href="#task1_sec4">Hilfestellung</a></li>
+</ul>
+</div>
+<div class="textblock"><h1><a class="anchor" id="task1_sec1"></a>
+Ziele</h1>
+<ul>
+<li>Kennenlernen oder Auffrischen der Programmiersprache C++ </li>
+<li>Kennenlernen der Entwicklungsumgebung </li>
+<li>Kennenlernen einiger Mechanismen hardwarenaher Programmierung (CGA Bildschirm, IO-Ports)</li>
+</ul>
+<h1><a class="anchor" id="task1_sec2"></a>
+Aufgabe</h1>
+<p>Testausgaben können die Fehlersuche vereinfachen und bieten eine gute Gelegenheit, sich in eine vorgegebene Entwicklungsumgebung einzuarbeiten. Aus diesem Grund soll unser Übungsbetriebssystem oo-StuBS als erstes solche Ausgabefunktionen erhalten. Die zu implementierenden Ausgabefunktionen sollen ähnlich wie die IO-Streams der C++ Bibliothek verwendet werden können und mit Hilfe der Klassen <a class="el" href="classIO__Port.html" title="Accessor for I/O-Space. ">IO_Port</a> (wird von uns vorgegeben), <a class="el" href="classCGA__Screen.html" title="CGA-Dispaly driver. ">CGA_Screen</a>, <a class="el" href="classStringbuffer.html" title="Puffer für die Textausgabe. ">Stringbuffer</a>, <a class="el" href="classO__Stream.html" title="Manipulation class providing formatted output support. ">O_Stream</a> und <a class="el" href="classCGA__Stream.html" title="CGA basierte Ausgabe, ählich zu std::cout von C++. ">CGA_Stream</a> umgesetzt werden. Damit die Ausgabefunktionen auch überall in oo-StuBS verwendet werden können, soll ein globales <a class="el" href="classCGA__Stream.html" title="CGA basierte Ausgabe, ählich zu std::cout von C++. ">CGA_Stream</a> Objekt kout erzeugt werden. </p><div align="center">
+<img src="dot_inline_dotgraph_1.png" alt="dot_inline_dotgraph_1.png" border="0" usemap="#dot_inline_dotgraph_1.map"/>
+<map name="dot_inline_dotgraph_1.map" id="dot_inline_dotgraph_1.map"><area shape="poly" id="node1" href="main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel(...)" alt="" coords="110,23,108,17,101,12,91,8,77,5,62,4,48,5,34,8,24,12,17,17,14,23,17,29,24,34,34,38,48,41,62,42,77,41,91,38,101,34,108,29"/>
+<area shape="rect" id="node2" href="classTask1.html" title="Task1" alt="" coords="129,4,185,42"/>
+<area shape="rect" id="node3" href="classKeyboard__Controller.html" title="Keyboard_Controller" alt="" coords="21,169,158,206"/>
+<area shape="rect" id="node7" href="classCGA__Stream.html" title="CGA_Stream" alt="" coords="176,82,271,120"/>
+<area shape="rect" id="node5" href="classIO__Port.html" title="IO_Port" alt="" coords="164,243,227,281"/>
+<area shape="rect" id="node4" href="classCGA__Screen.html" title="CGA_Screen" alt="" coords="177,169,270,206"/>
+<area shape="rect" id="node6" href="classKey.html" title="Key" alt="" coords="61,243,118,281"/>
+<area shape="rect" id="node8" href="classO__Stream.html" title="O_Stream" alt="" coords="298,169,372,206"/>
+<area shape="rect" id="node9" href="classStringbuffer.html" title="Stringbuffer" alt="" coords="295,243,381,281"/>
+</map>
+</div>
+<h1><a class="anchor" id="task1_sec3"></a>
+Implementierung</h1>
+<p>Die erste Aufgabe besteht aus der Implementierung einer grundlegenden Ausgabe für das Betriebssystem. Diese Teilaufgabe kann zudem in drei voneinander unabhängige Teile gegliedert werden, die sehr gut einzeln gelöst und getestet werden können. Daher empfehlen wir euch die folgende Bearbeitungsreihenfolge:</p>
+<p>Ausgabe:</p><ol type="1">
+<li>Umsetzung der Klasse <a class="el" href="classCGA__Screen.html" title="CGA-Dispaly driver. ">CGA_Screen</a> und Test in einer kleinen Anwendung.</li>
+<li>Umsetzung der Klassen <a class="el" href="classStringbuffer.html" title="Puffer für die Textausgabe. ">Stringbuffer</a> und <a class="el" href="classCGA__Stream.html" title="CGA basierte Ausgabe, ählich zu std::cout von C++. ">CGA_Stream</a>.</li>
+<li>Umsetzung der Klasse <a class="el" href="classO__Stream.html" title="Manipulation class providing formatted output support. ">O_Stream</a> und Validierung mit einem kleinen Testprogramm.</li>
+</ol>
+<dl class="section attention"><dt>Achtung</dt><dd>Achtet auf eine saubere Verwaltung aller von euch allozierten Puffer. Achtet außerdem darauf, dass Funktionen und Variablen, die modullokal gültig sind, als static gekennzeichnet werden sollten.</dd></dl>
+<p>Die <a class="el" href="classLog.html">Log</a> Klasse ermöglicht das Schreiben über die emulierte serielle Schnittstelle von Qemu in die Konsole des Entwicklungssystems. Damit ist es möglich Debug-Meldungen auszugeben ohne die Ausgabe der Tasks zu stören. Ein globales <a class="el" href="classLog.html" title="Logging facility for debug messages. ">Log</a> Objekt namens <a class="el" href="main_8cc.html#af9fa347fce52d0a359e84b9918726c5c">log</a> wird in <a class="el" href="main_8cc.html">main.cc</a> angelegt und ist durch Einbinden des Header <a class="el" href="object_2log_8h.html">object/log.h</a> im gesamten Betriebssystem verfügbar.</p>
+<p>Nach der vollständigen Implementierung sollte eine Ausgabe wie folgt zu sehen sein:</p>
+<div class="image">
+<img src="oostubs_output_task1.gif" />
+</div>
+<h1><a class="anchor" id="task1_sec4"></a>
+Hilfestellung</h1>
+<ul>
+<li><a class="el" href="task1_cgaInfo.html">Informationen zu CGA</a> </li>
+<li><a class="el" href="task1_keyboardInfo.html">Informationen zum Tastaturkontroller</a> </li>
+</ul>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Don Apr 7 2016 18:19:41 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

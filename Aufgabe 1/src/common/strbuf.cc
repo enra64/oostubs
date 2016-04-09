@@ -14,9 +14,8 @@ Stringbuffer::Stringbuffer(){
     buffer[i] = 0;
   }
 }
-/** \todo implement **/
+
 Stringbuffer::~Stringbuffer(){
-  /* ToDo: Insert Your Code Here */
 }
 
 void Stringbuffer::put (char c) {

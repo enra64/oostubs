@@ -1,0 +1,5 @@
+<map id="Serial::Serial" name="Serial::Serial">
+<area shape="rect" id="node2" href="$classSerial.html#a9981486edd9ae1be487bd054f341c771" title="Serial::control" alt="" coords="316,5,419,32"/>
+<area shape="rect" id="node4" href="$classSerial.html#a503bb1a19820b192724c76d43268e6d2" title="Serial::baudRate" alt="" coords="149,56,268,83"/>
+<area shape="rect" id="node3" href="$classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port. " alt="" coords="467,31,559,57"/>
+</map>

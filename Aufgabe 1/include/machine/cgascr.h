@@ -139,6 +139,24 @@ class CGA_Screen {
      *    indecates if the text should blink (true = should blink)
      */
     void setAttributes(int fgColor, int bgColor, bool blink);
+
+private:
+    const static unsigned char TERMINAL_HEIGHT = 25;
+    const static unsigned char TERMINAL_WIDTH = 80;
+    const static unsigned char CGA_BYTES_PER_CHAR = 2;
+    const static unsigned char BYTES_PER_LINE = 
+        TERMINAL_WIDTH * CGA_BYTES_PER_CHAR;
+    const static unsigned short BYTES_PER_PAGE = 
+        BYTES_PER_LINE * TERMINAL_HEIGHT;
+    const static unsigned char CURSOR_POSITION_INDEX_HIGH = 14;
+    const static unsigned char CURSOR_POSITION_INDEX_LOW = 15;
+    const static unsigned long VIDEO_BASE_ADDR = 0xB8000;
+
+    /** \brief storage field for the default attribute**/
+    unsigned char default_attribute;
+
+    /** \brief pointer to the regeneration buffer**/
+    unsigned char* regen_buffer;
 };
 
 #endif

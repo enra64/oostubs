@@ -1,0 +1,17 @@
+<map id="Keyboard_Controller::key_hit" name="Keyboard_Controller::key_hit">
+<area shape="rect" id="node2" href="$classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port. " alt="" coords="579,57,671,83"/>
+<area shape="rect" id="node3" href="$classKeyboard__Controller.html#aa517065c0ed4059b477dfb481539b1b2" title="interpret the reveived scancode and modifier bits " alt="" coords="193,239,333,280"/>
+<area shape="rect" id="node4" href="$classKey.html#a62e735f4121d8984d994a508bdd6a74b" title="Key::shift" alt="" coords="586,242,665,269"/>
+<area shape="rect" id="node5" href="$classKey.html#af4fa809960860523573abd695e3f8fbe" title="Key::alt_right" alt="" coords="576,293,675,319"/>
+<area shape="rect" id="node6" href="$classKey.html#ab1199ecfd588b567053543b6715ba19a" title="Key::alt_left" alt="" coords="405,515,497,542"/>
+<area shape="rect" id="node7" href="$classKey.html#a90ea541bc6d1286a517eaccd700c4ba0" title="Key::ctrl_right" alt="" coords="400,27,503,54"/>
+<area shape="rect" id="node8" href="$classKey.html#af1c7ef33119f0c10909a2de246de7854" title="Key::ctrl_left" alt="" coords="403,78,499,105"/>
+<area shape="rect" id="node9" href="$classKey.html#a45fb60e270f30b9f23e28259e851b14a" title="Key::caps_lock" alt="" coords="569,445,681,471"/>
+<area shape="rect" id="node10" href="$classKeyboard__Controller.html#a36dfc2c73c4031c8662e37159238d5b0" title="switch the specified LED of the keyboard on or off. " alt="" coords="381,180,521,221"/>
+<area shape="rect" id="node12" href="$classKey.html#af3d96c346d2e6088cafbc94fe7c783ef" title="Key::scroll_lock" alt="" coords="394,129,509,155"/>
+<area shape="rect" id="node13" href="$classKeyboard__Controller.html#ac2b33ffe1e2794c81249861aa792513a" title="convert the received scancode and modfier bits to an ascii char " alt="" coords="381,348,521,389"/>
+<area shape="rect" id="node16" href="$classKey.html#a4a8da77b0cb57bf89bffa3903c2f79ce" title="Key::num_lock" alt="" coords="571,495,680,522"/>
+<area shape="rect" id="node11" href="$classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port. " alt="" coords="575,187,675,214"/>
+<area shape="rect" id="node14" href="$classKey.html#abb65ed9de2b4a8c24f557416b484df34" title="set ascii value " alt="" coords="585,343,665,370"/>
+<area shape="rect" id="node15" href="$classKey.html#ae67075af1a5c0a7f585e8e61fc8515f8" title="set scancode value " alt="" coords="571,394,680,421"/>
+</map>

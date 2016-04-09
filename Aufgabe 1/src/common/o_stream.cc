@@ -12,7 +12,6 @@ O_Stream::O_Stream() : Stringbuffer(), fgColor(WHITE), bgColor(BLACK), blink(fal
 }
 
 O_Stream::~O_Stream(){
-  /* ToDo: Insert Your Code Here */
 }
 
 O_Stream& O_Stream::operator << (char value) {
@@ -110,9 +109,7 @@ O_Stream& O_Stream::operator << (unsigned int value) {
 
 }
 
-/** \brief \todo implement **/
 O_Stream& O_Stream::operator << (void* value) {
-  /* ToDo: Insert Your Code Here */
   Base prev_base = base;
   base = hex;
   *this << ((unsigned long) value);

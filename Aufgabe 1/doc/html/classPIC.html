@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>OOStuBS - Technische Informatik II (TI-II): PIC Klassenreferenz</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">OOStuBS - Technische Informatik II (TI-II)
+   &#160;<span id="projectnumber">2.4</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.11 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Klassen</span></a></li>
+      <li><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Auflistung&#160;der&#160;Klassen</span></a></li>
+      <li><a href="classes.html"><span>Klassen-Verzeichnis</span></a></li>
+      <li><a href="inherits.html"><span>Klassenhierarchie</span></a></li>
+      <li><a href="functions.html"><span>Klassen-Elemente</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Öffentliche Methoden</a> &#124;
+<a href="classPIC-members.html">Aufstellung aller Elemente</a>  </div>
+  <div class="headertitle">
+<div class="title">PIC Klassenreferenz</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Treiber für den PIC (Programmable Interrupt Controller)  
+ <a href="classPIC.html#details">Mehr ...</a></p>
+
+<p><code>#include &lt;<a class="el" href="pic_8h_source.html">pic.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Öffentliche Methoden</h2></td></tr>
+<tr class="memitem:a17f4ad355d60ae1fefa1ef70625d530c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPIC.html#a17f4ad355d60ae1fefa1ef70625d530c">PIC</a> ()</td></tr>
+<tr class="memdesc:a17f4ad355d60ae1fefa1ef70625d530c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standardkonstruktor.  <a href="#a17f4ad355d60ae1fefa1ef70625d530c">Mehr ...</a><br /></td></tr>
+<tr class="separator:a17f4ad355d60ae1fefa1ef70625d530c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
+<div class="textblock"><p>Treiber für den PIC (Programmable Interrupt Controller) </p>
+<p>Der PIC (programmierbarer Interruptkontroller) ermöglicht es dem System bestimmte Interrupts bzw. unterbrechungen zu erlauben oder zu verbieten. Wurden die Interrupts global aktiviert, so legt der <a class="el" href="classPIC.html" title="Treiber für den PIC (Programmable Interrupt Controller) ">PIC</a> fest, welche Interrupts weitergreicht werden um vom System behandelt zu werden. Es ist wichtig,d ass Interrupts nur behandelt werden, falls der entsprechende Interrupt erlaubt wurde und die Behandlung im allgemeinen aktiviert ist - siehe dazu die Klasse <a class="el" href="classCPU.html">CPU</a>.</p>
+<p>Der PIC basiert auf Intels 8259 Chip und besteht aus einem Master-Slave PIC-System. Heutzutage werden sie meist nur "emuliert". Verwendet wird mittlerweile APIC, welcher für ein Mehrkernbetrieb notwendig ist. </p>
+
+<p>Definiert in Zeile <a class="el" href="pic_8h_source.html#l00043">43</a> der Datei <a class="el" href="pic_8h_source.html">pic.h</a>.</p>
+</div><h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
+<a class="anchor" id="a17f4ad355d60ae1fefa1ef70625d530c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PIC::PIC </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Standardkonstruktor. </p>
+<p>Er initialisiert den <a class="el" href="classPIC.html" title="Treiber für den PIC (Programmable Interrupt Controller) ">PIC</a> und maskiert alle einkommenden Interrupt, damit wird keiner an die CPU durchgereicht. </p>
+
+<p>Definiert in Zeile <a class="el" href="pic_8cc_source.html#l00020">20</a> der Datei <a class="el" href="pic_8cc_source.html">pic.cc</a>.</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="classPIC_a17f4ad355d60ae1fefa1ef70625d530c_cgraph.png" border="0" usemap="#classPIC_a17f4ad355d60ae1fefa1ef70625d530c_cgraph" alt=""/></div>
+<map name="classPIC_a17f4ad355d60ae1fefa1ef70625d530c_cgraph" id="classPIC_a17f4ad355d60ae1fefa1ef70625d530c_cgraph">
+<area shape="rect" id="node2" href="classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port. " alt="" coords="129,5,229,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:<ul>
+<li>include/machine/<a class="el" href="pic_8h_source.html">pic.h</a></li>
+<li>src/machine/<a class="el" href="pic_8cc_source.html">pic.cc</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Don Apr 7 2016 18:19:41 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

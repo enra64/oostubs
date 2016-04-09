@@ -252,6 +252,7 @@ class O_Stream : public Stringbuffer{
     friend O_Stream& dec(O_Stream&);
     friend O_Stream& hex(O_Stream&);
 
+private:
     /** \brief helper function to write numbers to ascii
         @param value the number to be written in ascii
     **/    

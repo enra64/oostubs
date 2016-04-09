@@ -1,0 +1,11 @@
+<map id="CGA_Screen::setpos" name="CGA_Screen::setpos">
+<area shape="rect" id="node2" href="$classCGA__Screen.html#a6c295831093cab87c3944e39160965b9" title="gibt eine Zeichenkette an der aktuellen Position aus " alt="" coords="200,158,332,185"/>
+<area shape="rect" id="node4" href="$exceptions_8cc.html#aa9be12416ab5fcc6ced0ea49ff7825de" title="printException" alt="" coords="583,57,688,84"/>
+<area shape="rect" id="node5" href="$exceptions_8cc.html#a17ac45e3213989a19bb1472093ca30e6" title="Entry point for exceptions. " alt="" coords="766,32,845,58"/>
+<area shape="rect" id="node6" href="$classTask1.html#a48ca608ac9cdc03ab6614a4f61e2448e" title="test the functionality of the Kout object " alt="" coords="578,209,693,236"/>
+<area shape="rect" id="node7" href="$classTask1.html#a0d4029a13591e70af436c0ead066ea5c" title="parse and print multiboot information " alt="" coords="755,234,856,261"/>
+<area shape="rect" id="node9" href="$classTask1.html#a587ce3fad20f9ec4ec88beefd08db49e" title="test the functionality of the Keyboard_Controller object " alt="" coords="564,260,707,286"/>
+<area shape="rect" id="node10" href="$classCGA__Screen.html#a622bc3a2822e3006579167343d639353" title="leert den aktuellen Bildschirm " alt="" coords="381,108,515,134"/>
+<area shape="rect" id="node3" href="$classCGA__Stream.html#a73572f5377a28f09ee9dc3af7b5a65b9" title="ausgeben des Inhaltes des internen Puffers " alt="" coords="380,158,516,185"/>
+<area shape="rect" id="node8" href="$main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point " alt="" coords="904,234,961,261"/>
+</map>

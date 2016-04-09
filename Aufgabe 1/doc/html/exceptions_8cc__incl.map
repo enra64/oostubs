@@ -1,0 +1,11 @@
+<map id="src/machine/exceptions.cc" name="src/machine/exceptions.cc">
+<area shape="rect" id="node2" href="$kout_8h.html" title="alles notwendige zum nutzen der in main.cc deklarierten globalen Variable kout " alt="" coords="170,80,267,107"/>
+<area shape="rect" id="node9" href="$object_2cpu_8h.html" title="alles notwendige zum nutzen der in main.cc deklarierten globalen Variable cpu " alt="" coords="299,80,392,107"/>
+<area shape="rect" id="node3" href="$cgastr_8h.html" title="device/cgastr.h" alt="" coords="161,155,271,181"/>
+<area shape="rect" id="node4" href="$o__stream_8h.html" title="common/o_stream.h" alt="" coords="67,229,208,256"/>
+<area shape="rect" id="node8" href="$cgascr_8h.html" title="machine/cgascr.h" alt="" coords="232,229,357,256"/>
+<area shape="rect" id="node5" href="$strbuf_8h.html" title="common/strbuf.h" alt="" coords="5,304,125,331"/>
+<area shape="rect" id="node7" href="$colors_8h.html" title="common/colors.h" alt="" coords="149,304,272,331"/>
+<area shape="rect" id="node6" href="$config_8h.html" title="verschiedene defines für Einstellungen " alt="" coords="31,379,99,405"/>
+<area shape="rect" id="node10" href="$machine_2cpu_8h.html" title="machine/cpu.h" alt="" coords="296,155,403,181"/>
+</map>
