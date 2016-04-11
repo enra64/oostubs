@@ -18,6 +18,8 @@ CGA_Screen::CGA_Screen(){
   // buffer
   regen_buffer = (unsigned char*) VIDEO_BASE_ADDR;
   setAttributes(0x2, 0x1, true);
+  setpos(0, 10);
+  print("tage", 4); 
 }
 
 CGA_Screen::~CGA_Screen(){
