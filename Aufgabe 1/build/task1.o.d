@@ -6,5 +6,5 @@ build/task1.o: src/user/task1.cc /usr/include/stdc-predef.h \
  /usr/include/gnu/stubs-32.h /usr/include/bits/wchar.h \
  include/user/appl.h include/device/cgastr.h include/common/o_stream.h \
  include/common/strbuf.h include/config.h include/common/colors.h \
- include/machine/cgascr.h include/machine/keyctrl.h \
- include/machine/io_port.h include/machine/key.h
+ include/machine/cgascr.h include/machine/io_port.h \
+ include/machine/keyctrl.h include/machine/key.h

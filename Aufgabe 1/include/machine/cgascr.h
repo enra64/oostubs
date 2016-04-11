@@ -11,6 +11,9 @@
 
 /* INCLUDES */
 
+#include "machine/io_port.h"
+#include "common/colors.h"
+
 /* CLASSES */
 
 /** \brief CGA-Dispaly driver

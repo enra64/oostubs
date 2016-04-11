@@ -7,19 +7,12 @@
 \* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
  
 #include "machine/cgascr.h"
-#include "machine/io_port.h"
-
-
-
-
 
 CGA_Screen::CGA_Screen(){
   // set the pointer to the starting position of the regeneration
   // buffer
   regen_buffer = (unsigned char*) VIDEO_BASE_ADDR;
-  setAttributes(0x2, 0x1, true);
-  setpos(0, 10);
-  print("tage", 4); 
+  setAttributes(LIGHTGREY, BLACK, false);
 }
 
 CGA_Screen::~CGA_Screen(){
