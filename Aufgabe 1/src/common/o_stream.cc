@@ -20,7 +20,7 @@ O_Stream& O_Stream::operator << (char value) {
 }
 
 O_Stream& O_Stream::operator << (unsigned char value) {
-  put(value);
+  // put(value);
   return *this << (char)value;
 }
 
