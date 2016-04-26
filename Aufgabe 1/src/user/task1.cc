@@ -156,6 +156,8 @@ void Task1::testKout(){
   }
   
   kout << FGColor(LIGHTGREY) << Blink(false) << BGColor(BLACK) << endl << endl;
+
+  kout << "0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 012345" << endl;
 }
 
 void Task1::testKeyboard(){
