@@ -26,6 +26,9 @@ void CGA_Screen::setpos (unsigned short x, unsigned short y) {
   if(x < TERMINAL_WIDTH && y < TERMINAL_HEIGHT){
     // get IOPort access
     IO_Port index_reg_cga(0x3D4);
+
+    // the index register says where the data byte goes, which is why
+    // we have to write to the data register twice
     IO_Port data_reg_cga(0x3D5);
 
     // calculate offset
@@ -72,7 +75,7 @@ void CGA_Screen::show (unsigned short x, unsigned short y, char character, unsig
   // kk is this shit valid
   if(x < TERMINAL_WIDTH && y < TERMINAL_HEIGHT){
     // get pointer to regen buffer
-    char* buf = (char*) VIDEO_BASE_ADDR;    
+    char* buf = (char*) VIDEO_BASE_ADDR;
 
     // calculate the byte position
     unsigned short pos = CGA_BYTES_PER_CHAR*((y*TERMINAL_WIDTH) + x);
@@ -93,9 +96,9 @@ void CGA_Screen::print (const char* string, unsigned int n) {
   // "show" each character - extreme performance mode
   for(unsigned int i = 0; i < n; i++){
     // if the character is a newline, increase the line at x=0
-    if(string[i] == '\n'){
+    if(string[i] == '\n' || ccx == TERMINAL_WIDTH + 1){
       setpos(0, ccy + 1);
-    } 
+    }
     // not a newline - show char, increase position, update
     // variables
     else {
@@ -103,8 +106,6 @@ void CGA_Screen::print (const char* string, unsigned int n) {
       show(ccx, ccy, string[i], default_attribute);
       // increase cursor position
       setpos(++ccx, ccy);
-      // update cursor position in case of changes in y
-      getpos(ccx, ccy);
     }
   }
 }
