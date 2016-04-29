@@ -9,7 +9,7 @@ digraph "include/object" {
   }
   dir_00639e50a5e06ba932c41b2ae621276d [shape=box label="device" URL="dir_00639e50a5e06ba932c41b2ae621276d.html"];
   dir_c25c118f76a81c77ceea021073727baa [shape=box label="machine" URL="dir_c25c118f76a81c77ceea021073727baa.html"];
-  dir_00639e50a5e06ba932c41b2ae621276d->dir_c25c118f76a81c77ceea021073727baa [headlabel="2", labeldistance=1.5 headhref="dir_000002_000005.html"];
-  dir_23d5af2e228901f93ce64754cbbfed9f->dir_00639e50a5e06ba932c41b2ae621276d [headlabel="2", labeldistance=1.5 headhref="dir_000003_000002.html"];
+  dir_00639e50a5e06ba932c41b2ae621276d->dir_c25c118f76a81c77ceea021073727baa [headlabel="4", labeldistance=1.5 headhref="dir_000002_000005.html"];
+  dir_23d5af2e228901f93ce64754cbbfed9f->dir_00639e50a5e06ba932c41b2ae621276d [headlabel="4", labeldistance=1.5 headhref="dir_000003_000002.html"];
   dir_23d5af2e228901f93ce64754cbbfed9f->dir_c25c118f76a81c77ceea021073727baa [headlabel="1", labeldistance=1.5 headhref="dir_000003_000005.html"];
 }

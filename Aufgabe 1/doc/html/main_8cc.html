@@ -49,7 +49,6 @@
 <div class="header">
   <div class="summary">
 <a href="#define-members">Makrodefinitionen</a> &#124;
-<a href="#typedef-members">Typdefinitionen</a> &#124;
 <a href="#func-members">Funktionen</a> &#124;
 <a href="#var-members">Variablen</a>  </div>
   <div class="headertitle">
@@ -61,11 +60,11 @@
 <a href="#details">Mehr ...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="multiboot_8h_source.html">machine/multiboot.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="machine_2cpu_8h_source.html">machine/cpu.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="pic_8h_source.html">machine/pic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="keyctrl_8h_source.html">machine/keyctrl.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="interruptmanager_8h_source.html">device/interruptmanager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="device_2keyboard_8h_source.html">device/keyboard.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="cgastr_8h_source.html">device/cgastr.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="device_2log_8h_source.html">device/log.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="task1_8h_source.html">user/task1.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="task2_8h_source.html">user/task2.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include-Abhängigkeitsdiagramm für main.cc:</div>
 <div class="dyncontent">
@@ -94,13 +93,8 @@ Include-Abhängigkeitsdiagramm für main.cc:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Makrodefinitionen</h2></td></tr>
-<tr class="memitem:a3ebb888a082a3138da0d7e0a41cfd9ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cc.html#a3ebb888a082a3138da0d7e0a41cfd9ce">USE_TASK</a>&#160;&#160;&#160;10</td></tr>
+<tr class="memitem:a3ebb888a082a3138da0d7e0a41cfd9ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cc.html#a3ebb888a082a3138da0d7e0a41cfd9ce">USE_TASK</a>&#160;&#160;&#160;20</td></tr>
 <tr class="separator:a3ebb888a082a3138da0d7e0a41cfd9ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typdefinitionen</h2></td></tr>
-<tr class="memitem:af6ad062a3ea7824fee98fb170bb479fc"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classTask1.html">Task1</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cc.html#af6ad062a3ea7824fee98fb170bb479fc">TaskClass</a></td></tr>
-<tr class="separator:af6ad062a3ea7824fee98fb170bb479fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funktionen</h2></td></tr>
@@ -112,14 +106,14 @@ Funktionen</h2></td></tr>
 Variablen</h2></td></tr>
 <tr class="memitem:a0b2a3530e9a5998456be351b4251b878"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCPU.html">CPU</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cc.html#a0b2a3530e9a5998456be351b4251b878">cpu</a></td></tr>
 <tr class="separator:a0b2a3530e9a5998456be351b4251b878"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5551417910a4501fc4e52be788ec17bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classKeyboard__Controller.html">Keyboard_Controller</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cc.html#a5551417910a4501fc4e52be788ec17bb">keyboard</a></td></tr>
-<tr class="separator:a5551417910a4501fc4e52be788ec17bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada2dbaa2353775753f760be93baafaa2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classInterruptManager.html">InterruptManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cc.html#ada2dbaa2353775753f760be93baafaa2">iManager</a></td></tr>
+<tr class="separator:ada2dbaa2353775753f760be93baafaa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cb952f54873ca1b1a213ac08e6ff9a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classKeyboard.html">Keyboard</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cc.html#a0cb952f54873ca1b1a213ac08e6ff9a2">keyboard</a></td></tr>
+<tr class="separator:a0cb952f54873ca1b1a213ac08e6ff9a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af177bb20a527a2c8f2df3a4a2ddb5d38"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCGA__Stream.html">CGA_Stream</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cc.html#af177bb20a527a2c8f2df3a4a2ddb5d38">kout</a></td></tr>
 <tr class="separator:af177bb20a527a2c8f2df3a4a2ddb5d38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9fa347fce52d0a359e84b9918726c5c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classLog.html">Log</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cc.html#af9fa347fce52d0a359e84b9918726c5c">log</a></td></tr>
 <tr class="separator:af9fa347fce52d0a359e84b9918726c5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5df8263917aec96d469d1c5d00ae364c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPIC.html">PIC</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cc.html#a5df8263917aec96d469d1c5d00ae364c">pic</a></td></tr>
-<tr class="separator:a5df8263917aec96d469d1c5d00ae364c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
 <div class="textblock"><p>Grunddatei von OOStuBS. </p>
@@ -132,28 +126,13 @@ Variablen</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define USE_TASK&#160;&#160;&#160;10</td>
+          <td class="memname">#define USE_TASK&#160;&#160;&#160;20</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>festlegen, welche Aufgabenanwendung verwendet werden soll </p>
 
-<p>Definiert in Zeile <a class="el" href="main_8cc_source.html#l00023">23</a> der Datei <a class="el" href="main_8cc_source.html">main.cc</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Dokumentation der benutzerdefinierten Typen</h2>
-<a class="anchor" id="af6ad062a3ea7824fee98fb170bb479fc"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef <a class="el" href="classTask1.html">Task1</a> <a class="el" href="main_8cc.html#af6ad062a3ea7824fee98fb170bb479fc">TaskClass</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definiert in Zeile <a class="el" href="main_8cc_source.html#l00028">28</a> der Datei <a class="el" href="main_8cc_source.html">main.cc</a>.</p>
+<p>Definiert in Zeile <a class="el" href="main_8cc_source.html#l00022">22</a> der Datei <a class="el" href="main_8cc_source.html">main.cc</a>.</p>
 
 </div>
 </div>
@@ -192,7 +171,7 @@ Variablen</h2></td></tr>
 </dl>
 <p>This is the entry point of the operating system. If this function returns all interrupts will be disabled and the cpu will be halted. </p>
 
-<p>Definiert in Zeile <a class="el" href="main_8cc_source.html#l00054">54</a> der Datei <a class="el" href="main_8cc_source.html">main.cc</a>.</p>
+<p>Definiert in Zeile <a class="el" href="main_8cc_source.html#l00053">53</a> der Datei <a class="el" href="main_8cc_source.html">main.cc</a>.</p>
 
 <p><div class="dynheader">
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
@@ -249,21 +228,35 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definiert in Zeile <a class="el" href="main_8cc_source.html#l00038">38</a> der Datei <a class="el" href="main_8cc_source.html">main.cc</a>.</p>
+<p>Definiert in Zeile <a class="el" href="main_8cc_source.html#l00037">37</a> der Datei <a class="el" href="main_8cc_source.html">main.cc</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a5551417910a4501fc4e52be788ec17bb"></a>
+<a class="anchor" id="ada2dbaa2353775753f760be93baafaa2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classKeyboard__Controller.html">Keyboard_Controller</a> keyboard</td>
+          <td class="memname"><a class="el" href="classInterruptManager.html">InterruptManager</a> iManager</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definiert in Zeile <a class="el" href="main_8cc_source.html#l00037">37</a> der Datei <a class="el" href="main_8cc_source.html">main.cc</a>.</p>
+<p>Definiert in Zeile <a class="el" href="main_8cc_source.html#l00034">34</a> der Datei <a class="el" href="main_8cc_source.html">main.cc</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0cb952f54873ca1b1a213ac08e6ff9a2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classKeyboard.html">Keyboard</a> keyboard</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="main_8cc_source.html#l00036">36</a> der Datei <a class="el" href="main_8cc_source.html">main.cc</a>.</p>
 
 </div>
 </div>
@@ -277,7 +270,7 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definiert in Zeile <a class="el" href="main_8cc_source.html#l00036">36</a> der Datei <a class="el" href="main_8cc_source.html">main.cc</a>.</p>
+<p>Definiert in Zeile <a class="el" href="main_8cc_source.html#l00035">35</a> der Datei <a class="el" href="main_8cc_source.html">main.cc</a>.</p>
 
 </div>
 </div>
@@ -291,28 +284,14 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definiert in Zeile <a class="el" href="main_8cc_source.html#l00039">39</a> der Datei <a class="el" href="main_8cc_source.html">main.cc</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a5df8263917aec96d469d1c5d00ae364c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classPIC.html">PIC</a> pic</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definiert in Zeile <a class="el" href="main_8cc_source.html#l00035">35</a> der Datei <a class="el" href="main_8cc_source.html">main.cc</a>.</p>
+<p>Definiert in Zeile <a class="el" href="main_8cc_source.html#l00038">38</a> der Datei <a class="el" href="main_8cc_source.html">main.cc</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Erzeugt am Don Apr 7 2016 18:19:41 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+Erzeugt am Fre Apr 29 2016 14:48:30 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

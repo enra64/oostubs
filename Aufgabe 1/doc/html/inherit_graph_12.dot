@@ -4,5 +4,9 @@ digraph "Grafische Darstellung der Klassenhierarchie"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node1 [label="PIC",height=0.2,width=0.4,color="black",URL="$classPIC.html",tooltip="Treiber für den PIC (Programmable Interrupt Controller) "];
+  Node1 [label="InterruptStorage",height=0.2,width=0.4,color="black",URL="$classInterruptStorage.html",tooltip="Administrationseinheit für die Interruptweitergabe. "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="InterruptManager",height=0.2,width=0.4,color="black",URL="$classInterruptManager.html",tooltip="Administrationseinheit für die Interruptweitergabe. "];
+  Node3 [label="PIC",height=0.2,width=0.4,color="black",URL="$classPIC.html",tooltip="Treiber für den PIC (Programmable Interrupt Controller) "];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

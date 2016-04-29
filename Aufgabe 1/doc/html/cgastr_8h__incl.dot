@@ -14,4 +14,7 @@ digraph "include/device/cgastr.h"
   Node5 [label="common/colors.h",height=0.2,width=0.4,color="black",URL="$colors_8h.html"];
   Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 [label="machine/cgascr.h",height=0.2,width=0.4,color="black",URL="$cgascr_8h.html"];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="machine/io_port.h",height=0.2,width=0.4,color="black",URL="$io__port_8h.html"];
+  Node6 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }
