@@ -1,0 +1,20 @@
+# ebp/rbp stack base pointer
+
+2	push	%ebx		# parameter 1
+3	pushl	$0x1337		# parameter 2: 0x1337 immediate
+4	push	%eax		# parameter 3
+5	push	%ecx		# parameter 4
+6	call	func		# call the function
+7	addl	$12, %esp	# decrease frame size (by amount func increased it)
+8	L2	:
+
+
+10	func:
+11	push	%ebp		# save base pointer
+12	movl	%esp, %ebp	# write top pointer to base pointer (increase frame index)
+13	subl	$0x12, %esp	# increase frame size (by 12 dwords/longs) for function local variables
+14	L1:
+
+
+16	leave			# destroy stack frame
+17	ret			# return from function
