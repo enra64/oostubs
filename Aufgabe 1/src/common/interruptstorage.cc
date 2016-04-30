@@ -11,23 +11,20 @@
 \* * * * * * * * * * * * * * * * * * * * * * * * */
 #include "common/interruptstorage.h"
 
-
 /* * * * * * * * * * * * * * * * * * * * * * * * *\
 #                    METHODS                      # 
 \* * * * * * * * * * * * * * * * * * * * * * * * */
 
-/** \todo implement **/
 InterruptStorage::InterruptStorage(){
-  // ToDo: your code goes here
+  for(int i = 32; i < 48; i++){
+    mHandlers[i] = &mPanic;
+  }
 }
 
-
-/** \todo implement **/
 void InterruptStorage::assign(int iNum, InterruptHandler& handler){
-  // ToDo: your code goes here
+  mHandlers[iNum - 32] = &handler;
 }
 
-/** \todo implement **/
 void InterruptStorage::handle(int iNum){
-  // ToDo: your code goes here
+  mHandlers[iNum - 32]->trigger();
 }

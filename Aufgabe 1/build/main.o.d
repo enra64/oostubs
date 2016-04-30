@@ -4,8 +4,11 @@ build/main.o: src/main.cc /usr/include/stdc-predef.h \
  /usr/include/stdint.h /usr/include/features.h /usr/include/sys/cdefs.h \
  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
  /usr/include/gnu/stubs-32.h /usr/include/bits/wchar.h \
- include/machine/cpu.h include/machine/pic.h include/machine/io_port.h \
- include/machine/keyctrl.h include/machine/key.h include/device/cgastr.h \
- include/common/o_stream.h include/common/strbuf.h include/config.h \
- include/common/colors.h include/machine/cgascr.h include/device/log.h \
- include/machine/serial.h include/user/task1.h include/user/appl.h
+ include/machine/cpu.h include/device/interruptmanager.h \
+ include/common/interruptstorage.h include/common/interrupthandler.h \
+ include/common/panic.h include/machine/pic.h include/machine/io_port.h \
+ include/device/keyboard.h include/machine/keyctrl.h \
+ include/machine/key.h include/device/cgastr.h include/common/o_stream.h \
+ include/common/strbuf.h include/config.h include/common/colors.h \
+ include/machine/cgascr.h include/device/log.h include/machine/serial.h \
+ include/user/task2.h include/user/appl.h

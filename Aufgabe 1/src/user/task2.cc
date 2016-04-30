@@ -21,6 +21,8 @@ Task2::Task2(){
 void Task2::action(){
   unsigned short x,y;
   unsigned char i=0;
+
+//  allow(keyboard);
   
   kout.getpos(x,y);
   while(1){

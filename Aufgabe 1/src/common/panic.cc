@@ -10,18 +10,18 @@
 #                    INCLUDES                     #
 \* * * * * * * * * * * * * * * * * * * * * * * * */
 #include <common/panic.h>
-
+#include <object/cpu.h>
+#include <object/log.h>
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *\
 #                    METHODS                      # 
 \* * * * * * * * * * * * * * * * * * * * * * * * */
 
-/** \todo implement **/
 void Panic::trigger(){
-  // ToDo: your code goes here  
+  log << "unknown exception " + mExceptionNumber << "\n";
+  cpu.halt();
 }
 
-/** \todo implement **/
 void Panic::currentInterrupt(int iNum){
-  // ToDo: your code goes here
+  mExceptionNumber = iNum;
 }
