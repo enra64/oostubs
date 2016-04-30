@@ -1,0 +1,6 @@
+// full compile:
+gcc pointer.c
+// assemble only
+gcc -S pointer.c
+// disassemble binary:
+objdump -d a.out
