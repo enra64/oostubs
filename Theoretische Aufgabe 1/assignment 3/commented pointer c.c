@@ -7,9 +7,9 @@ int	main(){
 // give value of p and value of address pointed to by p
   printf("p	address	%p\n",	p);
   printf("p	content	%d\n",	*p);
-// overwrite p with garbage
+// overwrite a with 22
   *p=22;
-// a still exists
+
   printf("a	address	%p\n",	&a);
   printf("a	content	%d\n",	a);
 }

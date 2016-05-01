@@ -23,23 +23,23 @@ main:
 	movb	$5, -9(%rbp)	# save 5 (a) into our stack frame
 	leaq	-9(%rbp), %rax	# save the address of the 5 (p:=&a) into rax
 	movq	%rax, -8(%rbp)	# move the address to stack frame (p)
-############################################################# ^char *p = &a ############################################################# ^
+############################################################# ^char *p = &a ##########################################################
 	movq	-8(%rbp), %rax	# copy a's address from p (in the stack frame) to rax
 	movq	%rax, %rsi	# copy p(==a's address) to the second argument register
 	movl	$.LC0, %edi	# copy a reference to the string to the first argument register
-	movl	$0, %eax	# clean eax (why not rax?)
+	movl	$0, %eax	# clean eax
 	call	printf		# call printf
-############################################################# ^printf p #############################################################
+############################################################# ^printf p ##############################################################
 	movq	-8(%rbp), %rax	# copy p to rax
-	movzbl	(%rax), %eax	# move, padding with zeroes, from byte to long. copy rax to eax, padding with zeros
-	movsbl	%al, %eax	# move, padding with the src MSB, from byte to long. copy the lower 8 bits from rax to eax, 
+	movzbl	(%rax), %eax	# resolve %rax (so like *%rax or like *p) and copy that value to %eax
+	movsbl	%al, %eax	# move, padding with the src MSB, from byte to long.
 	movl	%eax, %esi	# copy *p==a to the second argument register
 	movl	$.LC1, %edi	# copy a reference to the string to the first argument register
 	movl	$0, %eax	# clear eax
 	call	printf		# call printf
 ############################################################# ^printf *p #############################################################
 	movq	-8(%rbp), %rax	# copy p to rax
-	movb	$22, (%rax)	# overwrite rax with 22
+	movb	$22, (%rax)	# overwrite *rax with 22
 	leaq	-9(%rbp), %rax	# copy effective address of a (==&a) to rax
 	movq	%rax, %rsi	# copy &a==(old p) to the second argument register
 	movl	$.LC2, %edi	# copy a reference to the string to the first argument register
@@ -52,7 +52,7 @@ main:
 	movl	$.LC3, %edi	# copy reference to the string to the first argument register
 	movl	$0, %eax	# clear eax
 	call	printf		# call printf
-############################################################# ^printf a #############################################################
+############################################################# ^printf a ##############################################################
 	movl	$0, %eax	# clear eax
 	leave			# leave the stack frame
 	.cfi_def_cfa 7, 8
