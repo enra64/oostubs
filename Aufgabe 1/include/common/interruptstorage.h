@@ -13,6 +13,7 @@
 #                    INCLUDES                     #
 \* * * * * * * * * * * * * * * * * * * * * * * * */
 #include "common/interrupthandler.h"
+#include "common/panic.h"
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *\
 #                    CLASSES                      #
@@ -88,6 +89,10 @@ class InterruptStorage {
      *  \param iNum a reference to store the interrupt's number to
      **/
      bool currentInterrupt(int& iNum);
-  };
+
+private:
+  InterruptHandler* mHandlers[16];
+  Panic mPanic;
+};
 
 #endif

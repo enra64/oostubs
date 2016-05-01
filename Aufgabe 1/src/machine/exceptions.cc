@@ -11,6 +11,7 @@
 #include "object/imanager.h"
 #include "object/kout.h"
 #include "object/cpu.h"
+#include "object/log.h"
 
 #include <stdint.h>
 
@@ -110,5 +111,6 @@ void exception(unsigned short slot, void** esp) {
   if(slot < 32 && slot != 2) {
     printException(slot, esp);
   }
+  log << "a\n";
   iManager.handle(slot);
 }
