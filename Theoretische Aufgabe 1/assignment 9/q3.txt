@@ -14,7 +14,6 @@
 12	movl	%esp, %ebp	# write top pointer to base pointer (increase frame index)
 13	subl	$0x12, %esp	# increase frame size (by 12 dwords/longs) for function local variables
 14	L1:
+16	leave			# destroy stack frame (-> go to line 7)
 
-
-16	leave			# destroy stack frame
 17	ret			# return from function

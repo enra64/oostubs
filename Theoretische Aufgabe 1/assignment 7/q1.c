@@ -24,6 +24,10 @@ pos2:
 if(a <= 0x9)
   goto pos1;
 
+//jo-actual:
+for(int i = 0; i <= 9; i++)
+	func();
+
 /*
 1	cmpl	$0x5	,	0	x18	(%esp)
 2	jne	pos3
