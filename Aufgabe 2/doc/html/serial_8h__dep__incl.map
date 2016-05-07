@@ -1,0 +1,7 @@
+<map id="include/machine/serial.h" name="include/machine/serial.h">
+<area shape="rect" id="node2" href="$device_2log_8h.html" title="include/device/log.h" alt="" coords="156,80,293,107"/>
+<area shape="rect" id="node6" href="$serial_8cc.html" title="src/machine/serial.cc" alt="" coords="318,80,465,107"/>
+<area shape="rect" id="node3" href="$object_2log_8h.html" title="include/object/log.h" alt="" coords="5,155,140,181"/>
+<area shape="rect" id="node4" href="$log_8cc.html" title="src/device/log.cc" alt="" coords="164,155,285,181"/>
+<area shape="rect" id="node5" href="$main_8cc.html" title="Grunddatei von OOStuBS. " alt="" coords="310,155,401,181"/>
+</map>
