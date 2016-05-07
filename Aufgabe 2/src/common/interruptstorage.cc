@@ -27,7 +27,8 @@ void InterruptStorage::assign(int iNum, InterruptHandler& handler){
 }
 
 void InterruptStorage::handle(int iNum){
-  mPanic.currentInterrupt(iNum);
+  // if this is uncommented, the keyboard interrupt does not work.
+  //mPanic.currentInterrupt(iNum);
   mHandlers[iNum]->trigger();
 }
 
