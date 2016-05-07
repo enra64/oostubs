@@ -18,16 +18,14 @@
 
 /** \todo implement **/
 InterruptStorage::InterruptStorage(){
-  // ToDo: your code goes here
+  for(int i=0; i < 32; i++)
+    mHandlers[i] = &mPanic;
 }
 
-
-/** \todo implement **/
 void InterruptStorage::assign(int iNum, InterruptHandler& handler){
-  // ToDo: your code goes here
+  mHandlers[iNum] = &handler;
 }
 
-/** \todo implement **/
 void InterruptStorage::handle(int iNum){
-  // ToDo: your code goes here
+  mHandlers[iNum]->trigger();
 }

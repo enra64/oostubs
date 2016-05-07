@@ -53,7 +53,7 @@ class Panic  : public InterruptHandler {
      **/
     void currentInterrupt(int iNum);
   private:
-    int mCurrentInterrupt = -1;
+    int mCurrentInterrupt;
 };
 
 #endif
