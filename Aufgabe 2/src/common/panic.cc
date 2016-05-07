@@ -10,18 +10,18 @@
 #                    INCLUDES                     #
 \* * * * * * * * * * * * * * * * * * * * * * * * */
 #include <common/panic.h>
-
+#include <object/cpu.h>
+#include <object/kout.h>
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *\
 #                    METHODS                      # 
 \* * * * * * * * * * * * * * * * * * * * * * * * */
 
-/** \todo implement **/
 void Panic::trigger(){
-  // ToDo: your code goes here  
+  kout << "Unhandled interrupt: " << mCurrentInterrupt << endl;
+  cpu.halt();
 }
 
-/** \todo implement **/
 void Panic::currentInterrupt(int iNum){
-  // ToDo: your code goes here
+  mCurrentInterrupt = iNum;
 }

@@ -52,6 +52,8 @@ class Panic  : public InterruptHandler {
       *\param iNum the currently handled interrupt's number
      **/
     void currentInterrupt(int iNum);
+  private:
+    int mCurrentInterrupt = -1;
 };
 
 #endif
