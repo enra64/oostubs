@@ -27,5 +27,6 @@ void InterruptStorage::assign(int iNum, InterruptHandler& handler){
 }
 
 void InterruptStorage::handle(int iNum){
+  mPanic.currentInterrupt(iNum);
   mHandlers[iNum]->trigger();
 }
