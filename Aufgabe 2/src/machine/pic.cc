@@ -42,29 +42,65 @@ PIC::PIC() {
   
   mask_1.outb(3);    // ICW4: tell Master PIC that we are in 8086/88 Mode (bit 0 == 1) and Automatic EOI (bit 1 == 1)
   mask_2.outb(3);    // ICW4: tell Master PIC that we are in 8086/88 Mode (bit 0 == 1) and Automatic EOI (bit 1 == 1)
+
+  // save the masks in ram to avoid IO access
+  mMaskMaster = 0xFB;
+  mMaskSlave = 0xFF;
   
-  mask_1.outb(0xFB); // Tell the Master PIC to ignore every interrupt except the interrupt connected to PIC2
-  mask_2.outb(0xFF); // Tell the Slave PIC to ignore every interrupt
+  mask_1.outb(mMaskMaster); // Tell the Master PIC to ignore every interrupt except the interrupt connected to PIC2
+  mask_2.outb(mMaskSlave); // Tell the Slave PIC to ignore every interrupt
 
   // ToDo: your code goes here
+  // set global interrupt enable flag
+  cpu.enable_int();
+
+  // enable keyboard interrupt
+  allow(keyboard);
 }
 
 /** \todo implement **/
 PIC::~PIC(){
-
+  // clear global interrupt enable flag
+  cpu.disable_int();
 }
 
 /** \todo implement **/
 void PIC::allow(Interrupts interrupt){
-  // ToDo: your code goes here
+  // the first eight interrupts are on the master pic
+  bool isMaster = interrupt < 40;
+  
+  // get appropriate io_port
+  IO_Port maskPort(isMaster ? 0x21 : 0xa1);
+  
+  if(isMaster)
+    mMaskMaster &= ~(1 << (interrupt - 32));
+  else
+    mMaskSlave &= ~(1 << (interrupt - 40));
+
+  // update pic masks
+  maskPort.outb(isMaster ? mMaskMaster : mMaskSlave);
 }
 
 /** \todo implement **/
 void PIC::forbid(Interrupts interrupt){
-  // ToDo: your code goes here
+  // the first eight interrupts are on the master pic
+  bool isMaster = interrupt < 40;
+  
+  // get appropriate io_port
+  IO_Port maskPort(isMaster ? 0x21 : 0xa1);
+  
+  // update saved masks  
+  if(isMaster)
+    mMaskMaster |= (1 << (interrupt - 32));
+  else
+    mMaskSlave |= (1 << (interrupt - 40));
+
+  // update pic masks
+  maskPort.outb(isMaster ? mMaskMaster : mMaskSlave);
 }
 
-/** \todo implement **/
 void PIC::ack(Interrupts interrupt){
-  // ToDo: your code goes here
+  // get appropriate io_port
+  IO_Port maskPort(interrupt < 40 ? 0x20 : 0xa0);
+  maskPort.outb(0x20);
 }

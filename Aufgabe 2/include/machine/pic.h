@@ -139,6 +139,8 @@ class PIC {
      *   The interrupt to acknowledge
      */
     void ack(Interrupts interrupt);
+private:
+    unsigned char mMaskMaster, mMaskSlave;
 };
 
 #endif
