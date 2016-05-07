@@ -30,3 +30,7 @@ void InterruptStorage::handle(int iNum){
   mPanic.currentInterrupt(iNum);
   mHandlers[iNum]->trigger();
 }
+
+//bool InterruptStorage::currentInterrupt(int& iNum){
+//  
+//}
