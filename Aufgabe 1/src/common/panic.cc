@@ -19,9 +19,9 @@
 
 void Panic::trigger(){
   log << "unknown exception " + mExceptionNumber << "\n";
-  cpu.halt();
+  //cpu.halt();
 }
 
 void Panic::currentInterrupt(int iNum){
-  mExceptionNumber = iNum;
+  //mExceptionNumber = iNum;
 }
