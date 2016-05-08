@@ -93,6 +93,7 @@ class InterruptStorage {
      InterruptHandler* mHandlers[48];
   private:
      Panic mPanic;
+     // avoid getting a panic before the keyboard had a chance to plugin()
      bool mKeyboardHandlerAssigned;
   };
 

@@ -30,6 +30,7 @@ void InterruptStorage::assign(int iNum, InterruptHandler& handler){
 }
 
 void InterruptStorage::handle(int iNum){
+  
   if(iNum == 33 && !mKeyboardHandlerAssigned)
     return;
   mPanic.currentInterrupt(iNum);
