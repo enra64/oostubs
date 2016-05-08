@@ -53,9 +53,6 @@ PIC::PIC() {
   // ToDo: your code goes here
   // set global interrupt enable flag
   cpu.enable_int();
-
-  // enable keyboard interrupt
-  allow(keyboard);
 }
 
 /** \todo implement **/
