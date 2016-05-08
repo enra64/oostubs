@@ -1,0 +1,28 @@
+<map id="IO_Port::inb" name="IO_Port::inb">
+<area shape="rect" id="node2" href="$classCGA__Screen.html#a6f47426c0cf0662b6835d64e08cf929e" title="get the cursor position " alt="" coords="145,141,292,168"/>
+<area shape="rect" id="node14" href="$classKeyboard__Controller.html#a13a0e454bd8c6ee99182d05770d7c44a" title="Default constructor, turns all LEDs off and set speed and delay maximal. " alt="" coords="342,384,490,426"/>
+<area shape="rect" id="node15" href="$classKeyboard__Controller.html#a686dd47e66ae9c2d9ccf1b9f84d3e99d" title="reboots the computer " alt="" coords="149,502,289,543"/>
+<area shape="rect" id="node16" href="$classKeyboard__Controller.html#a78cf6859d88097a0f2b6945fc86c1d21" title="get the last pressed key " alt="" coords="540,268,680,310"/>
+<area shape="rect" id="node17" href="$classKeyboard__Controller.html#aa213c738efd52d7986fb925e6aaa7d95" title="set the speed and delay of repeats of the keyboard. " alt="" coords="149,384,289,426"/>
+<area shape="rect" id="node18" href="$classKeyboard__Controller.html#a36dfc2c73c4031c8662e37159238d5b0" title="switch the specified LED of the keyboard on or off. " alt="" coords="149,319,289,360"/>
+<area shape="rect" id="node20" href="$classSerial.html#ab4ed6a72fd54b73d02bb7b334612514d" title="Serial::status" alt="" coords="169,568,268,594"/>
+<area shape="rect" id="node24" href="$classSerial.html#a9981486edd9ae1be487bd054f341c771" title="Serial::control" alt="" coords="167,618,270,645"/>
+<area shape="rect" id="node26" href="$classSerial.html#a503bb1a19820b192724c76d43268e6d2" title="Serial::baudRate" alt="" coords="357,669,475,696"/>
+<area shape="rect" id="node3" href="$classCGA__Screen.html#a6c295831093cab87c3944e39160965b9" title="gibt eine Zeichenkette an der aktuellen Position aus " alt="" coords="544,90,676,117"/>
+<area shape="rect" id="node7" href="$classTask1.html#a48ca608ac9cdc03ab6614a4f61e2448e" title="test the functionality of the Kout object " alt="" coords="982,166,1097,193"/>
+<area shape="rect" id="node9" href="$classTask1.html#a587ce3fad20f9ec4ec88beefd08db49e" title="test the functionality of the Keyboard_Controller object " alt="" coords="968,217,1111,244"/>
+<area shape="rect" id="node10" href="$classTask2.html#aa5de17846032b02d6d0819cdc78b1b3e" title="prints the line " alt="" coords="989,40,1090,66"/>
+<area shape="rect" id="node13" href="$classCGA__Screen.html#a3808a301813e3e1b6368ab75a94ea652" title="das aktuelle Display wird eine Zeile nach oben gescrollt " alt="" coords="340,65,492,92"/>
+<area shape="rect" id="node4" href="$classCGA__Stream.html#a73572f5377a28f09ee9dc3af7b5a65b9" title="ausgeben des Inhaltes des internen Puffers " alt="" coords="756,116,892,142"/>
+<area shape="rect" id="node12" href="$classCGA__Screen.html#a8bfd69c9fc770359fb8d6e3a02cbdd1e" title="Destructor. " alt="" coords="728,65,920,92"/>
+<area shape="rect" id="node5" href="$exceptions_8cc.html#aa9be12416ab5fcc6ced0ea49ff7825de" title="printException" alt="" coords="987,116,1092,142"/>
+<area shape="rect" id="node6" href="$exceptions_8cc.html#a17ac45e3213989a19bb1472093ca30e6" title="Entry point for exceptions. " alt="" coords="1170,116,1249,142"/>
+<area shape="rect" id="node8" href="$classTask1.html#a0d4029a13591e70af436c0ead066ea5c" title="parse and print multiboot information " alt="" coords="1159,192,1260,218"/>
+<area shape="rect" id="node11" href="$main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point " alt="" coords="1181,40,1238,66"/>
+<area shape="rect" id="node19" href="$classKeyboard__Controller.html#aa517065c0ed4059b477dfb481539b1b2" title="interpret the reveived scancode and modifier bits " alt="" coords="346,319,486,360"/>
+<area shape="rect" id="node21" href="$classSerial.html#a2ebc6cf48988c16d87b2584b47261ea1" title="gibt eine Zeichenkette an der aktuellen Position aus " alt="" coords="372,568,460,594"/>
+<area shape="rect" id="node22" href="$classLog.html#a48b8faa1f9d2590c6fb650f1004e73c9" title="flush the content of the internal buffer " alt="" coords="571,568,649,594"/>
+<area shape="rect" id="node23" href="$classSerial.html#a5b32c394c0ff923a4ef1c13cfb20a6ba" title="Destructor. " alt="" coords="558,517,662,544"/>
+<area shape="rect" id="node25" href="$classSerial.html#a3667c3137f2df94716b5193f9fb736ab" title="Constructor. " alt="" coords="562,618,658,645"/>
+<area shape="rect" id="node27" href="$classSerial.html#a23dd45934b6bcfeabd44b78cb035fae7" title="Serial::baudRate" alt="" coords="551,669,669,696"/>
+</map>

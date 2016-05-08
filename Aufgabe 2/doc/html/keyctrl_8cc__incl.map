@@ -1,0 +1,8 @@
+<map id="src/machine/keyctrl.cc" name="src/machine/keyctrl.cc">
+<area shape="rect" id="node2" href="$keyctrl_8h.html" title="machine/keyctrl.h" alt="" coords="135,80,260,107"/>
+<area shape="rect" id="node5" href="$intlock_8h.html" title="locking/intlock.h" alt="" coords="285,80,401,107"/>
+<area shape="rect" id="node3" href="$io__port_8h.html" title="machine/io_port.h" alt="" coords="5,155,131,181"/>
+<area shape="rect" id="node4" href="$key_8h.html" title="machine/key.h" alt="" coords="155,155,261,181"/>
+<area shape="rect" id="node6" href="$object_2cpu_8h.html" title="alles notwendige zum nutzen der in main.cc deklarierten globalen Variable cpu " alt="" coords="296,155,389,181"/>
+<area shape="rect" id="node7" href="$machine_2cpu_8h.html" title="machine/cpu.h" alt="" coords="289,229,396,256"/>
+</map>

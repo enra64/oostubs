@@ -1,0 +1,5 @@
+<map id="CGA_Screen::clear" name="CGA_Screen::clear">
+<area shape="rect" id="node2" href="$classCGA__Screen.html#a6dfbfb197371c461938cfcc9c5d70187" title="print a character to a specific position " alt="" coords="192,5,331,32"/>
+<area shape="rect" id="node3" href="$classCGA__Screen.html#a346b7ccc05356f76e738a76a24510e33" title="set the cursor position " alt="" coords="188,56,335,83"/>
+<area shape="rect" id="node4" href="$classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port. " alt="" coords="383,56,483,83"/>
+</map>
