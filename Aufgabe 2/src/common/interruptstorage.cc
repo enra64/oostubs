@@ -10,25 +10,29 @@
 #                    INCLUDES                     #
 \* * * * * * * * * * * * * * * * * * * * * * * * */
 #include "common/interruptstorage.h"
-
+#include "object/kout.h"
+#include "object/cpu.h"
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *\
 #                    METHODS                      # 
 \* * * * * * * * * * * * * * * * * * * * * * * * */
 
-/** \todo implement **/
 InterruptStorage::InterruptStorage(){
-  for(int i=0; i < 32; i++)
-    mHandlers[i] = &mPanic;
+  for(int i=0; i < 48; i++)
+    assign(i, mPanic);
+  mKeyboardHandlerAssigned = false;
 }
 
 void InterruptStorage::assign(int iNum, InterruptHandler& handler){
   mHandlers[iNum] = &handler;
+  if(iNum == 33)
+    mKeyboardHandlerAssigned = true;
 }
 
 void InterruptStorage::handle(int iNum){
-  // if this is uncommented, the keyboard interrupt does not work.
-  //mPanic.currentInterrupt(iNum);
+  if(iNum == 33 && !mKeyboardHandlerAssigned)
+    return;
+  mPanic.currentInterrupt(iNum);
   mHandlers[iNum]->trigger();
 }
 

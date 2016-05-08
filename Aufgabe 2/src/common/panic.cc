@@ -18,7 +18,7 @@
 \* * * * * * * * * * * * * * * * * * * * * * * * */
 
 void Panic::trigger(){
-  kout << "Unhandled interrupt: " << mCurrentInterrupt << endl;
+  kout << "Unhandled interrupt: '" << mCurrentInterrupt << "'" << endl;
   cpu.halt();
 }
 

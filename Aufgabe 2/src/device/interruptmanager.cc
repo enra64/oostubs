@@ -12,6 +12,6 @@
 #include <device/interruptmanager.h>
 
 void InterruptManager::assign(int iNum, InterruptHandler& handler){
-  mHandlers[iNum] = &handler;
+  InterruptStorage::assign(iNum, handler);
   allow((Interrupts) iNum);
 }

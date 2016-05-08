@@ -90,9 +90,10 @@ class InterruptStorage {
      **/
      bool currentInterrupt(int& iNum);
   protected:
-     InterruptHandler* mHandlers[32];
+     InterruptHandler* mHandlers[48];
   private:
      Panic mPanic;
+     bool mKeyboardHandlerAssigned;
   };
 
 #endif
