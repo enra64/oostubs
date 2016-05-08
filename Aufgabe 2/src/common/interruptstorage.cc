@@ -18,7 +18,7 @@
 \* * * * * * * * * * * * * * * * * * * * * * * * */
 
 InterruptStorage::InterruptStorage(){
-  for(int i=0; i < 48; i++)  
+  for(int i=0; i < 48; i++)
     assign(i, mPanic);
 }
 
