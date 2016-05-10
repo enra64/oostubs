@@ -1,0 +1,2170 @@
+diff -Naur -x .git Aufgabe2-solve/doc/mainpage.dox Aufgabe3/doc/mainpage.dox
+--- Aufgabe2-solve/doc/mainpage.dox	2016-05-09 16:40:11.986013134 +0200
++++ Aufgabe3/doc/mainpage.dox	2016-05-09 16:42:03.736608238 +0200
+@@ -11,6 +11,7 @@
+  * \section main_sec2 Aufgaben
+  * \ref task1 \n
+  * \ref task2 \n
++ * \ref task3 \n
+  * 
+  * \section main_sec3 Entwicklungsumgebung
+  * Auf der folgenden Seite ist die Entwicklungsumgebung beschrieben. \n
+@@ -33,6 +34,7 @@
+  * \section main_sec2 tasks
+  * \ref task1 \n
+  * \ref task2 \n
++ * \ref task3 \n
+  * 
+  * \section main_sec3 Development Environment
+  * The following side describe the environment. \n
+diff -Naur -x .git Aufgabe2-solve/doc/task3.dox Aufgabe3/doc/task3.dox
+--- Aufgabe2-solve/doc/task3.dox	1970-01-01 01:00:00.000000000 +0100
++++ Aufgabe3/doc/task3.dox	2016-05-09 16:42:03.824607132 +0200
+@@ -0,0 +1,1470 @@
++/**\page task3 Aufgabe 3 - Prozedurstackanalyse
++ * \tableofcontents
++ * 
++ * 
++ * \section task3_sec1 Ziele
++ *   \li praktische Erfahrungen mit Prozedurstack sammeln
++ *   \li x86-Ausnahmebehandlung
++ * 
++ * \section task3_sec2 Aufgabe
++ * Nachdem in der \ref task1 "ersten Aufgabe" Ein- und Ausgabe implementiert wurden und 
++ * in der \ref task2 "zweiten Aufgabe" Unterbrechungsbehandlungen eingebaut wurden geht es 
++ * in dieser Aufgabe um Fehlermeldungen der x86-CPU und dem Stackaufbau bei Funktionsaufrufen.
++ * 
++ * Zu diesem Zweck sind in zwei Teilfunktionen die Stacks zu untersuchen und deren
++ * Struktur zu interpretieren. 
++ * 
++ * Zusätzlich ist ein potentieller Schadcode zu finden und sein Einfallstor zu überprüfen. 
++ * 
++ * In dieser Aufgabe ist keine eigene Implementierung notwendig!
++ *
++ * \section task3_sec3 Implementierung und Fragen
++ * Die Vorgabe bringt zwei neue Task-Anwendungen, \ref Task3A und \ref Task3B.
++ * Beim Start des OS kann zwischen beiden Aufgaben gewählt werden, wobei deren 
++ * eigentliche Funktion für die Aufgaben nicht von Bedeutung ist.
++ * 
++ * \subsection task3_sec3_1 Teil A
++ * Den Anfang macht die Aufgabe Task3A. Hier wird eine Methode Task3A::action()
++ * aufgerufen. Offenbar tritt dabei allerdings ein Fehler auf, denn das Programm
++ * wird mit der Ausgabe von 3 Parametern abgebrochen. Entwickeln Sie eine 
++ * Strategie, wie Sie mit Hilfe des gdb die Programmzeile finden, in der der
++ * Fehler auftritt, welcher Fehlertyp generiert wird und welche Inhalte sich
++ * beim Auslösen der Exception auf dem Stack befinden.
++ * 
++ * \attention
++ * Der Stackaufbau nach dem Auslösen einer \ref Exception folgt in unserem Simulator 
++ * einer leicht anderen Struktur als in der Dokumentation beschrieben und
++ * stellt sich wie folgt dar:\n
++ * Fehlercode / irrelevant /  eip  / cs / eflags/\n
++ *
++ * Durch den zugehörigen Aufruf der Behandlungsfunktion \ref Exception werden weitere
++ * Frames auf dem Stack abgelegt. Betrachten Sie entsprechend nur den Ausschnitt,
++ * der unterhalb des Stackframes des Funktionsaufrufes Task3A::action() liegt.
++ *
++ * \b Fragen: \n
++ * Was für ein Fehler ist aufgetreten? \n
++ * In welcher Quellcodezeile trat dieser Fehler auf? \n
++ * Wie sind Sie vorgegangen? \n
++ * 
++ * \subsection task3_sec3_2 Teil B
++ * Die zweite Aufgabe \ref Task3B führt die Berechnung einer Fibonacci-Folge 
++ * durch runFib(). Machen Sie sich zunächst mit der Aufrufhierarchie der Methode
++ * vertraut. Mit dem Starten des Programms wird an signifikanten Punkten die
++ * Funktion printStack() aufgerufen. Diese gibt in 
++ * 32-Bit-Worten die Stackstruktur zu je vier Einheiten pro Zeile in 
++ * hexadezimaler Darstellung aus.
++ * 
++ * Es ist nun an Ihnen diesen Ausgaben entsprechende Bedeutungen zu geben. Achten
++ * Sie dabei insbesondere auf die verschiedenen Formen der Parameterübergaben 
++ * zwischen den Funktionen. Insbesondere für die rekursiven Aufrufe ergibt sich
++ * ein deutliches Muster. Sie können gern den gdb hinzuziehen, um weitere 
++ * Informationen zu erlangen.
++ * 
++ * \b Fragen: \n
++ * Was sind die sich wiederholenden Strukturen? \n
++ * Wie erscheint das Array \"ende\" im Speicher? \n
++ * In welcher Reihenfolge werden Parameter bei einem Funktionsaufruf auf den Stack gelegt? \n
++ * 
++ * \subsection task3_sec3_3 Teil C
++ * Wir haben ein Sicherheitsleck in OOStuBs, wodurch es Angreifern gelungen ist,
++ * potentiell schädlichen Code in das System einzuschleusen. Führen Sie eine Analyse
++ * des Schadcodes durch und vollziehen sie nach, wie der Angreifer seinen Code ausführen konnte.
++ * \n
++ * \b Hinweis: \n
++ * Nutzen Sie zur Analyse den gdb, in Eclipse werden Sie den Schadcode nicht lesen können.\n
++ * \n
++ * \b Fragen: \n
++ * Welchen Schadcode führt der Angreifer aus? \n
++ * Wie versteckt sich der Angreifer vor Analysen? \n
++ * Wie konnte er seinen Code ausführen? \n
++ * Wie hätte man dies verhindern können? \n
++ *
++ * \section task3_sec4 Hilfestellung
++ *   \li \subpage task3_procstack
++ *   \li \subpage task3_exception
++ * 
++ * \~english
++ * \page task3 Task 3 - Analysation of the Procedurestack
++ * 
++ * There is no english describtion. Use the german one.
++ */
++
++/**\page task3_procstack Stack und Prozeduren und x86-Assembler
++ * \tableofcontents
++ * 
++ * \section task3_procstack_sec1 Ziel dieser Informationen
++ * 
++ * Ziel dieser Seite ist es, insbesondere für die Teilnehmer von 
++ * Technische Informatik II, die noch keine Assemblerkenntnisse besitzen, 
++ * einen Überblick über die Assembler-Programmierung zu geben. Wir bilden 
++ * uns nicht ein, dass ihr am Ende komplexe Assemblerprogramme schreiben 
++ * könnt, aber das wird auch nicht nötig sein. Wir hoffen jedoch, 
++ * dass ihr auf diese Weise zumindest eine gewisse Vorstellung davon 
++ * erhaltet, wie ein Hochsprachenprogramm in Assembler aussieht und 
++ * dass ihr bei entsprechender Hilfestellungen auch selbst kleine Funktionen 
++ * in Assembler schreiben könnt. Die verschiedenen Konzepte werden am Beispiel 
++ * des 80<b>x86</b> Prozessors erläutert. Diese Prozessorreihe stammt von der Firma 
++ * Intel und steckt direkt oder als Nachbau u.a. in jedem PC. \n
++ * Heutige Tabletts und Smartphone verwenden jedoch meist andere Prozessoren.
++ * 
++ * Den \e Rahmenaufbau eines Assemblerprogramms werden wir hier nicht erklären, 
++ * den schaut ihr euch am besten an einer Assemblerdatei ab.
++ * 
++ * \section task3_procstack_sec2 Was ist ein Assembler?
++ * Ein Assembler ist genau genommen ein Compiler, 
++ * der den Code eines Assemblerprogramms in Maschinensprache, 
++ * d.h. Nullen und Einsen übersetzt. Anders als ein C-Compiler hat 
++ * es der Assembler jedoch sehr einfach, da (\e fast \e immer) eine 
++ * Assembleranweisung genau einer Maschinensprachenanweisung entspricht. 
++ * Das Assemblerprogramm ist also nur eine für Menschen komfortablere 
++ * Darstellung des Maschinenprogramms.
++ * 
++ * Statt \c 000001011110100000000011 schreiben zu müssen, kann der 
++ * Programmierer die Assembleranweisung <tt>add ax,1000</tt> verwenden, 
++ * die - bei den 80x86 Prozessoren - genau dasselbe bedeutet.
++ * 
++ * <table border="1" rules="all">
++     <tr>
++       <th>symbolische Bezeichnung</th>
++       <th>Maschinencode</th>
++     </tr>
++     <tr>
++       <td>add ax</td>
++       <td>00000101</td>
++     </tr>
++     <tr>
++       <td>1000 (dez.)</td>
++       <td>0000001111101000</td>
++     </tr>
++ * </table>
++ * 
++ * Zusätzlich vertauscht der Assembler noch die Reihenfolge der Bytes des Offsets.
++ * 
++ * <table border="1" rules="all">
++     <tr>
++       <td>00000101</td>
++       <td>11101000</td>
++       <td>00000011</td>
++     </tr><tr>
++       <td>add ax</td>
++       <td>low Byte</td>
++       <td>high Byte</td>
++     </tr>
++ * </table>
++ * 
++ * Im üblichen Sprachgebrauch wird unter \e Assembler jedoch weniger der Compiler 
++ * verstanden, als die symbolische Notation der Maschinensprache. <tt>add ax,1000</tt> 
++ * ist dann also eine Assembleranweisung.
++ * 
++ * \section task3_procstack_sec3 Was kann ein Assembler?
++ * Ein Assembler kann eigentlich sehr wenig, nämlich nur das, 
++ * was der Prozessor direkt versteht. Die ganzen schönen Konstrukte 
++ * höherer Programmiersprachen, die dem Programmierer erlauben, 
++ * seine Algorithmen in verständliche, (\e ziemlich) fehlerfreie Programme 
++ * zu übertragen, fehlen:
++ *   \li keine komplexen Anweisungen
++ *   \li keine komfortablen for, while oder reapeat-until Schleifen
++ *   \li keine strukturierten Datentypen
++ *   \li keine Unterprogramme mit Parameterübergabe
++ *   \li ...
++ * 
++ * \b Beispiele:
++ * <ol>
++ *   <li> 
++ *   Die C Anweisung <tt>summe = a + b + c + d;</tt> ist für einen Assembler 
++ *   zu kompliziert und muss daher in mehrere Anweisungen aufgeteilt 
++ *   werden. Der 80x86 Assembler kann immer nur zwei Zahlen addieren und 
++ *   das Ergebnis in einer der beiden verwendeten Variablen (Akkumulatorregister) 
++ *   speichern. Das folgende C Programm entspricht daher eher einem Assemblerprogramm: 
++ *   \code{.cpp}
++  summe = a;
++  summe = summe + b;
++  summe = summe + c;
++  summe = summe + d;
++\endcode
++ *   In einem x86 Assembler würde das dann so aussehen:
++ *   \code{.py}
++  mov [a], %eax
++  add [b], %eax
++  add [c], %eax
++  add [d], %eax
++\endcode
++ *   </li>
++ *   <li>
++ *   Einfache if-then-else Konstrukte sind für Assembler auch schon zu schwierig: 
++ *   \code{.cpp}
++  if (a == 4711){
++    ...
++  }else{
++    ...
++  }
++\endcode
++ * 
++ *   Sie müssen mit Hilfe von gotos ausgedrückt werden: 
++ *   \code{.cpp}
++  if (a != 4711)
++    goto ungleich
++gleich:   ...
++    goto weiter
++ungleich: ...
++weiter:   ...
++\endcode
++ *   In Assembler umgesetzt sieht es dann so aus:
++ *   \code{.py}
++  cmpl $4711, %eax
++  jne ungleich
++gleich:   
++  ...
++  jmp weiter
++ungleich: 
++  ...
++weiter:   
++  ...
++\endcode
++ *   </li>
++ *   <li>
++ *   Einfache Zählschleifen werden vom 80x86 Prozessor schon besser unterstützt. 
++ *   Das folgende C Programm 
++ *   \code{.cpp}
++  for (i=100; i!=0; i++) { 
++    summe = summe + a;
++  }
++\endcode
++ *   sieht in einem 80x86 Assembler etwa so aus: 
++ *   \code{.py}
++  mov $100, %ecx
++schleife:  
++  add [a], %eax
++  loop schleife
++\endcode
++ *   Der Loop-Befehl dekrementiert implizit das \c ecx Register und 
++ *   führt den Sprung nur aus, wenn der Inhalt des \c ecx Registers anschließend nicht 0 ist. 
++ *   </li>
++ * </ol>
++ * 
++ * 
++ * \section task3_procstack_sec4 Was ist ein Register?
++ * In den bisher genannten Beispielen wurden anstelle der Variablennamen 
++ * des C Programms stets die Namen von Registern verwendet. Ein Register 
++ * ist ein winziges Stückchen Hardware innerhalb des Prozessors, das 
++ * beim 80386 und höher bis zu 32 Bits, also 32 Ziffern im Bereich 0 und 1 speichern kann.
++ * 
++ * Der 80386 besitzt die folgenden Register.
++ * 
++ * \subsection task3_procstack_sec4_1 Allgemeine Register
++ * <table border="1" rules="all">
++     <tr>
++       <th>Name</th>
++       <th>Bemerkung</th>
++     </tr>
++     <tr>
++       <td>eax</td>
++       <td>allgemein verwendbar, spezielle Bedeutung bei Arithmetikbefehlen</td>
++     </tr>
++     <tr>
++       <td>ebx</td>
++       <td>allgemein verwendbar</td>
++     </tr>
++     <tr>
++       <td>ecx</td>
++       <td>allgemein verwendbar, spezielle Bedeutung bei Schleifen</td>
++     </tr>
++     <tr>
++       <td>edx</td>
++       <td>allgemein verwendbar</td>
++     </tr>
++     <tr>
++       <td>ebp</td>
++       <td>Basepointer</td>
++     </tr>
++     <tr>
++       <td>esi</td>
++       <td>Quelle (eng: source) f&uuml;r Stringoperationen</td>
++     </tr>
++     <tr>
++       <td>edi</td>
++       <td>Ziel (eng: destination) f&uuml;r Stringoperationen</td>
++     </tr>
++     <tr>
++       <td>esp</td>
++       <td>Stackpointer</td>
++     </tr>
++ * </table>
++ * Die unteren beiden Bytes der Register \c eax, \c ebx, \c ecx und \c edx 
++ * haben eigene Namen, beim \c eax Register sieht das so aus:
++ * <center>
++ * <table border="0">
++ *   <tr>
++ *     <td style="width:25px; text-align:left;">31</td>
++ *     <td style="width:25px;"></td>
++ *     <td style="width:25px;"></td>
++ *     <td style="width:25px;"></td>
++ *     <td style="width:25px;text-align:left;">15</td>
++ *     <td style="width:25px;"></td>
++ *     <td style="width:25px;text-align:left;">7</td>
++ *     <td style="width:25px;text-align:right;">0</td>
++ *   </tr>
++ *   <tr>
++ *     <td colspan=2 style="width:50px; border:1px solid black">&nbsp;</td>
++ *     <td colspan=2 style="width:50px; border:1px solid black">&nbsp;</td>
++ *     <td colspan=2 style="width:50px; border:1px solid black">&nbsp;</td>
++ *     <td colspan=2 style="width:50px; border:1px solid black">&nbsp;</td>
++ *   </tr>
++ *   <tr>
++ *     <td colspan=2 style="width:50px; border-left:1px dashed black"></td>
++ *     <td colspan=2 style="width:50px;"></td>
++ *     <td colspan=2 style="width:50px; border-left:1px dashed black"></td>
++ *     <td colspan=2 style="width:50px; text-align:center; border:1px solid black">al</td>
++ *   </tr>
++ *   <tr>
++ *     <td colspan=2 style="width:50px; border-left:1px dashed black"></td>
++ *     <td colspan=2 style="width:50px;"></td>
++ *     <td colspan=2 style="width:50px; text-align:center; border:1px solid black">ah</td>
++ *     <td colspan=2 style="width:50px; border-right:1px dashed black"></td>
++ *   </tr>
++ *   <tr>
++ *     <td colspan=4 style="width:100px; border-left:1px dashed black"></td>
++ *     <td colspan=4 style="width:100px; text-align:center; border:1px solid black">ax</td>
++ *   </tr>
++ *   <tr>
++ *     <td colspan=8 style="width:200px; text-align:center; border:1px solid black">eax</td>
++ *   </tr>
++ * </table>
++ * </center>
++ * 
++ * \subsection task3_procstack_sec4_2 Segmentregister
++ * <table border="1" rules="all">
++     <tr>
++       <th>Name</th>
++       <th>Bemerkung</th>
++     </tr>
++     <tr>
++       <td>cs</td>
++       <td>Codesegment</td>
++     </tr>
++     <tr>
++       <td>ds</td>
++       <td>Datasegment</td>
++     </tr>
++     <tr>
++       <td>ss</td>
++       <td>Stacksegment</td>
++     </tr>
++     <tr>
++       <td>es</td>
++       <td>beliebiges Segment</td>
++     </tr>
++     <tr>
++       <td>fs</td>
++       <td>beliebiges Segment</td>
++     </tr>
++     <tr>
++       <td>gs</td>
++       <td>beliebiges Segment</td>
++     </tr>
++ * </table>
++ * 
++ * \subsection task3_procstack_sec4_3 Sonstige Register
++ * <table border="1" rules="all">
++     <tr>
++       <th>Name</th>
++       <th>Bemerkung</th>
++     </tr>
++     <tr>
++       <td>eip</td>
++       <td>Instruction Pointer</td>
++     </tr>
++     <tr>
++       <td>ef</td>
++       <td>Flags</td>
++     </tr>
++ * </table>
++ * 
++ * \section task3_procstack_sec5 Was ist Speicher?
++ * Meistens reichen die Register nicht aus, um ein Problem zu lösen. 
++ * In diesem Fall muss auf den Hauptspeicher des Computers zugegriffen 
++ * werden, der erheblich mehr Information speichern kann. Für den 
++ * Programmierer sieht der Hauptspeicher wie ein riesiges Array von 
++ * Registern aus, die je nach Wunsch 8, 16 oder 32 Bits breit sind. 
++ * Die kleinste adressierbare Einheit ist also ein Byte (= 8 Bits). 
++ * Daher wird auch die Größe des Speichers in Bytes gemessen. 
++ * Um auf einen bestimmten Eintrag des Arrays Hauptspeicher zugreifen 
++ * zu können, muss der Programmierer den Index, d.h. die Adresse des 
++ * Eintrages kennen. Das erste Byte des Hauptspeichers bekommt dabei 
++ * die Adresse 0, das zweite die Adresse 1 usw..
++ * 
++ * In einem Assemblerprogramm können Variablen angelegt werden, 
++ * indem einer Speicheradresse ein Label zugeordnet und dabei 
++ * Speicherplatz in der gewünschten Größe reserviert wird.
++ * 
++ * \code{.py}
++.data
++gruss:       .ascii "hello, world\n\0"
++unglueck:    .short 13
++million:     .long 1000000
++
++.text
++             movw million, %ax
++             ...
++\endcode
++ * Der im Folgenden abgebildete Speicher ist pro Zelle ein Byte groß. Jedes Byte hat 
++ * jeweils die gleiche Höhe und die Breite. Ist eine Zelle doppelt so hoch wie eine 
++ * andere, so belegt sie auch doppelt so viel Speicher.
++ * 
++ * <center>
++ * <table border="0" style="border-collapse: collapse;">
++ *   <tr>
++ *     <td style="height:25px; width:125px;"></td>
++ *     <td style="height:25px; width:80px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="height:25px; width:125px; text-align:left;">&nbsp;<i>niedrigste Adresse</i></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="height:25px; width:125px; text-align:right;"><b>gruss:&nbsp;</b></td>
++ *     <td style="height:25px; width:80px; border:1px solid black; text-align:center;">'h'</td>
++ *     <td style="height:25px; width:125px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="height:25px; width:125px;"></td>
++ *     <td style="height:25px; width:80px; border:1px solid black; text-align:center;">'e'</td>
++ *     <td style="height:25px; width:125px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="height:25px; width:125px;"></td>
++ *     <td style="height:25px; width:80px; border:1px solid black; text-align:center;">'l'</td>
++ *     <td style="height:25px; width:125px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="height:25px; width:125px;"></td>
++ *     <td style="height:25px; width:80px; border:1px solid black; text-align:center;">'l'</td>
++ *     <td style="height:25px; width:125px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="height:25px; width:125px;"></td>
++ *     <td style="height:25px; width:80px; border:1px solid black; text-align:center;">'o'</td>
++ *     <td style="height:25px; width:125px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="height:25px; width:125px;"></td>
++ *     <td style="height:25px; width:80px; border:1px solid black; text-align:center;">','</td>
++ *     <td style="height:25px; width:125px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="height:25px; width:125px;"></td>
++ *     <td style="height:25px; width:80px; border:1px solid black; text-align:center;">'&nbsp;'</td>
++ *     <td style="height:25px; width:125px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="height:25px; width:125px;"></td>
++ *     <td style="height:25px; width:80px; border:1px solid black; text-align:center;">'w'</td>
++ *     <td style="height:25px; width:125px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="height:25px; width:125px;"></td>
++ *     <td style="height:25px; width:80px; border:1px solid black; text-align:center;">'o'</td>
++ *     <td style="height:25px; width:125px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="height:25px; width:125px;"></td>
++ *     <td style="height:25px; width:80px; border:1px solid black; text-align:center;">'r'</td>
++ *     <td style="height:25px; width:125px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="height:25px; width:125px;"></td>
++ *     <td style="height:25px; width:80px; border:1px solid black; text-align:center;">'l'</td>
++ *     <td style="height:25px; width:125px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="height:25px; width:125px;"></td>
++ *     <td style="height:25px; width:80px; border:1px solid black; text-align:center;">'d'</td>
++ *     <td style="height:25px; width:125px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="height:25px; width:125px;"></td>
++ *     <td style="height:25px; width:80px; border:1px solid black; text-align:center;">'\\n'</td>
++ *     <td style="height:25px; width:125px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="height:25px; width:125px;"></td>
++ *     <td style="height:25px; width:80px; border:1px solid black; text-align:center;">'\\0'</td>
++ *     <td style="height:25px; width:125px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="height:50px; width:125px; text-align:right; vertical-align:top;"><b>unglueck:&nbsp;</b></td>
++ *     <td style="height:50px; width:80px; border:1px solid black; text-align:center;">13</td>
++ *     <td style="height:50px; width:125px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="height:100px; width:125px; text-align:right; vertical-align:top;"><b>million:&nbsp;</b></td>
++ *     <td style="height:100px; width:80px; border:1px solid black; text-align:center;">1000000</td>
++ *     <td style="height:100px; width:125px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="height:25px; width:125px;"></td>
++ *     <td style="height:25px; width:80px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="height:25px; width:125px; text-align:left;">&nbsp;<i>höchste Adresse</i></td>
++ *   </tr>
++ * </table>
++ * </center>
++ * 
++ * \section task3_procstack_sec6 Was ist ein Stack?
++ * Nicht immer will man sich ein neues Label ausdenken, nur um kurzfristig 
++ * mal den Wert eines Registers zu speichern, beispielsweise, weil man dieses 
++ * Register für eine bestimmte Anweisung benötigt, den alten Wert aber nicht 
++ * verlieren möchte. In diesem Fall wünscht man sich so etwas wie einen Schmierzettel. 
++ * Den bekommt man mit dem Stack. Der Stack ist eigentlich nichts weiter als 
++ * ein Stück des Hauptspeichers, nur dass dort nicht mit festen Adressen 
++ * gearbeitet wird, sondern die zu sichernden Daten einfach immer oben drauf 
++ * geschrieben (push) bzw. von oben heruntergeholt werden (\c pop). Der Zugriff 
++ * ist also ganz einfach, vorausgesetzt man erinnert sich daran, in welcher 
++ * Reihenfolge die Daten auf den Stapel gelegt wurden. Ein spezielles Register, 
++ * der <b>Stackpointer esp</b> zeigt stets auf das oberste Element des Stacks. Da \c push 
++ * und \c pop immer nur 32 Bits auf einmal transferieren können, ist der Stack in 
++ * der folgenden Abbildung vier Bytes breit dargestellt. 
++ * Oben sind die niedrigen Adressen, unten die hohen.
++ * 
++ * <center>
++ * <table border="0"  style="border-collapse: collapse;">
++ *   <tr>
++ *     <th style="font-size:90%;">eax=10, ebx=47</th>
++ *     <td></td>
++ *     <th style="font-size:90%;">eax=7, ebx=47</th>
++ *     <td></td>
++ *     <th style="font-size:90%;">eax=7, ebx=40</th>
++ *     <td></td>
++ *     <th style="font-size:90%;">eax=7, ebx=47</th>
++ *     <td style="width:25px;">&nbsp;</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:100px;">&nbsp;</td>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:100px;"></td>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:100px;"></td>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:50px;">&nbsp;</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border:1px solid black;">&nbsp;</td>
++ *     <td style="width:100px;">&nbsp;</td>
++ *     <td style="width:100px; border:1px solid black;">&nbsp;</td>
++ *     <td style="width:100px;">&nbsp;</td>
++ *     <td style="width:100px; border:1px solid black;">&nbsp;</td>
++ *     <td style="width:100px;">&nbsp;</td>
++ *     <td style="width:100px; border:1px solid black;">&nbsp;</td>
++ *     <td style="width:50px;">&nbsp;</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:50px; border:1px solid black;">&nbsp;</td>
++ *     <td style="width:50px;">&nbsp;</td>
++ *     <td style="width:50px; border:1px solid black;">&nbsp;</td>
++ *     <td style="width:50px;">&nbsp;</td>
++ *     <td style="width:50px; border:1px solid black;">&nbsp;</td>
++ *     <td style="width:50px;">&nbsp;</td>
++ *     <td style="width:50px; border:1px solid black;">&nbsp;</td>
++ *     <td style="width:50px;">&nbsp;</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:50px; border:1px solid black;">&nbsp;</td>
++ *     <td style="width:50px;">&nbsp;</td>
++ *     <td style="width:50px; border:1px solid black;">&nbsp;</td>
++ *     <td style="width:50px;">&nbsp;</td>
++ *     <td style="width:50px; border:1px solid black; text-align:center;">47</td>
++ *     <td style="width:50px; text-align:left;">&larr; esp</td>
++ *     <td style="width:50px; border:1px solid black; text-align:center;">47</td>
++ *     <td style="width:50px;">&nbsp;</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border:1px solid black;">&nbsp;</td>
++ *     <td style="width:100px;">&nbsp;</td>
++ *     <td style="width:100px; border:1px solid black; text-align:center;">10</td>
++ *     <td style="width:100px; text-align:left;">&larr; esp</td>
++ *     <td style="width:100px; border:1px solid black; text-align:center;">10</td>
++ *     <td style="width:100px;">&nbsp;</td>
++ *     <td style="width:100px; border:1px solid black; text-align:center;">10</td>
++ *     <td style="width:50px; text-align:left;">&larr; esp</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border:1px solid black; background:silver;">&nbsp;</td>
++ *     <td style="width:100px; text-align:left;">&larr; esp</td>
++ *     <td style="width:100px; border:1px solid black; background:silver;">&nbsp;</td>
++ *     <td style="width:100px;">&nbsp;</td>
++ *     <td style="width:100px; border:1px solid black; background:silver;">&nbsp;</td>
++ *     <td style="width:100px;">&nbsp;</td>
++ *     <td style="width:100px; border:1px solid black; background:silver;">&nbsp;</td>
++ *     <td style="width:50px; text-align:left;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:100px;">&nbsp;</td>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:100px;"></td>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:100px;"></td>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:50px;">&nbsp;</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px;">&nbsp;</td>
++ *     <td style="width:100px; vertical-align:top; font-size:100%">
++ *       &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&rarr;\n
++ *       <tt>push \%eax</tt> \n
++ *       <tt>mov $7, \%eax</tt>
++ *     </td>
++ *     <td style="width:100px;">&nbsp;</td>
++ *     <td style="width:100px; vertical-align:top; font-size:100%">
++ *       &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&rarr;\n
++ *       <tt>push \%ebx</tt> \n
++ *       <tt>sub \%eax, \%ebx</tt>
++ *     </td>
++ *     <td style="width:100px;">&nbsp;</td>
++ *     <td style="width:100px; vertical-align:top; font-size:100%">
++ *       &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&rarr;\n
++ *       <tt>pop \%ebx</tt>
++ *     </td>
++ *     <td style="width:100px;">&nbsp;</td>
++ *     <td style="width:50px;">&nbsp;</td>
++ *   </tr>
++ * </table>
++ * </center>
++ * 
++ * \subsection task3_procstack_sec6_1 Adressierungsarten
++ * Die meisten Befehle des 80x86 können ihre Operanden wahlweise aus 
++ * Registern, aus dem Speicher oder unmittelbar einer Konstante entnehmen. 
++ * Beim \c mov Befehl sind u.a. folgende Formen möglich, wobei der erste 
++ * Operand stets das Ziel und der zweite stets die Quelle der Kopieraktion angeben:
++ * <ul>
++ *   <li>
++ *     <b>Register-Adressierung:</b> 
++ *       Der Wert eines Registers wird in ein anderes übertragen. \n
++ *     <tt>mov %edi, %ebx</tt>
++ *   </li>
++ *   <li>
++ *     <b>Unmittelbare Adressierung:</b>
++ *       Eine Konstante wird in ein Register übertragen. \n
++ *     <tt>mov $1000, %ebx</tt>
++ *   </li>
++ *   <li>
++ *     <b>Direkte Adressierung:</b>
++ *       Der Wert der an der angegebenen Speicherstelle steht, 
++ *       wird in das Register übertragen. \n
++ *     <tt>mov 1000, %ebx</tt>
++ *   </li>
++ *   <li>
++ *     <b>Register-Indirekte Adressierung:</b>
++ *       Der Wert, der an der Speicherstelle steht, die durch das zweite 
++ *       Register bezeichnet wird, wird in das erste Register übertragen. \n
++ *     <tt>mov (%eax), %ebx</tt>
++ *   </li>
++ *   <li>
++ *     <b>Basis-Register Adressierung:</b>
++ *       Der Wert, der an der Speicherstelle steht, die sich durch die Summe 
++ *       des Inhalts des zweiten Registers und der Konstanten ergibt, wird in das 
++ *       erste Register übertragen. \n
++ *     <tt>mov 10(%esi), %eax</tt>
++ *   </li>
++ * </ul>
++ * \note
++ *   Wenn der 80x86 Prozessor im Real-Mode betrieben wird - z.B. bei 
++ *   der Arbeit mit dem Betriebssystem MS DOS - werden Speicheradressen 
++ *   durch ein Segmentregister und einen Offset angegeben. 
++ *   Bei OOStuBS ist das nicht nötig - <b>es ist sogar falsch</b> - 
++ *   da OOStuBS im Protected Mode läuft und die Segmentregister von uns 
++ *   bereits für euch initialisiert wurden.
++ * 
++ * \section task3_procstack_sec7 Prozeduren
++ * Aus den höheren Programmiersprachen ist das Konzept der Funktion oder 
++ * Prozedur bekannt. Der Vorteil dieses Konzeptes gegenüber einem \c goto 
++ * besteht darin, dass die Prozedur von jeder beliebigen Stelle im Programm 
++ * aufgerufen werden kann und das Programm anschließend an genau der Stelle 
++ * fortgesetzt wird, die nach dem Prozeduraufruf folgt. Die Prozedur selbst 
++ * muss nicht wissen, von wo sie aufgerufen wurde und wo es hinterher weiter 
++ * geht. Das geschieht irgendwie automatisch. Aber wie? 
++ * 
++ * Die Lösung besteht darin, dass nicht nur die Daten des Programms, sondern 
++ * auch das Programm selbst im Hauptspeicher liegt und somit zu jeder 
++ * Maschinencodeanweisung eine eigene Adresse gehört. Damit der Prozessor 
++ * ein Programm ausführt, muss sein Befehlszeiger auf den Anfang des Programms 
++ * zeigen, also die Adresse der ersten Maschinencodeanweisung in das spezielle 
++ * Register Befehlszeiger (<i>instruction pointer, eip</i>) geladen werden. Der 
++ * Prozessor wird dann den auf diese Weise bezeichneten Befehl ausführen und 
++ * im Normalfall anschließend den Inhalt des Befehlszeigers um die Länge des 
++ * Befehls im Speicher erhöhen, so dass er auf die nächste Maschinenanweisung 
++ * zeigt. Bei einem Sprungbefehl wird der Befehlszeiger nicht um die Länge des 
++ * Befehls, sondern um die angegebene relative Zieladresse erhöht oder erniedrigt.
++ * 
++ * Um nun eine Prozedur oder Funktion (in Assembler dasselbe) aufzurufen, 
++ * wird zunächst einmal wie beim Sprungbefehl verfahren, nur dass der alte Wert 
++ * des Befehlszeigers (+ Länge des Befehls) zuvor auf den Stack geschrieben wird. 
++ * Am Ende der Funktion genügt dann ein Sprung an die auf dem Stack gespeicherte 
++ * Adresse, um zu dem aufrufenden Programm zurückzukehren.
++ * 
++ * Beim 80x86 erfolgt das Speichern der Rücksprungadresse auf dem Stack implizit 
++ * mit Hilfe des call Befehls. Genauso führt der ret Befehl auch implizit einen 
++ * Sprung an die auf dem Stack liegende Adresse durch:
++ * \code{.py}
++; ----- Hauptprogramm -----
++;
++main:  
++  ...
++  call f1
++xy:
++  ...
++
++; ----- Funktion f1
++f1:
++  ...
++  ret
++\endcode
++ * 
++ * <center>
++ * <table border="0"  style="border-collapse: collapse;">
++ *   <tr>
++ *     <td></td>
++ *     <th style="font-size:90%;">vor <tt>call f1</tt></th>
++ *     <td></td>
++ *     <td></td>
++ *     <th style="font-size:90%;">nach <tt>call f1</tt></th>
++ *     <td></td>
++ *     <td></td>
++ *     <th style="font-size:90%;">nach \c ret</th>
++ *     <td></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:50px;">&nbsp;</td>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:75px;">&nbsp;</td>
++ *     <td style="width:75px;">&nbsp;</td>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:75px;">&nbsp;</td>
++ *     <td style="width:75px;">&nbsp;</td>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:50px;">&nbsp;</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:50px; text-align:right;">main:&nbsp;</td>
++ *     <td style="width:100px; border:1px solid black; text-align:center;">...</td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:50px; text-align:right;">main:&nbsp;</td>
++ *     <td style="width:100px; border:1px solid black; text-align:center;">...</td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:50px; text-align:right;">main:&nbsp;</td>
++ *     <td style="width:100px; border:1px solid black; text-align:center;">...</td>
++ *     <td style="width:50px;">&nbsp;</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border:1px solid black;">&nbsp;<tt>call f1</tt></td>
++ *     <td style="width:50px; text-align:left;">&larr; eip</td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border:1px solid black;">&nbsp;<tt>call f1</tt></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border:1px solid black;">&nbsp;<tt>call f1</tt></td>
++ *     <td style="width:50px;">&nbsp;</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:50px; text-align:right;">xy:&nbsp;</td>
++ *     <td style="width:100px; border:1px solid black; text-align:center;">...</td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:50px; text-align:right;">xy:&nbsp;</td>
++ *     <td style="width:100px; border:1px solid black; text-align:center;">...</td>
++ *     <td style="width:50px;">&nbsp;</td>
++ *     <td style="width:50px; text-align:right;">xy:&nbsp;</td>
++ *     <td style="width:100px; border:1px solid black; text-align:center;">...</td>
++ *     <td style="width:50px; text-align:left;">&larr; eip</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:50px;">&nbsp;</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:50px;">&nbsp;</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:50px; text-align:right;">f1:&nbsp;</td>
++ *     <td style="width:100px; border:1px solid black; text-align:center;">...</td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:50px; text-align:right;">f1:&nbsp;</td>
++ *     <td style="width:100px; border:1px solid black; text-align:center;">...</td>
++ *     <td style="width:50px; text-align:left;">&larr; eip</td>
++ *     <td style="width:50px; text-align:right;">f1:&nbsp;</td>
++ *     <td style="width:100px; border:1px solid black; text-align:center;">...</td>
++ *     <td style="width:50px;">&nbsp;</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border:1px solid black;">&nbsp;<tt>ret</tt></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border:1px solid black;">&nbsp;<tt>ret</tt></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border:1px solid black;">&nbsp;<tt>ret</tt></td>
++ *     <td style="width:50px;">&nbsp;</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:50px;">&nbsp;</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:50px;">&nbsp;</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border:1px solid black;">&nbsp;</td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border:1px solid black;">&nbsp;</td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border:1px solid black;">&nbsp;</td>
++ *     <td style="width:50px;">&nbsp;</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border:1px solid black;">&nbsp;</td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border:1px solid black; text-align:center;"><b>xy</b></td>
++ *     <td style="width:50px; text-align:left;">&larr; esp</td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border:1px solid black; text-align:center;">xy</td>
++ *     <td style="width:50px; text-align:left;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border:1px solid black; background:silver;">&nbsp;</td>
++ *     <td style="width:50px; text-align:left;">&larr; esp</td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border:1px solid black; background:silver;">&nbsp;</td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border:1px solid black; background:silver;">&nbsp;</td>
++ *     <td style="width:50px; text-align:left;">&larr; esp</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:50px;"></td>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:50px;">&nbsp;</td>
++ *   </tr>
++ * </table>
++ * </center>
++ * 
++ * Wenn die Funktion Parameter erhalten soll, werden diese üblicherweise 
++ * ebenfalls auf den Stack geschrieben, natürlich vor dem call Befehl. 
++ * Hinterher müssen sie natürlich wieder entfernt werden, entweder mit 
++ * \c pop, oder durch direktes Umsetzen des Stackpointers:
++ * \code{.py}
++  push %eax     ; zweiter Parameter fuer f1
++  push %ebx     ; erster Parameter  fuer f1
++  call f1
++  add $8, %esp  ; Parameter vom Stack entfernen
++\endcode
++ * 
++ * Um innerhalb der Funktion auf die Parameter zugreifen zu können, 
++ * wird üblicherweise der Basepointer ebp zu Hilfe genommen. Wenn 
++ * er gleich zu Anfang der Funktion gesichert und dann mit dem Wert 
++ * des Stackpointers belegt wird, kann der erste Parameter immer 
++ * über <tt>8(%ebp)</tt> und der zweite Parameter über 
++ * <tt>12(%ebp)</tt> erreicht werden, unabhängig davon, wie viele 
++ * \c push und \c pop Operationen seit Beginn der Funktion verwendet 
++ * wurden.
++ * 
++ * \code{.py}
++f1:   
++  push %ebp
++  mov  %esp, %ebp
++  ...
++  mov 8(%ebp), %ebx    ; 1. Parameter in ebx laden
++  mov 12(%ebp), %eax   ; 2. Parameter in eax laden
++  ...
++  pop %ebp
++  ret
++\endcode
++ * 
++ * Bei der folgenden Darstellung wird angenommen: <b>ebx = 47</b>.\n
++ * Die niedrigste Adresse ist oben, die höchste unten.
++ * <center>
++ * <table border="0"  style="border-collapse: collapse;">
++ *   <tr>
++ *     <td style="width:150px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:150px;">&nbsp;</td>
++ *     <td style="width:150px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:150px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:150px; border:1px solid black;">&nbsp;</td>
++ *     <td style="width:150px;">&nbsp;</td>
++ *     <td style="width:150px; border:1px solid black;">&nbsp;</td>
++ *     <td style="width:150px;">&nbsp;</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:150px; border:1px solid black; text-align:center;">&nbsp;</td>
++ *     <td style="width:150px;">&nbsp;</td>
++ *     <td style="width:150px; border:1px solid black; text-align:center;"><b>47</b></td>
++ *     <td style="width:150px;">&larr; esp</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:150px; border:1px solid black; text-align:center;">alter ebp</td>
++ *     <td style="width:150px;">&larr; ebp &larr; esp</td>
++ *     <td style="width:150px; border:1px solid black; text-align:center;">alter ebp</td>
++ *     <td style="width:150px;">&larr; ebp</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:150px; border:1px solid black; text-align:center;">Rücksprungadr.</td>
++ *     <td style="width:150px;"></td>
++ *     <td style="width:150px; border:1px solid black; text-align:center;">Rücksprungadr.</td>
++ *     <td style="width:150px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:150px; border:1px solid black; text-align:center;">1. Parameter</td>
++ *     <td style="width:150px;">&larr; ebp+8</td>
++ *     <td style="width:150px; border:1px solid black; text-align:center;">1. Parameter</td>
++ *     <td style="width:150px;">&larr; ebp+8</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:150px; border:1px solid black; text-align:center;">2. Parameter</td>
++ *     <td style="width:150px;">&larr; ebp+16</td>
++ *     <td style="width:150px; border:1px solid black; text-align:center;">2. Parameter</td>
++ *     <td style="width:150px;">&larr; ebp+16</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:150px; border:1px solid black; background:silver;">&nbsp;</td>
++ *     <td style="width:150px;">&nbsp;</td>
++ *     <td style="width:150px; border:1px solid black; background:silver;">&nbsp;</td>
++ *     <td style="width:150px;">&nbsp;</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:150px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:150px;">&nbsp;</td>
++ *     <td style="width:150px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:150px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:150px;"></td>
++ *     <td style="width:150px; text-align:center; font-size:110%">
++ *       &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&rarr;\n
++ *       <tt style="font-size:108%;">push %ebx</tt>
++ *     </td>
++ *     <td style="width:150px;"></td>
++ *     <td style="width:150px;"></td>
++ *   </tr>
++ * </table>
++ * </center>
++ * 
++ * 
++ * \section task3_procstack_sec8 Flüchtige und nicht-flüchtige Register / Anbindung an C
++ * Damit Funktionen von verschiedenen Stellen des Assemblerprogramms 
++ * heraus aufgerufen werden können, ist es wichtig festzulegen, welche 
++ * Registerinhalte von der Funktion verändert werden dürfen und welche 
++ * bei Verlassen der Funktion noch - oder wieder - den alten Wert besitzen 
++ * müssen. Am sichersten ist es natürlich, grundsätzlich alle Register, 
++ * die die Funktion zur Erfüllung ihrer Aufgabe benötigt, zu Beginn der 
++ * Funktion auf dem Stack zu speichern und unmittelbar vor Verlassen der 
++ * Funktion wieder zu laden.
++ * 
++ * Die Assemblerprogramme, die der GNU C Compiler erzeugt, verfolgen 
++ * jedoch eine etwas andere Strategie: Sie gehen davon aus, dass viele 
++ * Register sowieso nur kurzfristig verwendet werden, zum Beispiel als 
++ * Zählvariable von kleinen Schleifen oder um die Parameter für eine 
++ * Funktion auf den Stack zu schreiben. Hier wäre es reine Verschwendung, 
++ * die ohnehin längst veralteten Werte zu Beginn einer Funktion mühsam zu 
++ * sichern und am Ende wiederherzustellen. Da man einem Register nicht 
++ * ansieht, ob sein Inhalt wertvoll ist oder nicht, haben die Entwickler 
++ * des GNU C Compilers einfach festgelegt, dass die Register 
++ * \b eax, \b ecx und \b edx grundsätzlich als \e flüchtige Register zu 
++ * betrachten sind, deren Inhalt einfach überschrieben werden darf. Das 
++ * Register eax hat dabei noch eine besondere Rolle: Es liefert den 
++ * Rückgabewert der Funktion, soweit erforderlich. Die Werte der übrigen 
++ * Register müssen dagegen gerettet werden, bevor sie von einer Funktion 
++ * überschrieben werden dürfen. Sie werden deshalb <i>nicht-flüchtige</i> Register 
++ * genannt.
++ * 
++ * \section task3_procstack_sec9 Literatur
++ * 
++ * \li <a href="http://www.lowlevel.eu/wiki/Teil_2_-_Assembler_101">"Assembler 101" auf lowlevel.eu</a>
++ * \li <a href="http://www.intel.com/content/www/us/en/processors/architectures-software-developer-manuals.html">Intel&reg; 64 and IA-32 Architectures Software Developer Manuals</a>
++ * 
++ * \~english
++ * \page task3_procstack Stack and Procedure
++ * 
++ * There is no english describtion. Use the german one.
++ */
++
++
++/**
++ * \page task3_exception Ausnahmebehandlungen der x86-Architektur
++ * \tableofcontents
++ * 
++ * Die hier vorgestellten Fehler beziehen sich auf die x86-Architektur von Intel. Andere 
++ * Plattformen bieten meist ähnliche Ausnahmen an. Basierend auf der Mächtigkeit der 
++ * Architektur könnte es sich allerdings nur um Auswahl oder gar um mehr Fehler handeln.
++ * 
++ * \section task3_exception_sec1 Grundlagen
++ * Während der Prozessor die einzelnen Opcode-Befehle abarbeitet können Fehler auftreten. 
++ * Ein gutes Beispiel ist die Division durch null bei ganzen Zahlen. Tritt diese auf, so ist 
++ * das Ergebnis nicht definiert und der Prozessor alleine kann nicht entscheiden, wie damit 
++ * umgegangen werden muss. Aus diesem Grund gibt es für verschiedene Fehler Interrupts, die 
++ * für die Behandlung gelten. Da es sich dabei um für die Ausführung essentiell wichtige 
++ * Anweisungen handelt, können diese Interrupts nicht deaktiviert werden. Auch das globale 
++ * deaktivieren von Interrupts hat auf die Ausnahmebehandlungen keinen Einfluss. 
++ * Folglich muss jedes Betriebssystem Routinen für diese bereitstellen.
++ * 
++ * Die Ausnahmen lassen sich auf zwei Arten einteilen.\n
++ * Da wäre zuerst die Klassifikation nach:
++ *  - <b>Trap</b>, Unterbrechungen werden direkt <i>nach</i> einer auslösenden Anweisung aufgerufen
++ *  - <b>Fault</b>, Unterbrechungen werden aufgerufen, wenn ein Befehl nicht abgearbeitet 
++ *                  werden kann. Nach dem Rückkehr von der Behandlung kann die Anweisung erneut 
++ *                  durchgeführt werden. Die Ausnahmebehandlung kann also die Ursache beheben 
++ *                  und das Programm danach normal fortsetzen.
++ *  - <b>Aborts</b>, Dieser Fehler kann nicht behoben werden und ein Abbruch des Systems wird 
++ *                   empfohlen.
++ * 
++ * Eine andere Möglichkeit ist die Aufteilung danach, ob zusätzlich ein 32-Bit-Fehlercodewort 
++ * übergeben wird oder ist.
++ * 
++ * \section task3_exception_sec2 Stackaufbau
++ * Tritt ein Fehler auf und geht die CPU über die entsprechende Behandlungsroutine aufzurufen, 
++ * so werden einige Informationen auf den Stack gepackt, um die behandelnde Funktion zu 
++ * unterstützen.\n
++ * Zu diesen Informationen zählen der EIP der auslösenden Anweisung, das CS-Register und die 
++ * EFLAGS. Je nach Umstand und Fehler erscheinen weitere Informationen auf den Stack.
++ * 
++ * Befindet sich der ausgeführte Befehl im Kernelmodus, also Sicherheitsring 0, so 
++ * muss kein Kontextwechsel durchgeführt werden und es müssen weniger Informationen gespeichert 
++ * werden.
++ * 
++ * \subsection task3_exception_sec2_1 Fehler in Ring 0, kein Fehlercode
++ * <center>
++ * <table border="0"  style="border-collapse: collapse;">
++ *   <tr>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:350px;"><i>niedrige Adresse</i></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border:1px solid black;">&nbsp;</td>
++ *     <td style="width:350px;">&nbsp;</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border:1px solid black; text-align:center;">EIP</td>
++ *     <td style="width:350px;">&larr; esp <b>nach</b> dem Wechsel zur Behandlung</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border:1px solid black; text-align:center;">CS</td>
++ *     <td style="width:350px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border:1px solid black; text-align:center;">EFLAGS</td>
++ *     <td style="width:350px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border:1px solid black; background:silver;">&nbsp;</td>
++ *     <td style="width:350px;">&larr; esp <b>vor</b> dem Wechsel zur Behandlung</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border:1px solid black;">&nbsp;</td>
++ *     <td style="width:350px;">&nbsp;</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:350px;"><i>hohe Adresse</i></td>
++ *   </tr>
++ * </table>
++ * </center>
++ * 
++ * \subsection task3_exception_sec2_2 Fehler in Ring 0, mit Fehlercode
++ * <center>
++ * <table border="0"  style="border-collapse: collapse;">
++ *   <tr>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:350px;"><i>niedrige Adresse</i></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border:1px solid black;">&nbsp;</td>
++ *     <td style="width:350px;">&nbsp;</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border:1px solid black; text-align:center;">Fehlercode</td>
++ *     <td style="width:350px;">&larr; esp <b>nach</b> dem Wechsel zur Behandlung</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border:1px solid black; text-align:center;">EIP</td>
++ *     <td style="width:350px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border:1px solid black; text-align:center;">CS</td>
++ *     <td style="width:350px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border:1px solid black; text-align:center;">EFLAGS</td>
++ *     <td style="width:350px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border:1px solid black; background:silver;">&nbsp;</td>
++ *     <td style="width:350px;">&larr; esp <b>vor</b> dem Wechsel zur Behandlung</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border:1px solid black;">&nbsp;</td>
++ *     <td style="width:350px;">&nbsp;</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:350px;"><i>hohe Adresse</i></td>
++ *   </tr>
++ * </table>
++ * </center>
++ * 
++ * \subsection task3_exception_sec2_3 Fehler in Ring >0, mit Fehlercode
++ * OOStuBS befindet sich durchgehend in Ring 0. Somit sind die folgenden Informationen für 
++ * keine Aufgabe relevant.\n
++ * Die folgende Darstellung bezieht sich auf den Kernelspeicher-Stack, der für die Behandlung 
++ * vorgesehen ist. Die Informationen langen nicht auf dem Stack des gerade ausgeführten Programms, 
++ * bei dem der Fehler auftrat.
++ * <center>
++ * <table border="0"  style="border-collapse: collapse;">
++ *   <tr>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:350px;"><i>niedrige Adresse</i></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border:1px solid black;">&nbsp;</td>
++ *     <td style="width:350px;">&nbsp;</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border:1px solid black; text-align:center;">Fehlercode</td>
++ *     <td style="width:350px;">&larr; esp <b>nach</b> dem Wechsel zur Behandlung</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border:1px solid black; text-align:center;">EIP</td>
++ *     <td style="width:350px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border:1px solid black; text-align:center;">CS</td>
++ *     <td style="width:350px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border:1px solid black; text-align:center;">EFLAGS</td>
++ *     <td style="width:350px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border:1px solid black; text-align:center;">ESP</td>
++ *     <td style="width:350px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border:1px solid black; text-align:center;">SS</td>
++ *     <td style="width:350px;"></td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border:1px solid black; background:silver;">&nbsp;</td>
++ *     <td style="width:350px;">&larr; esp <b>vor</b> dem Wechsel zur Behandlung</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border:1px solid black;">&nbsp;</td>
++ *     <td style="width:350px;">&nbsp;</td>
++ *   </tr>
++ *   <tr>
++ *     <td style="width:100px; border-left:1px dashed black; border-right:1px dashed black;"></td>
++ *     <td style="width:350px;"><i>hohe Adresse</i></td>
++ *   </tr>
++ * </table>
++ * </center>
++ * 
++ * \subsection task3_exception_sec2_4 Fehlercode
++ * Es gibt kein einheitliches Aussehen des Fehlercode. Stattdessen hängt es vom jeweiligen 
++ * Fehler ab, wie er aufgebaut ist. Oft hat er allerdings den folgenden oder einen ähnlichen 
++ * Aufbau.
++ * <table border="1" rules="all">
++ *   <tr>
++ *     <th>Bit</th>
++ *     <th>Bedeutung</th>
++ *   </tr>
++ *   <tr>
++ *     <td>0</td>
++ *     <td>Falls gesetzt gesetzt, so trat der Fehler nicht im gerade ausgeführten Programm statt - sondern z.B. in einem Interrupt.</td>
++ *   </tr>
++ *   <tr>
++ *     <td>1</td>
++ *     <td>Falls Bit 0 nicht gesetzt, so: falls gesetzt, so ist der Index von der IDT\n
++ *         Falls Bit 0 gesetzt, so: Bit 1 vom Segment Selector Index</td>
++ *   </tr>
++ *   <tr>
++ *     <td>2</td>
++ *     <td>Falls Bit 1 nicht gesetzt, so: falls gesetzt, so ist der Index von der LDT, sonst GDT\n
++ *         Falls Bit 1 gesetzt, so: Bit 2 vom Segment Selector Index</td>
++ *   </tr>
++ *   <tr>
++ *     <td>3-15</td>
++ *     <td>Bits 3-15 vom Segment Selector Index; der Index besagt, welcher Eintrag in der 
++ *         entsprechenden Tabelle ausgewählt war.</td>
++ *   </tr>
++ *   <tr>
++ *     <td>16-31</td>
++ *     <td>ungenutzt/reserviert</td>
++ *   </tr>
++ * </table>
++ * 
++ * \section task3_exception_sec3 Liste der Ausnahmebehandlungen
++ * Die folgende Liste wurde dem Intel-Architektur-Handbuch entnommen. Es gibt mehrere dieser 
++ * Listen im Handbuch, doch leider sind sie nicht einheitlich.
++ * <table border="1" rules="all">
++ *   <tr>
++ *     <th>Interrupt</th>
++ *     <th>Bezeichnung</th>
++ *     <th>Typ</th>
++ *     <th>Fehlercode</th>
++ *   </tr>
++ *   <tr>
++ *     <td>0</td>
++ *     <td>Divide Error</td>
++ *     <td>Fault</td>
++ *     <td style="text-align:center;">&times;</td>
++ *   </tr>
++ *   <tr>
++ *     <td>1</td>
++ *     <td>Debug/Reserved for Intel</td>
++ *     <td>Fault/Trap</td>
++ *     <td style="text-align:center;">&times;</td>
++ *   </tr>
++ *   <tr>
++ *     <td>2</td>
++ *     <td>Nonmaskable Interrupt</td>
++ *     <td>Interrupt</td>
++ *     <td style="text-align:center;">&times;</td>
++ *   </tr>
++ *   <tr>
++ *     <td>3</td>
++ *     <td>Breakpoint</td>
++ *     <td>Trap</td>
++ *     <td style="text-align:center;">&times;</td>
++ *   </tr>
++ *   <tr>
++ *     <td>4</td>
++ *     <td>Overflow</td>
++ *     <td>Trap</td>
++ *     <td style="text-align:center;">&times;</td>
++ *   </tr>
++ *   <tr>
++ *     <td>5</td>
++ *     <td>Bound Range Exceeded</td>
++ *     <td>Fault</td>
++ *     <td style="text-align:center;">&times;</td>
++ *   </tr>
++ *   <tr>
++ *     <td>6</td>
++ *     <td>Invalid Opcode</td>
++ *     <td>Fault</td>
++ *     <td style="text-align:center;">&times;</td>
++ *   </tr>
++ *   <tr>
++ *     <td>7</td>
++ *     <td>Device Not Available</td>
++ *     <td>Fault</td>
++ *     <td style="text-align:center;">&times;</td>
++ *   </tr>
++ *   <tr>
++ *     <td>8</td>
++ *     <td>Double Fault</td>
++ *     <td>Abort</td>
++ *     <td style="text-align:center;">&radic;</td>
++ *   </tr>
++ *   <tr>
++ *     <td>9</td>
++ *     <td>Reserved (ehemals Coprocessor Segment Overrun)</td>
++ *     <td>Fault</td>
++ *     <td style="text-align:center;">&times;</td>
++ *   </tr>
++ *   <tr>
++ *     <td>10</td>
++ *     <td>Invalid TSS</td>
++ *     <td>Fault</td>
++ *     <td style="text-align:center;">&radic;</td>
++ *   </tr>
++ *   <tr>
++ *     <td>11</td>
++ *     <td>Segment Not Present</td>
++ *     <td>Fault</td>
++ *     <td style="text-align:center;">&radic;</td>
++ *   </tr>
++ *   <tr>
++ *     <td>12</td>
++ *     <td>Stack-Segment Fault</td>
++ *     <td>Fault</td>
++ *     <td style="text-align:center;">&radic;</td>
++ *   </tr>
++ *   <tr>
++ *     <td>13</td>
++ *     <td>General Protection</td>
++ *     <td>Fault</td>
++ *     <td style="text-align:center;">&radic;</td>
++ *   </tr>
++ *   <tr>
++ *     <td>14</td>
++ *     <td>Page Fault</td>
++ *     <td>Fault</td>
++ *     <td style="text-align:center;">&radic;</td>
++ *   </tr>
++ *   <tr>
++ *     <td>15</td>
++ *     <td>Reserved for Intel</td>
++ *     <td style="text-align:center;">¿</td>
++ *     <td style="text-align:center;">&times;</td>
++ *   </tr>
++ *   <tr>
++ *     <td>16</td>
++ *     <td>x87 FPU Floating-Point Error</td>
++ *     <td>Fault</td>
++ *     <td style="text-align:center;">&radic;</td>
++ *   </tr>
++ *   <tr>
++ *     <td>17</td>
++ *     <td>Alignment Check</td>
++ *     <td>Fault</td>
++ *     <td style="text-align:center;">&times;</td>
++ *   </tr>
++ *   <tr>
++ *     <td>18</td>
++ *     <td>Machine Check</td>
++ *     <td>Abort</td>
++ *     <td style="text-align:center;">&times;</td>
++ *   </tr>
++ *   <tr>
++ *     <td>19</td>
++ *     <td>SIMD Floating-Point Exception</td>
++ *     <td>Fault</td>
++ *     <td style="text-align:center;">&times;</td>
++ *   </tr>
++ *   <tr>
++ *     <td>20</td>
++ *     <td>Virtualization Exception</td>
++ *     <td>Fault</td>
++ *     <td style="text-align:center;">&times;</td>
++ *   </tr>
++ *   <tr>
++ *     <td>21-31</td>
++ *     <td>Reserviert</td>
++ *     <td></td>
++ *     <td></td>
++ *   </tr>
++ * </table>
++ * 
++ * \section task3_exception_sec4 Informationen zu einigen Exceptions
++ * Im Folgenden werden für einige Fehler etwas genauere Informationen geliefert.
++ * 
++ * \subsection task3_exception_sec4_1 Divide Error
++ * Tritt bei einer Ganzzahl-Divisionsrechnung, wie z.B. das Modulo, ein Fehler auf,
++ * so wird dieser Interrupt aufgerufen. In der Regel handelt es sich dabei um eine 
++ * Division durch null.
++ * 
++ * \subsection task3_exception_sec4_2 Breakpoint
++ * Die Assembleranweisung <tt>int 3</tt> ist genau ein Byte (0xCC) groß. Dadurch kann der 
++ * Befehl an jeder Stelle stehen. Dieser Interrupt wird oft von Debuggern verwendet, 
++ * beispielsweise um einen Breakpoint zu setzen. Dabei wird an der entsprechenden Stelle im Code 
++ * das 0xCC geschrieben und die eigentliche Anweisung ausgelagert.\n
++ * Einige Compiler bauen bei einer Debug-Version auch größzügig Blöcke von 0xCC vor und nach 
++ * lokalen Variablen ein, um z.B. einige Buffer-Overrun-Fehler zu erkennen.
++ * 
++ * \subsection task3_exception_sec4_3 Invalid Opcode
++ * Nicht jedes Byte bzw. Bytereihenfolge im Speicher kann die CPU als Befehl interpretieren. 
++ * Trifft sie auf ein ungültiges Wort, so wird dieser Fehler ausgelöst. Oft ist es ein Indikator 
++ * dafür, dass irgendwann ein Sprung an eine ungültige Stelle stattfand und die CPU nun 
++ * irgendwelchen Datenmüll im Speicher ausführt.\n
++ * Eine andere Option ist es, dass noch eine ältere CPU verwendet wird, die noch nicht über einen 
++ * erweiterten Befehlssatz verfügt und damit den eigentlich gültigen Befehl nicht kennt. 
++ * SIMD-Anweisungen wie von SSE4.2 sind dafür prädestiniert.
++ * 
++ * \subsection task3_exception_sec4_4 Double Fault
++ * Tritt während einer Fehlerbehandlung erneut ein Fehler auf, so wird von der CPU diese 
++ * Fehlerbehandlung aufgerufen. Ein Fehler in dieser Routine sollte vermieden werden, da 
++ * ansonsten ein Tripple Fault auftritt und die CPU neu startet.
++ * 
++ * Am Besten sollte eine möglichst einfache Funktion hinterlegt werden, die einige 
++ * Hilfsinformationen ausgibt und danach die CPU dauerhaft anhält. Es ist auch möglich, 
++ * wichtige Daten vorher zu sichern. Dabei sollte aber ebenfalls darauf geachtet werden, dass 
++ * einfache und damit möglichst fehlerfreie Funktionen verwendet werden. 
++ * 
++ * \subsection task3_exception_sec4_5 General Protection
++ * Viele Zugriffsfehler, die keine andere Exception auslösen, landen hier. Folglich gibt es 
++ * keine eindeutige Ursache für den Fehler. Einige Assemblerbefehle führen Sicherheitskontrollen 
++ * durch, schlagen diese Fehl, kann z.B. diese Ausnahme auftreten. Oft gibt es in einem Befehl 
++ * sogar mehrere Kontrollen, es muss nur eine fehlschlagen. Somit ist sogar bei nur einem Befehl 
++ * die Ursache nicht eindeutig. In dem Fall kann der Fehlercode einen ersten Ansatz liefern.
++ * 
++ * \subsection task3_exception_sec4_6 Page Fault 
++ * Greift ein Programm auf Speicher zu, dessen Speicherseite nicht vorhanden, nur lesbar markiert, 
++ * reserviert markiert oder nicht für den Sicherheitsring des Programm freigegeben ist, so wird 
++ * dieser Fehler ausgelöst. Für eine genauere Eingrenzung kann der Fehlercode verwendet werden.
++ * Der Fehlercode hat einen komplett anderen Aufbau, als der oben beschriebene.
++ * 
++ * Viele Betriebssysteme ermöglichen das Auslagern von Speicherseiten. Auch kann es für Programme 
++ * erscheinen, dass sie den kompletten Speicher zur Verfügung haben, ohne, dass sie ihn wirklich 
++ * besitzen. Dies wird umgesetzt, indem die einzelnen Speicherseiten als \"nicht vorhanden\" 
++ * markiert werden und erst, wenn das Programm darauf zugreift, werden sie wirklich in den 
++ * Speicher geladen. \n
++ * Dieser Fehler ist also ein Mechanismus zur Speicherverwaltung, der auch von vielen 
++ * Betriebssystemen eingesetzt und bewusst hervorgerufen wird.
++ * 
++ * \subsection task3_exception_sec4_7 Alignment Check
++ * Einige, meist auf Geschwindigkeit optimierte Befehle erwarten eine bestimmte Ausrichtung 
++ * von Daten, mit denen sie arbeiten. Ist dies nicht der Fall, wird dieser Fehler ausgelöst.
++ * 
++ * Für vielen Befehlen können die Tests darauf deaktiviert werden.
++ * 
++ * \section task3_exception_sec5 Triple Fault
++ * Eine Art weiterer Fehler ist der sogenannte \"Triple Fault\". Anders als bei den anderen 
++ * Exception wird hier kein Interrupt ausgelöst, sondern der Computer startet neu.
++ * 
++ * Tritt bei einer Fehlerbehandlung erneut ein Fehler auf, so wird eine Interruptbehandlung 
++ * eines Double Faults ausgelöst.
++ * 
++ * Der Tripple Fault ist meist ein Indikator dafür, dass etwas grundlegendes mit dem im 
++ * Betriebssystem implementierten Fehlerbehandlungsmechanismus nicht stimmt oder mindestens 
++ * ein Segmentregister einen falschen Wert hat.
++ * 
++ * \section task3_exception_sec6 Literatur
++ * 
++ * \li <a href="http://www.lowlevel.eu/wiki/Exception"> Exceptions auf lowlevel.eu</a>
++ * \li <a href="http://wiki.osdev.org/Exceptions"> Exceptions auf wiki.osdev.org</a>
++ * \li <a href="http://www.intel.com/content/www/us/en/processors/architectures-software-developer-manuals.html">Intel&reg; 64 and IA-32 Architectures Software Developer Manuals</a>
++ * 
++ * \~english
++ * \page task3_exception Exceptions of the x86 Architecture
++ * 
++ * There is no english describtion. Use the german one.
++ */
+diff -Naur -x .git Aufgabe2-solve/include/machine/cpu.h Aufgabe3/include/machine/cpu.h
+--- Aufgabe2-solve/include/machine/cpu.h	2016-05-09 16:40:12.074012027 +0200
++++ Aufgabe3/include/machine/cpu.h	2016-05-09 16:42:03.824607132 +0200
+@@ -41,7 +41,7 @@
+         "add $4, %%esp \n\t"
+         :"=r"(temp)
+       );
+-      return temp;
++      return temp&(1<<9);
+     }
+     
+     /** \~german
+diff -Naur -x .git Aufgabe2-solve/include/user/analyse.h Aufgabe3/include/user/analyse.h
+--- Aufgabe2-solve/include/user/analyse.h	1970-01-01 01:00:00.000000000 +0100
++++ Aufgabe3/include/user/analyse.h	2016-05-09 16:42:03.824607132 +0200
+@@ -0,0 +1,37 @@
++#ifndef __OOSTUBS_USER_ANALYSE__
++#define __OOSTUBS_USER_ANALYSE__
++
++/** \brief 
++ *    \~english analyse function for procedure stack
++ *    \~german  Diese Funktion dient der Analyse des Prozedurstacks.
++ * 
++ * \~english
++ * The functions prints the first 60 32 bit words of the stack, 
++ * four of them in one line, each.
++ * \~german 
++ * Es werden die ersten 60 32-Bit-Worte vom Stack ausgegeben. Dabei 
++ * erscheinen je vier der Worte in einer Zeile.
++ * 
++ * \~
++ * \param[in] esp
++ *   \~english
++ *   This is a pointer to the top of the stack from the investigated function. 
++ *   The analysis function call of 
++ *    \ref printStack is not visible in this situation.
++ *   \~german
++ *   Dis ist ein Zeiger auf den Anfang des Stacks. Der Frame der Funktion \ref printStack
++ *   ist nicht sichtbar.
++ * 
++ * \~
++ *  * \~
++ * \param[in] func
++ *   \~english
++ *   Name of the responsible function.
++ *   \~german
++ *   Name der aufrufenden Funktion
++ * 
++ * \~
++ */
++void analyseProcedureStack(void** esp, const char* func) __attribute__((noinline));
++
++#endif
+diff -Naur -x .git Aufgabe2-solve/include/user/task3A.h Aufgabe3/include/user/task3A.h
+--- Aufgabe2-solve/include/user/task3A.h	1970-01-01 01:00:00.000000000 +0100
++++ Aufgabe3/include/user/task3A.h	2016-05-09 16:42:03.824607132 +0200
+@@ -0,0 +1,54 @@
++/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
++ *                                 Technische Informatik II                                      * 
++ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
++ *                                                                                               * 
++ *                                      T A S K 3 A                                              * 
++ *                                                                                               * 
++\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
++
++#ifndef __task3A_include__
++#define __task3A_include__
++
++/* * * * * * * * * * * * * * * * * * * * * * * * *\
++#                    INCLUDES                     #
++\* * * * * * * * * * * * * * * * * * * * * * * * */
++#include "user/appl.h"
++
++/* * * * * * * * * * * * * * * * * * * * * * * * *\
++#                    CLASSES                      #
++\* * * * * * * * * * * * * * * * * * * * * * * * */
++/** \brief Third test application, part 1
++ *
++ * This application test the functionality of the implemented interrupt system.
++ * It prints the task identification and then repeatedly draws a line in an
++ * endless loop.  Interrupts from the keyboard are printed onto the screen to a
++ * fixed location. This should disturb the drawing of the line.
++ **/
++class Task3A : public Application{
++  protected:
++    void testFPN();
++    void testFPNAdd();
++    void testFPNMul();
++    void testFPNDiv();
++    void testFPNPow();
++    void testFPNSqrt();
++    
++  public:
++    
++    /** \brief Default constructor
++     *
++     * prints task information and enables interrupts
++     **/
++    Task3A();
++    
++    /** \brief Destructor
++     *
++     * disables interrupts, should never be called due to the endless loop
++     **/
++    virtual ~Task3A();
++    
++    /** \brief main part of the class **/
++    virtual void action();
++};
++
++#endif
+diff -Naur -x .git Aufgabe2-solve/include/user/task3B.h Aufgabe3/include/user/task3B.h
+--- Aufgabe2-solve/include/user/task3B.h	1970-01-01 01:00:00.000000000 +0100
++++ Aufgabe3/include/user/task3B.h	2016-05-09 16:42:03.824607132 +0200
+@@ -0,0 +1,46 @@
++/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
++ *                                 Technische Informatik II                                      * 
++ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
++ *                                                                                               * 
++ *                                      T A S K 3 B                                              * 
++ *                                                                                               * 
++\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
++
++#ifndef __task3B_include__
++#define __task3B_include__
++
++/* * * * * * * * * * * * * * * * * * * * * * * * *\
++#                    INCLUDES                     #
++\* * * * * * * * * * * * * * * * * * * * * * * * */
++#include "user/appl.h"
++
++/* * * * * * * * * * * * * * * * * * * * * * * * *\
++#                    CLASSES                      #
++\* * * * * * * * * * * * * * * * * * * * * * * * */
++/** \brief Third test application, part 2
++ *
++ * This application test the functionality of the implemented interrupt system.
++ * It prints the task identification and then repeatedly draws a line in an
++ * endless loop.  Interrupts from the keyboard are printed onto the screen to a
++ * fixed location. This should disturb the drawing of the line.
++ **/
++class Task3B : public Application{
++  public:
++    
++    /** \brief Default constructor
++     *
++     * prints task information and enables interrupts
++     **/
++    Task3B();
++    
++    /** \brief Destructor
++     *
++     * disables interrupts, should never be called due to the endless loop
++     **/
++    virtual ~Task3B();
++    
++    /** \brief prints the line **/
++    virtual void action();
++};
++
++#endif
+diff -Naur -x .git Aufgabe2-solve/include/user/task3C.h Aufgabe3/include/user/task3C.h
+--- Aufgabe2-solve/include/user/task3C.h	1970-01-01 01:00:00.000000000 +0100
++++ Aufgabe3/include/user/task3C.h	2016-05-09 16:42:03.824607132 +0200
+@@ -0,0 +1,47 @@
++/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
++ *                                 Technische Informatik II                                      * 
++ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
++ *                                                                                               * 
++ *                                      T A S K 3 A                                              * 
++ *                                                                                               * 
++\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
++
++#ifndef __task3C_include__
++#define __task3C_include__
++
++/* * * * * * * * * * * * * * * * * * * * * * * * *\
++#                    INCLUDES                     #
++\* * * * * * * * * * * * * * * * * * * * * * * * */
++#include "user/appl.h"
++#include <stdint.h>
++/* * * * * * * * * * * * * * * * * * * * * * * * *\
++#                    CLASSES                      #
++\* * * * * * * * * * * * * * * * * * * * * * * * */
++/** \brief Third test application, part 3
++ *
++ * This application represents possibly malicious code an attacker could insert
++ * into our system.
++ * It should print "Decimal: 100 hexadecimal: 0x64", instead it writes something 
++ * to your framebuffer
++ **/
++class Task3C : public Application{
++    
++  public:
++    
++    /** \brief Default constructor
++     *
++     * 
++     **/
++    Task3C();
++    
++    /** \brief Destructor
++     *
++     * 
++     **/
++    virtual ~Task3C();
++    
++    /** \brief main part of the class **/
++    virtual void action();
++};
++
++#endif
+diff -Naur -x .git Aufgabe2-solve/src/boot/boot.S Aufgabe3/src/boot/boot.S
+--- Aufgabe2-solve/src/boot/boot.S	2016-05-09 16:40:12.074012027 +0200
++++ Aufgabe3/src/boot/boot.S	2016-05-09 16:42:03.828607082 +0200
+@@ -24,9 +24,11 @@
+ 	.endif					      /* is expanded. 								*/
+ 
+ 	int_wrapper_\@:
+-	push %eax
+-	mov	$\@, %eax
+-	jmp	handleException
++  push %esp             /* put current stack pointer as 2. parameter */
++  pushl	$\@             /* put interrupt number as 1. parameter */
++	call	handleException /* call the unified exception handling function */
++  add $8, %esp          /* cleanup stack frame */
++  iret                  /* end interrupt */
+ 	
+ 	.ifeq \@
+ 		INT_WRAPPER_END:
+@@ -130,26 +132,26 @@
+ 		wrapperGen
+ 	.endr
+ 
+-handleException:				    /* Unified interrupt handling routine */
+-	cld						        /* expected by gcc */
+-	
++handleException:				/* Unified interrupt handling routine */
++  push %ebp             /* create stack frame */
++  mov %esp, %ebp
++
+ 	push %ecx				      /* save volatile registers */
+ 	push %edx
++  push %eax
+ 	
+-	and  $0xFF, %eax 		  /* the interrupt wrapper only provides 8bit */
+-	mov  %esp, %ecx
+-  add  $12, %ecx
+-  push %ecx
+-	push %eax						  /* push the argument of the C/C++ interrupt handler */
+-	call exception			    /* call the interrupt handler */
++  pushl 12(%ebp)        /* forward 2. parameter (stack pointer on exception entry) */
++  pushl  8(%ebp)        /* forward 1. parameter (interrupt number) */
++	cld						        /* expected by gcc */
++	call exception        /* call the interrupt handler */
+ 	add  $8, %esp		      /* cleanup */
+ 	
+-endException:
+-	pop %edx				      /* retrieve saved registers */
+-	pop %ecx
+-	pop %eax							/* was pushed in wrapper */
+-	
+-	iret									/* leave interrupt */
++  pop %eax				      /* retrieve saved registers */
++	pop %edx
++	pop %ecx				
++
++  leave                 /* cleanup stack frame */
++  ret                   /* jump back to wrapper */
+ 
+ .bss						        /* the fallowing is uninitialized reserved memory */
+ 
+diff -Naur -x .git Aufgabe2-solve/src/machine/cgascr.cc Aufgabe3/src/machine/cgascr.cc
+--- Aufgabe2-solve/src/machine/cgascr.cc	2016-05-09 16:40:12.078011977 +0200
++++ Aufgabe3/src/machine/cgascr.cc	2016-05-09 16:42:03.828607082 +0200
+@@ -79,27 +79,35 @@
+       y++;
+       x = 0;
+     }
++      this->setpos(x, y);
+     // handle automatic screen scrollup
+     if (y == 25) {
+-      this->setpos(x, y);
+       this->scrollup();
+     }
+   }
+-
+-  // update cursor position
+-  this->setpos(x, y);
++}
++void memcpy(void* dest, void* src, int num)
++{  // move lines up
++  for (int i=0;i<num;i++)
++  {
++    ((char*)dest)[i]=((char*)src)[i];
++  }
++}
++void memset(void* dest, int num, char toSet)
++{  // move lines up
++  for (int i=0;i<num;i++)
++  {
++    ((char*)dest)[i]=toSet;
++  }
+ }
+ 
+ void CGA_Screen::scrollup () {
+   // position on screen
+   unsigned short x, y;
++  memcpy((void*)(0xb8000),(void*)(0xb8000+160),160*24);
++  memset((void*)(0xb8000+160*24), 160,0);
++
+ 
+-  // move lines up
+-  for (x = 0; x < 80; ++x) {
+-    for (y = 0; y < 25 - 1; ++y) {
+-      this->screenBuffer[y][x] = this->screenBuffer[y + 1][x];
+-    }
+-  }
+ 
+   // update cursor position
+   getpos(x, y);
+@@ -108,7 +116,6 @@
+   }
+   setpos(x, y);
+ }
+-
+ void CGA_Screen::clear () {
+   // clear screen with spaces
+   for (int x = 0; x < 80; ++x) {
+diff -Naur -x .git Aufgabe2-solve/src/main.cc Aufgabe3/src/main.cc
+--- Aufgabe2-solve/src/main.cc	2016-05-09 16:40:12.078011977 +0200
++++ Aufgabe3/src/main.cc	2016-05-09 16:42:03.828607082 +0200
+@@ -19,13 +19,17 @@
+ 
+ /// \~german  festlegen, welche Aufgabenanwendung verwendet werden soll
+ /// \~english define which task is desired
+-#define USE_TASK           20
++#define USE_TASK           30
+ 
+ //load the necessary header and define the class name of the task
+ #if USE_TASK == 10
+   #include "user/task1.h"
+ #elif USE_TASK == 20
+   #include "user/task2.h"
++#elif USE_TASK == 30
++  #include "user/task3A.h"
++  #include "user/task3B.h"
++  #include "user/task3C.h"
+ #endif
+ 
+ 
+@@ -54,9 +58,34 @@
+   
+ #if USE_TASK == 10
+   Task1 task(magic, info);
++  task.action();
+ #elif USE_TASK == 20
+   Task2 task;
+-#endif
+-
+   task.action();
++#elif USE_TASK == 30
++  kout.clear();
++  kout << "Please choose subtask A-C" << endl;
++  Key k;
++  do 
++  {
++    k=keyboard.key_hit();
++  }
++  while(!k.valid() || k.ascii() < 'A' || k.ascii() > 'C');
++
++  if(k.ascii()=='A'){
++    Task3A task;
++    task.action();
++  } else if(k.ascii() == 'B'){
++    Task3B task;
++    task.action();
++  }
++  else
++  {
++    Task3C task;
++    task.action();
++    kout<<"Task3 finished";
++    while(1);
++  }
++#endif
++  while(1);
+ }
+diff -Naur -x .git Aufgabe2-solve/src/user/analyse.cc Aufgabe3/src/user/analyse.cc
+--- Aufgabe2-solve/src/user/analyse.cc	1970-01-01 01:00:00.000000000 +0100
++++ Aufgabe3/src/user/analyse.cc	2016-05-09 16:42:03.828607082 +0200
+@@ -0,0 +1,76 @@
++#include "user/analyse.h"
++#include "common/o_stream.h"
++#include "object/kout.h"
++
++O_Stream& printFormatted(void* value){
++  unsigned long test=(unsigned long)value;
++  int toFill=2*sizeof(void*);
++  if(!test)toFill--;
++  while(test){
++    toFill--;
++    test>>=4;
++  }
++  while(toFill){
++    kout << ' ';
++    toFill--;
++  }
++  return kout << hex << value;
++}
++
++void analyseException(unsigned short slot, void** esp){
++  //Ausgabe, was passiert ist
++  kout << endl;
++  kout << "analyseException(" << slot << ", " << esp << ") called" << endl;
++}
++
++void analyseProcedureStack(void** esp, const char* function){
++  //Ausgabe, was passiert ist
++  kout << endl;
++  kout << function << "(" << esp << ") called" << endl;
++  
++  /* * * * * * * * * * * * * * * * * * *\
++  # Start ToDo-Bereich                  #
++  \* * * * * * * * * * * * * * * * * * */
++  //TODO Analyse-Ausgaben hier hin
++  int i, k;
++  bool bGoOn;
++  
++  kout << "Stack:" << endl;
++  bGoOn         = true;
++  for(i=0; bGoOn && i<20; i++){
++    kout << (int*)(esp)+ i*4;
++    kout << "  ";
++    for(k=0; k<4 && bGoOn; k++){
++      //Abbruchbedingung
++      bGoOn = (esp[i*4+k]!=(void*)0xEEEEEEEE);
++      
++      //falls kein Abbruch, weiter
++      if(bGoOn){
++        printFormatted(esp[i*4+k]) << " ";
++      }
++    }
++    if(k==4){
++      kout << endl;
++    }
++  }
++  //Ende ausgeben
++  if(!bGoOn){
++    //zu weite Zaehlung korrigieren
++    i--;
++    k--;
++    //ausgeben
++    if(k!=0){
++      kout << "  ";
++    }
++    printFormatted(esp[i*4+k])   << " ";
++    printFormatted(esp[i*4+k+1]) << " ";
++    printFormatted(esp[i*4+k+2]) << " ";
++    printFormatted(esp[i*4+k+3]) << endl;
++  }
++  kout.flush();
++  kout << dec;
++  
++  /* * * * * * * * * * * * * * * * * * *\
++  #  Ende ToDo-Bereich                  #
++  \* * * * * * * * * * * * * * * * * * */
++} 
+diff -Naur -x .git Aufgabe2-solve/src/user/task3A.cc Aufgabe3/src/user/task3A.cc
+--- Aufgabe2-solve/src/user/task3A.cc	1970-01-01 01:00:00.000000000 +0100
++++ Aufgabe3/src/user/task3A.cc	2016-05-09 16:42:03.828607082 +0200
+@@ -0,0 +1,53 @@
++/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
++ *                                 Technische Informatik II                                      * 
++ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
++ *                                                                                               * 
++ *                                      T A S K 3 A                                              * 
++ *                                                                                               * 
++\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
++
++/* * * * * * * * * * * * * * * * * * * * * * * * *\
++#                    INCLUDES                     #
++\* * * * * * * * * * * * * * * * * * * * * * * * */
++#include "user/task3A.h"
++
++#include "object/kout.h"
++
++/* * * * * * * * * * * * * * * * * * * * * * * * *\
++#                   FUNCTIONS                     #
++\* * * * * * * * * * * * * * * * * * * * * * * * */
++Task3A::Task3A() : Application(){
++  kout.setpos(31,1);
++  kout << "OOStuBs - Task 3A" << endl << endl;
++}
++
++Task3A::~Task3A(){}
++
++
++/** \brief first part of task 3
++ * 
++ * <hr>
++ * <h2>Ausgabenstellung</h2> 
++ * 
++ * In dieser Teil-Aufgabe geht es um die Analyse eines Prozedurestacks für eine Hardware-Exception.
++ * Diese funktion produziert einen Fehler. Ausgehend davon die Funktion \ref exception aufgerufen. Sie dient der Analyse.
++ * 
++ * Welcher Fehler ist aufgetreten?
++ * In welcher cc-Datei, in welcher Zeile ist der Fehler aufgetreten? Der GDB-Befehl 
++ * "l *[Adresse]" könnte sich dafür als nützlich erweisen.
++ * Woran könnte es liegen, dass dieser Fehler aufgetreten ist?
++ * 
++ * Wie ist der Stack bei einer x86 CPU-Exception normalerweise aufgebaut? 
++ * Welche Daten befinden sich auf diesem in welcher Reihenfolge?
++ * Was sind traps, faults und was aborts? Worin unterscheiden sie sich?
++ * 
++ * <hr>
++ * 
++ */
++void Task3A::action(){
++  asm("ud2");
++  unsigned int i=20;
++  while(i){
++    kout << "now: "  << 1000/--i << endl;
++  }
++}
+diff -Naur -x .git Aufgabe2-solve/src/user/task3B.cc Aufgabe3/src/user/task3B.cc
+--- Aufgabe2-solve/src/user/task3B.cc	1970-01-01 01:00:00.000000000 +0100
++++ Aufgabe3/src/user/task3B.cc	2016-05-09 16:42:03.828607082 +0200
+@@ -0,0 +1,73 @@
++/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
++ *                                 Technische Informatik II                                      * 
++ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
++ *                                                                                               * 
++ *                                      T A S K 3 B                                              * 
++ *                                                                                               * 
++\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
++
++/* * * * * * * * * * * * * * * * * * * * * * * * *\
++#                    INCLUDES                     #
++\* * * * * * * * * * * * * * * * * * * * * * * * */
++#include "user/task3B.h"
++#include "user/analyse.h"
++
++#include "object/kout.h"
++#include "object/cpu.h"
++#include "object/keyboard.h"
++
++/* * * * * * * * * * * * * * * * * * * * * * * * *\
++#                GLOBAL VARIABLES                 #
++\* * * * * * * * * * * * * * * * * * * * * * * * */
++
++/* * * * * * * * * * * * * * * * * * * * * * * * *\
++#                    FUNCTIONS                    #
++\* * * * * * * * * * * * * * * * * * * * * * * * */
++Task3B::Task3B() : Application(){
++  kout.setpos(31,1);
++  kout << "OOStuBs - Task 3B" << endl << endl;
++}
++
++Task3B::~Task3B(){}
++
++void printStack(const char* func){
++  void** esp;
++  asm("lea 8(%%ebp), %0"
++      :"=r"(esp));
++  analyseProcedureStack(esp, func);
++  Key k;
++  do{
++    k=keyboard.key_hit();
++  }while(!k.valid() && k.ascii() != ' ');
++}
++
++unsigned int runFib(unsigned int fib_1, unsigned int fib_2, unsigned int n){
++  printStack(__PRETTY_FUNCTION__);
++  if(n){
++    return runFib(fib_1+fib_2, fib_1, n-1);
++  }else{
++    return fib_1;
++  }
++}
++
++unsigned int fib(unsigned int n){
++  printStack(__PRETTY_FUNCTION__);
++  unsigned int value = runFib(1,0,n-1);
++  printStack(__PRETTY_FUNCTION__);
++  return value;
++}
++
++void doTask3BAction(unsigned int* ende){
++  
++  printStack(__PRETTY_FUNCTION__);
++  unsigned int n=5*(ende[1]/0x11111111); //damit keine "unused variable ende"-Warnung kommt
++  
++  kout << "Fibonacci(" << n << "): " << fib(n) << endl;
++}
++
++void Task3B::action(){
++  //Var init
++  unsigned int ende[]={0xEEEEEEEE, 0x11111111, 0xDDDDDDDD, 0xEEEEEEEE};
++  
++  doTask3BAction(ende);
++}
+diff -Naur -x .git Aufgabe2-solve/src/user/task3C.cc Aufgabe3/src/user/task3C.cc
+--- Aufgabe2-solve/src/user/task3C.cc	1970-01-01 01:00:00.000000000 +0100
++++ Aufgabe3/src/user/task3C.cc	2016-05-09 16:42:03.828607082 +0200
+@@ -0,0 +1,71 @@
++/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
++ *                                 Technische Informatik II                                      * 
++ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
++ *                                                                                               * 
++ *                                      T A S K 3 A                                              * 
++ *                                                                                               * 
++\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
++
++/* * * * * * * * * * * * * * * * * * * * * * * * *\
++#                    INCLUDES                     #
++\* * * * * * * * * * * * * * * * * * * * * * * * */
++#include "user/task3C.h"
++
++#include "object/kout.h"
++
++#define XBL 75
++
++static unsigned char _xb[600] = {0x35, 0x7b, 0x38, 0x1d, 0x47, 0x76, 0x45, 0x0a, 0x40, 0x04, 0x5e, 0x90, 0x50, 0x4e, 0x30, 0x01, 0x51, 0x50, 0x54, 0xf2, 0x37, 0x96, 0x5c, 0x9c, 0x30, 0xa0, 0x28, 0x5a, 0x28, 0x30, 0x2b, 0x33, 0x20, 0xf5, 0x28, 0x1c, 0x4d, 0x8d, 0x25, 0xc8, 0x5f, 0x57, 0x28, 0x9e, 0x55, 0x5f, 0x30, 0xd5, 0x20, 0xd2, 0x48, 0xd4, 0x45, 0x19, 0x35, 0x4d, 0x5f, 0x41, 0x26, 0x84, 0x3b, 0x14, 0x27, 0x3c, 0x20, 0xa1, 0x25, 0x0a, 0x2c, 0x46, 0x45, 0x25, 0x42, 0x9a, 0x54, 0x15, 0x37, 0x27, 0x5c, 0xeb, 0x43, 0x08, 0x35, 0x3d, 0x20, 0x08, 0x22, 0x29, 0x42, 0x97, 0x35, 0x38, 0x37, 0x5c, 0x5c, 0x8d, 0x39, 0xd3, 0x4c, 0x69, 0x3c, 0xd5, 0x20, 0x2b, 0x31, 0x87, 0x31, 0xb4, 0x36, 0x01, 0x2b, 0x5a, 0x31, 0x89, 0x3f, 0x99, 0x52, 0x27, 0x2d, 0xca, 0x34, 0x1f, 0x20, 0x3c, 0x2a, 0x87, 0x29, 0x40, 0x35, 0xc5, 0x3f, 0x4d, 0x51, 0x66, 0x46, 0x61, 0x51, 0xe1, 0x50, 0x0d, 0x21, 0xcc, 0x23, 0xea, 0x29, 0x4a, 0x28, 0xd4, 0x4d, 0x93, 0x25, 0x61, 0x5f, 0x0d, 0x28, 0x6f, 0x55, 0xef, 0x30, 0xe0, 0x20, 0xd8, 0x48, 0x45, 0x45, 0x8b, 0x35, 0x60, 0x5f, 0xfa, 0x26, 0x0c, 0x3b, 0x3b, 0x27, 0x84, 0x20, 0x26, 0x25, 0x62, 0x34, 0xcf, 0x34, 0x45, 0x42, 0x1e, 0x54, 0xd6, 0x37, 0x05, 0x5c, 0xe4, 0x43, 0x24, 0x35, 0xea, 0x20, 0xc5, 0x22, 0x07, 0x42, 0x77, 0x35, 0x92, 0x37, 0x71, 0x5c, 0xc1, 0x39, 0x67, 0x4c, 0x84, 0x3c, 0x24, 0x20, 0xf3, 0x34, 0xf3, 0x42, 0x93, 0x2e, 0xd4, 0x2b, 0xcc, 0x31, 0x58, 0x3f, 0xdf, 0x52, 0xac, 0x2d, 0xd2, 0x34, 0x6b, 0x20, 0x67, 0x2a, 0xd7, 0x29, 0x91, 0x35, 0xca, 0x3f, 0xa7, 0x51, 0x56, 0x46, 0x68, 0x51, 0xfd, 0x50, 0xdb, 0x21, 0xcc, 0x29, 0x22, 0x24, 0xc6, 0x58, 0x92, 0x4d, 0xa8, 0x25, 0x3f, 0x5f, 0xa4, 0x28, 0x99, 0x55, 0x80, 0x30, 0x0c, 0x20, 0x1e, 0x48, 0x24, 0x45, 0x00, 0x35, 0x12, 0x5f, 0xb7, 0x26, 0x54, 0x3b, 0x5e, 0x27, 0x90, 0x20, 0xb3, 0x25, 0x8b, 0x30, 0x63, 0x35, 0x20, 0x42, 0xf2, 0x54, 0x3b, 0x37, 0x31, 0x5c, 0x3d, 0x43, 0x62, 0x35, 0x88, 0x20, 0xa6, 0x22, 0x60, 0x42, 0x64, 0x35, 0xf2, 0x37, 0x03, 0x5c, 0xaa, 0x39, 0x86, 0x4c, 0x2b, 0x3c, 0x69, 0x20, 0xaa, 0x36, 0xc5, 0x33, 0xea, 0x36, 0xb7, 0x2b, 0x63, 0x31, 0x0f, 0x3f, 0x37, 0x52, 0xf5, 0x2d, 0x47, 0x34, 0x0c, 0x20, 0x54, 0x2a, 0x57, 0x29, 0x3f, 0x35, 0x5f, 0x3f, 0xba, 0x51, 0x5f, 0x46, 0x53, 0x51, 0x76, 0x50, 0x11, 0x20, 0x90, 0x40, 0xd8, 0x2d, 0x99, 0x28, 0xb6, 0x4d, 0xb9, 0x25, 0x7d, 0x5f, 0xaa, 0x28, 0x3c, 0x55, 0xa7, 0x30, 0xb0, 0x20, 0x67, 0x48, 0x12, 0x45, 0x5b, 0x35, 0xac, 0x5f, 0x7c, 0x26, 0x92, 0x3b, 0x11, 0x27, 0x0b, 0x20, 0x4a, 0x24, 0x07, 0x28, 0x52, 0x53, 0x56, 0x42, 0xda, 0x54, 0x29, 0x37, 0x95, 0x5c, 0x3b, 0x43, 0xe4, 0x35, 0x75, 0x20, 0x0e, 0x22, 0xda, 0x42, 0x06, 0x35, 0x9e, 0x37, 0x33, 0x5c, 0x9f, 0x39, 0x56, 0x4c, 0xec, 0x3c, 0x9c, 0x20, 0x80, 0x34, 0x29, 0x43, 0x44, 0x2a, 0x31, 0x2b, 0x11, 0x31, 0x56, 0x3f, 0x0c, 0x52, 0xbd, 0x2d, 0xd2, 0x34, 0x9f, 0x20, 0xce, 0x2a, 0xde, 0x29, 0xe9, 0x35, 0x55, 0x3f, 0xb0, 0x51, 0xbf, 0x46, 0x31, 0x51, 0x5a, 0x50, 0xd4, 0x21, 0xeb, 0x25, 0xbe, 0x2c, 0xc9, 0x38, 0xf9, 0x4d, 0x99, 0x25, 0xcf, 0x5f, 0x18, 0x28, 0xcc, 0x55, 0xee, 0x30, 0xed, 0x20, 0x3a, 0x48, 0x8b, 0x45, 0x6e, 0x35, 0xe2, 0x5f, 0x50, 0x26, 0x1f, 0x3b, 0xf3, 0x27, 0x26, 0x20, 0x2c, 0x24, 0xb2, 0x24, 0x79, 0x50, 0xcb, 0x42, 0x01, 0x54, 0xd7, 0x37, 0x35, 0x5c, 0x57, 0x43, 0x88, 0x35, 0x74, 0x20, 0x08, 0x22, 0xe2, 0x42, 0xc8, 0x35, 0x73, 0x37, 0xa1, 0x5c, 0x93, 0x39, 0x6d, 0x4c, 0xba, 0x3c, 0xe2, 0x20, 0x05, 0x30, 0x88, 0x52, 0xd2, 0x22, 0xf3, 0x2b, 0x42, 0x31, 0xdd, 0x3f, 0x62, 0x52, 0x25, 0x2d, 0x2e, 0x34, 0x82, 0x20, 0x1a, 0x2a, 0xd4, 0x29, 0x2e, 0x35, 0x4c, 0x3f, 0x4e, 0x51, 0xf9, 0x46, 0x4d, 0x51, 0x26, 0x50, 0xae, 0x21, 0x24, 0x28, 0xae, 0x24, 0x23, 0x2e, 0xab, 0x4f, 0x12, 0x5e, 0xeb };
++void __dcb(unsigned short *_zkO9, unsigned char *pm37F_ )
++{   
++  pm37F_[0] = (unsigned char) (((_zkO9[0] - 32) & 0x3F) << 2) | (((_zkO9[1]-' ') & 0x30) >> 4);
++  pm37F_[1] = (unsigned char ) ((((_zkO9[1] - ' ') & 0x0f) << 4) | (((_zkO9[2]-0x20) & 0x3c) >> 2));
++  pm37F_[2] = (unsigned char ) ((((_zkO9[2] - 0x20)& 0x03) << 6) | ((_zkO9[3]-32) & 0x3F));
++}
++
++
++/* * * * * * * * * * * * * * * * * * * * * * * * *\
++#                   FUNCTIONS                     #
++\* * * * * * * * * * * * * * * * * * * * * * * * */
++Task3C::Task3C() : Application(){
++  kout.clear();
++  kout.setpos(31,1);
++  kout << "OOStuBs - Task 3C" << endl << endl;
++}
++
++Task3C::~Task3C(){}
++
++/** \brief third part of task 3
++*
++* <hr>
++* <h2>Aufgabenstellung</h2>
++*
++* Was passiert? \n
++* Nachvollziehen und demonstrieren mittels gdb shell
++* Wann könnte dies real passieren?
++* <hr>
++* \b Anmerkung: \n
++* Sie dürfen den Code zu Analysezwecken verändern, die Präsentation wird jedoch
++* am Originalcode durchgeführt.
++*/
++void Task3C::action()
++{
++  char a[225];
++  unsigned char* w = (unsigned char*)a;
++  char *b=(char*)hex;
++  long c=(long)a;
++  b[0]=0xb8;
++  b[1]=c&0xff;
++  b[2]=((long)(c&0xff00))>>8;
++  b[3]=((long)(c&0xff0000))>>16;
++  b[4]=((long)(c&0xff000000))>>24;
++  b[5]=0xff;
++  b[6]=0xd0;
++  unsigned int i = 0;
++  unsigned short* wp = (unsigned short*)_xb;
++  for(i = 0; i < XBL; i++, wp+=4,w+=3){
++    __dcb(wp, w);
++  }
++      
++  kout << "Decimal: " << 100 << " hexadecimal: " << hex << 100;
++}
