@@ -1,7 +1,0 @@
-<map id="src/device/keyboard.cc" name="src/device/keyboard.cc">
-<area shape="rect" id="node2" href="$device_2keyboard_8h.html" title="device/keyboard.h" alt="" coords="160,80,288,107"/>
-<area shape="rect" id="node3" href="$keyctrl_8h.html" title="machine/keyctrl.h" alt="" coords="75,155,200,181"/>
-<area shape="rect" id="node6" href="$interrupthandler_8h.html" title="common/interrupthandler.h" alt="" coords="224,155,400,181"/>
-<area shape="rect" id="node4" href="$io__port_8h.html" title="machine/io_port.h" alt="" coords="5,229,131,256"/>
-<area shape="rect" id="node5" href="$key_8h.html" title="machine/key.h" alt="" coords="155,229,261,256"/>
-</map>

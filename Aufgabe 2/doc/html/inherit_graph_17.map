@@ -1,8 +1,0 @@
-<map id="Grafische Darstellung der Klassenhierarchie" name="Grafische Darstellung der Klassenhierarchie">
-<area shape="rect" id="node1" href="$classCGA__Screen.html" title="CGA&#45;Dispaly driver. " alt="" coords="143,5,241,32"/>
-<area shape="rect" id="node2" href="$classCGA__Stream.html" title="CGA basierte Ausgabe, ählich zu std::cout von C++. " alt="" coords="289,31,389,57"/>
-<area shape="rect" id="node3" href="$classSerial.html" title="Serial" alt="" coords="165,107,219,133"/>
-<area shape="rect" id="node4" href="$classLog.html" title="Logging facility for debug messages. " alt="" coords="318,81,361,108"/>
-<area shape="rect" id="node5" href="$classStringbuffer.html" title="Puffer für die Textausgabe. " alt="" coords="5,56,95,83"/>
-<area shape="rect" id="node6" href="$classO__Stream.html" title="Manipulation class providing formatted output support. " alt="" coords="151,56,233,83"/>
-</map>

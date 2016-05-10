@@ -1,8 +1,0 @@
-<map id="CGA_Stream" name="CGA_Stream">
-<area shape="rect" id="node2" href="$classO__Stream.html" title="Manipulation class providing formatted output support. " alt="" coords="28,199,109,225"/>
-<area shape="rect" id="node3" href="$classStringbuffer.html" title="Puffer für die Textausgabe. " alt="" coords="5,95,95,121"/>
-<area shape="rect" id="node4" href="$classCGA__Screen.html" title="CGA&#45;Dispaly driver. " alt="" coords="175,199,274,225"/>
-<area shape="rect" id="node5" href="$classIO__Port.html" title="Accessor for I/O&#45;Space. " alt="" coords="119,95,186,121"/>
-<area shape="rect" id="node6" href="$unioncga__attribute.html" title="cga_attribute" alt="" coords="239,5,336,32"/>
-<area shape="rect" id="node7" href="$structcga__element.html" title="cga_element" alt="" coords="358,95,454,121"/>
-</map>

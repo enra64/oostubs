@@ -1,5 +1,0 @@
-<map id="Serial::transmit" name="Serial::transmit">
-<area shape="rect" id="node2" href="$classSerial.html#a2ebc6cf48988c16d87b2584b47261ea1" title="gibt eine Zeichenkette an der aktuellen Position aus " alt="" coords="164,31,252,57"/>
-<area shape="rect" id="node3" href="$classLog.html#a48b8faa1f9d2590c6fb650f1004e73c9" title="flush the content of the internal buffer " alt="" coords="313,5,391,32"/>
-<area shape="rect" id="node4" href="$classSerial.html#a5b32c394c0ff923a4ef1c13cfb20a6ba" title="Destructor. " alt="" coords="300,56,404,83"/>
-</map>

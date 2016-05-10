@@ -1,6 +1,0 @@
-<map id="include/object/cpu.h" name="include/object/cpu.h">
-<area shape="rect" id="node2" href="$intlock_8h.html" title="include/locking/intlock.h" alt="" coords="5,80,167,107"/>
-<area shape="rect" id="node4" href="$exceptions_8cc.html" title="Interrupt&#45;Behandlungsfunktionen. " alt="" coords="191,80,370,107"/>
-<area shape="rect" id="node5" href="$pic_8cc.html" title="src/machine/pic.cc" alt="" coords="395,80,527,107"/>
-<area shape="rect" id="node3" href="$keyctrl_8cc.html" title="src/machine/keyctrl.cc" alt="" coords="9,155,163,181"/>
-</map>

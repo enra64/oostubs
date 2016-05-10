@@ -1,4 +1,0 @@
-<map id="CPU::halt" name="CPU::halt">
-<area shape="rect" id="node2" href="$exceptions_8cc.html#aa9be12416ab5fcc6ced0ea49ff7825de" title="printException" alt="" coords="133,5,239,32"/>
-<area shape="rect" id="node3" href="$exceptions_8cc.html#a17ac45e3213989a19bb1472093ca30e6" title="Entry point for exceptions. " alt="" coords="287,5,365,32"/>
-</map>

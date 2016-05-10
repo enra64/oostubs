@@ -1,5 +1,0 @@
-<map id="Grafische Darstellung der Klassenhierarchie" name="Grafische Darstellung der Klassenhierarchie">
-<area shape="rect" id="node1" href="$classInterruptStorage.html" title="Administrationseinheit für die Interruptweitergabe. " alt="" coords="5,5,120,32"/>
-<area shape="rect" id="node2" href="$classInterruptManager.html" title="Administrationseinheit für die Interruptweitergabe. " alt="" coords="168,31,288,57"/>
-<area shape="rect" id="node3" href="$classPIC.html" title="Treiber für den PIC (Programmable Interrupt Controller) " alt="" coords="40,56,85,83"/>
-</map>
