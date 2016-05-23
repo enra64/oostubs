@@ -1,0 +1,161 @@
+A:
+Was für ein Fehler ist aufgetreten?
+	Ein invalider opcode wurde aufgerufen, indem ud2 aufgerufen wurde.
+	UD2 erzeugt nur diese Exception, und ist ansonsten eine NOP. 
+	http://x86.renejeschke.de/html/file_module_x86_id_318.html
+	Außerdem div/0.
+
+In welcher Quellcodezeile trat dieser Fehler auf? 
+	Task3A.cc:48
+
+Wie sind Sie vorgegangen? 
+	make debug
+	break exceptions.cc:99
+	continue
+	info stack
+	info locals
+
+	task3A.cc angeguckt
+	"l* <address> könnte sehr nützlich sein" gesehen
+	alles was nach adresse aussieht eingetippt
+	help l
+	set listsize 1
+	list *0x102FFF -> program counter wert des letzten calls in 
+			  unserem code vor der exception
+
+Wie ist der Stack bei einer x86 CPU-Exception normalerweise aufgebaut?
+	top/.../error flags/code segment/instruction pointer //16-bit realmode
+	top/.../error flags/code segment/instruction pointer //32-bit protected mode, no privilege change or error code
+	top/.../error flags/code segment/instruction pointer/error code //32-bit protected mode, no privilege change but an error code
+	top/.../user stack segment/user stack pointer/error flags/code segment/instruction pointer //32-bit protected mode, privilege change but no error code
+	top/.../user stack segment/user stack pointer/error flags/code segment/instruction pointer/error code //32-bit protected mode, privilege change and error code
+
+Welche Daten befinden sich auf diesem in welcher Reihenfolge?
+	s.o.
+
+Was sind traps, faults und was aborts? Worin unterscheiden sie sich?
+	Fault: Exception die korrigiert werden kann. Die gleiche Zeile kann dann erneut ausgeführt werden.
+	Trap: Exception die benutzt werden kann um syscalls auszuführen oder den debugger zu starten etc., quasi eine gewollte exception, oder ein fehler im usercode.
+	Abort: eine exception die nicht recovered werden kann, z.B. hw fehler
+
+B:
+break task3B.cc:38
+info stack
+frame 0
+info frame
+info args
+info locals
+
+Was sind die sich wiederholenden Strukturen? 
+	u.a. die parameter für runFib, base pointer, rücksprungadressen
+Wie erscheint das Array "ende" im Speicher? 
+	Auf dem Stack.
+In welcher Reihenfolge werden Parameter bei einem Funktionsaufruf auf den Stack gelegt?
+	Zuerst wird das letzte Argument auf den Stack gelegt, zuletzt das erste.
+	
+C:
+Was passiert?:
+    Der Code einer Funktion wird so überschrieben, dass eigener Code aufgerufen wird.
+Wann könnte dies real passieren?:
+    z.B. bei einem Buffer overflow könnte Funktionsspeicher überschrieben werden, der dann später vom eigentlichen Code aufgerufen wird.
+Welchen Schadcode führt der Angreifer aus?
+   // funktions bla 
+   0x00108b8f <+3759>:	push   %ebp
+   0x00108b90 <+3760>:	mov    %esp,%ebp
+   0x00108b92 <+3762>:	sub    $0x10,%esp
+   
+   // imm 0xB8240 in unseren stackbereich - 0xB8000 ist cga buffer...
+   0x00108b95 <+3765>:	movl   $0xb8240,-0x4(%ebp) 
+
+   // somehow this writes into the buffer
+   0x00108b9c <+3772>:	mov    -0x4(%ebp),%eax//immer gleich
+   0x00108b9f <+3775>:	lea    0x2(%eax),%edx//auch immer gleich   
+   0x00108ba2 <+3778>:	mov    %edx,-0x4(%ebp)//auch immer gleich
+   0x00108ba5 <+3781>:	movw   $0x2553,(%eax)// wechselt blöderweise
+
+   0x00108baa <+3786>:	mov    -0x4(%ebp),%eax
+   0x00108bad <+3789>:	lea    0x2(%eax),%edx
+   0x00108bb0 <+3792>:	mov    %edx,-0x4(%ebp)
+   0x00108bb3 <+3795>:	movw   $0x1545,(%eax)
+
+   0x00108bb8 <+3800>:	mov    -0x4(%ebp),%eax
+   0x00108bbb <+3803>:	lea    0x2(%eax),%edx   
+   0x00108bbe <+3806>:	mov    %edx,-0x4(%ebp)
+   0x00108bc1 <+3809>:	movw   $0x2443,(%eax)
+
+   0x00108bc6 <+3814>:	mov    -0x4(%ebp),%eax
+   0x00108bc9 <+3817>:	lea    0x2(%eax),%edx   
+   0x00108bcc <+3820>:	mov    %edx,-0x4(%ebp)
+   0x00108bcf <+3823>:	movw   $0x1455,(%eax)
+
+   0x00108bd4 <+3828>:	mov    -0x4(%ebp),%eax
+   0x00108bd7 <+3831>:	lea    0x2(%eax),%edx   
+   0x00108bda <+3834>:	mov    %edx,-0x4(%ebp)
+   0x00108bdd <+3837>:	movw   $0x2352,(%eax)
+   
+   0x00108be2 <+3842>:	mov    -0x4(%ebp),%eax
+   0x00108be5 <+3845>:	lea    0x2(%eax),%edx   
+   0x00108be8 <+3848>:	mov    %edx,-0x4(%ebp)
+   0x00108beb <+3851>:	movw   $0x1349,(%eax)
+
+   0x00108bf0 <+3856>:	mov    -0x4(%ebp),%eax
+   0x00108bf3 <+3859>:	lea    0x2(%eax),%edx   
+   0x00108bf6 <+3862>:	mov    %edx,-0x4(%ebp)
+   0x00108bf9 <+3865>:	movw   $0x1554,(%eax)
+
+   //%ebp=0x10B4C <stack+3692>; <stack+3688>=0x000B824E
+   0x00108bfe <+3870>:	mov    -0x4(%ebp),%eax
+   // eax now contains 0x000B824E, as does edx.
+   0x00108c01 <+3873>:	lea    0x2(%eax),%edx
+   // eax = 0x000B824E(754254), edx = 0xB8250(754256)
+   // -> wir gehen zwei byte weiter!
+   // adresse vom nächsten displaybyte speichern
+   0x00108c04 <+3876>:	mov    %edx,-0x4(%ebp)
+   // move 0x3559= 00110101 01011001 into the address pointed to by eax
+   // 0(no blink) 011(cyan) 0101(magenta) 
+   // 01011001 (ascii Y) into the display value
+   0x00108c07 <+3879>:	movw   $0x3559,(%eax)
+   
+   0x00108c0c <+3884>:	mov    -0x4(%ebp),%eax
+   0x00108c0f <+3887>:	lea    0x2(%eax),%edx
+   0x00108c12 <+3890>:	mov    %edx,-0x4(%ebp)
+   0x00108c15 <+3893>:	movw   $0x3420,(%eax)
+
+   0x00108c1a <+3898>:	mov    -0x4(%ebp),%eax
+   0x00108c1d <+3901>:	lea    0x2(%eax),%edx   
+   0x00108c20 <+3904>:	mov    %edx,-0x4(%ebp)
+   0x00108c23 <+3907>:	movw   $0x3342,(%eax)
+
+   0x00108c28 <+3912>:	mov    -0x4(%ebp),%eax
+   0x00108c2b <+3915>:	lea    0x2(%eax),%edx   
+   0x00108c2e <+3918>:	mov    %edx,-0x4(%ebp)
+   0x00108c31 <+3921>:	movw   $0x3252,(%eax)
+   
+   0x00108c36 <+3926>:	mov    -0x4(%ebp),%eax
+   0x00108c39 <+3929>:	lea    0x2(%eax),%edx
+   0x00108c3c <+3932>:	mov    %edx,-0x4(%ebp)
+   0x00108c3f <+3935>:	movw   $0x3145,(%eax)
+
+   0x00108c44 <+3940>:	mov    -0x4(%ebp),%eax
+   0x00108c47 <+3943>:	lea    0x2(%eax),%edx   
+   0x00108c4a <+3946>:	mov    %edx,-0x4(%ebp)
+   0x00108c4d <+3949>:	movw   $0x3041,(%eax)
+
+   0x00108c52 <+3954>:	mov    -0x4(%ebp),%eax
+   0x00108c55 <+3957>:	lea    0x2(%eax),%edx
+   0x00108c58 <+3960>:	mov    %edx,-0x4(%ebp)
+   0x00108c5b <+3963>:	movw   $0x2043,(%eax)
+   
+   0x00108c60 <+3968>:	mov    -0x4(%ebp),%eax
+   0x00108c63 <+3971>:	lea    0x2(%eax),%edx
+   0x00108c66 <+3974>:	mov    %edx,-0x4(%ebp)
+   0x00108c69 <+3977>:	movw   $0x1048,(%eax)
+   
+   0x00108c6e <+3982>:	jmp    0x108c6e <stack+3982> //endless loop
+
+Wie versteckt sich der Angreifer vor Analysen? 
+    Base64-Obfuscation
+Wie konnte er seinen Code ausführen? 
+        Der Code einer Funktion wird so überschrieben, dass eigener Code aufgerufen wird.
+Wie hätte man dies verhindern können?
+    Strenge Unterscheidung zwischen program/nonprogram ram, keine funktionen schreiben die funktionen als parameter haben?

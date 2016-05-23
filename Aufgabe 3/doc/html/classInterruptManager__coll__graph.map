@@ -1,0 +1,6 @@
+<map id="InterruptManager" name="InterruptManager">
+<area shape="rect" id="node2" href="$classInterruptStorage.html" title="Administrationseinheit für die Interruptweitergabe. " alt="" coords="5,171,120,197"/>
+<area shape="rect" id="node3" href="$classPanic.html" title="Standardinterruptbehandlungsroutine. " alt="" coords="134,81,189,108"/>
+<area shape="rect" id="node4" href="$classInterruptHandler.html" title="Basisklasse für die Interruptbehandlung. " alt="" coords="21,5,136,32"/>
+<area shape="rect" id="node5" href="$classPIC.html" title="Treiber für den PIC (Programmable Interrupt Controller) " alt="" coords="144,171,189,197"/>
+</map>

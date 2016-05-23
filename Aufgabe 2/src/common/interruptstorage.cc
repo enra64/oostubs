@@ -12,6 +12,7 @@
 #include "common/interruptstorage.h"
 #include "object/kout.h"
 #include "object/cpu.h"
+#include "object/imanager.h"
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *\
 #                    METHODS                      # 
@@ -27,10 +28,16 @@ void InterruptStorage::assign(int iNum, InterruptHandler& handler){
 }
 
 void InterruptStorage::handle(int iNum){
+  mCurrentInterrupt = iNum;
   mPanic.currentInterrupt(iNum);
   mHandlers[iNum]->trigger();
+  iManager.ack(iNum);
+  mCurrentInterrupt = -1;
 }
 
-//bool InterruptStorage::currentInterrupt(int& iNum){
-//  
-//}
+bool InterruptStorage::currentInterrupt(int& iNum){
+  if(mCurrentInterrupt == -1)
+    return false;
+  iNum = mCurrentInterrupt;
+  return true;
+}

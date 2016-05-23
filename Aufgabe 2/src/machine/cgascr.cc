@@ -58,6 +58,12 @@ void CGA_Screen::show (unsigned short x, unsigned short y, char character, unsig
   this->screenBuffer[y][x].attribute.byte = attribute;
 }
 
+void CGA_Screen::show (unsigned short x, unsigned short y, char character) {
+  // set character and attribute in video memory
+  this->screenBuffer[y][x].character = character;
+  this->screenBuffer[y][x].attribute.byte = defaultAttributes.byte;
+}
+
 void CGA_Screen::print (const char* string, unsigned int n) {
   // position of screen where printing happens
   unsigned short x, y;

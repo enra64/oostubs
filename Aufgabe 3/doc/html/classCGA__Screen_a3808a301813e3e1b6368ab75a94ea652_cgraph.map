@@ -1,0 +1,8 @@
+<map id="CGA_Screen::scrollup" name="CGA_Screen::scrollup">
+<area shape="rect" id="node2" href="$cgascr_8cc.html#a6e6bcac2e080fd8066ffd4b46cc64db0" title="memcpy" alt="" coords="243,5,315,32"/>
+<area shape="rect" id="node3" href="$cgascr_8cc.html#a9138eaf62e2ebaff35fe90d676b94126" title="memset" alt="" coords="244,56,313,83"/>
+<area shape="rect" id="node4" href="$classCGA__Screen.html#a6f47426c0cf0662b6835d64e08cf929e" title="get the cursor position " alt="" coords="205,157,352,184"/>
+<area shape="rect" id="node7" href="$classCGA__Screen.html#a346b7ccc05356f76e738a76a24510e33" title="set the cursor position " alt="" coords="205,107,352,133"/>
+<area shape="rect" id="node5" href="$classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port. " alt="" coords="400,107,500,133"/>
+<area shape="rect" id="node6" href="$classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port. " alt="" coords="404,157,496,184"/>
+</map>

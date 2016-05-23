@@ -1,0 +1,5 @@
+<map id="CGA_Screen" name="CGA_Screen">
+<area shape="rect" id="node2" href="$classIO__Port.html" title="Accessor for I/O&#45;Space. " alt="" coords="5,95,72,121"/>
+<area shape="rect" id="node3" href="$unioncga__attribute.html" title="cga_attribute" alt="" coords="125,5,222,32"/>
+<area shape="rect" id="node4" href="$structcga__element.html" title="cga_element" alt="" coords="244,95,340,121"/>
+</map>

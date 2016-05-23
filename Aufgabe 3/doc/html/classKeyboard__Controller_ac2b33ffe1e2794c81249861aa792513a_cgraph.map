@@ -1,0 +1,8 @@
+<map id="Keyboard_Controller::get_ascii_code" name="Keyboard_Controller::get_ascii_code">
+<area shape="rect" id="node2" href="$classKey.html#abb65ed9de2b4a8c24f557416b484df34" title="set ascii value " alt="" coords="209,5,289,32"/>
+<area shape="rect" id="node3" href="$classKey.html#ae67075af1a5c0a7f585e8e61fc8515f8" title="set scancode value " alt="" coords="195,56,304,83"/>
+<area shape="rect" id="node4" href="$classKey.html#a4a8da77b0cb57bf89bffa3903c2f79ce" title="Key::num_lock" alt="" coords="195,107,304,133"/>
+<area shape="rect" id="node5" href="$classKey.html#af4fa809960860523573abd695e3f8fbe" title="Key::alt_right" alt="" coords="200,157,299,184"/>
+<area shape="rect" id="node6" href="$classKey.html#a62e735f4121d8984d994a508bdd6a74b" title="Key::shift" alt="" coords="210,208,289,235"/>
+<area shape="rect" id="node7" href="$classKey.html#a45fb60e270f30b9f23e28259e851b14a" title="Key::caps_lock" alt="" coords="193,259,305,285"/>
+</map>

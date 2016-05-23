@@ -1,0 +1,7 @@
+<map id="include/device/interruptmanager.h" name="include/device/interruptmanager.h">
+<area shape="rect" id="node2" href="$interruptstorage_8h.html" title="common/interruptstorage.h" alt="" coords="45,80,222,107"/>
+<area shape="rect" id="node5" href="$pic_8h.html" title="machine/pic.h" alt="" coords="246,80,349,107"/>
+<area shape="rect" id="node3" href="$interrupthandler_8h.html" title="common/interrupthandler.h" alt="" coords="5,229,181,256"/>
+<area shape="rect" id="node4" href="$panic_8h.html" title="common/panic.h" alt="" coords="83,155,202,181"/>
+<area shape="rect" id="node6" href="$io__port_8h.html" title="machine/io_port.h" alt="" coords="235,155,360,181"/>
+</map>

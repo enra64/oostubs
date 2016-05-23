@@ -1,0 +1,15 @@
+<map id="Task2::action" name="Task2::action">
+<area shape="rect" id="node2" href="$classCGA__Screen.html#a6f47426c0cf0662b6835d64e08cf929e" title="get the cursor position " alt="" coords="719,5,865,32"/>
+<area shape="rect" id="node5" href="$classCGA__Screen.html#a346b7ccc05356f76e738a76a24510e33" title="set the cursor position " alt="" coords="719,157,865,184"/>
+<area shape="rect" id="node6" href="$classCGA__Stream.html#a73572f5377a28f09ee9dc3af7b5a65b9" title="ausgeben des Inhaltes des internen Puffers " alt="" coords="155,132,291,159"/>
+<area shape="rect" id="node12" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline " alt="" coords="199,259,246,285"/>
+<area shape="rect" id="node3" href="$classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port. " alt="" coords="913,107,1013,133"/>
+<area shape="rect" id="node4" href="$classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port. " alt="" coords="917,5,1009,32"/>
+<area shape="rect" id="node7" href="$classCGA__Screen.html#a6c295831093cab87c3944e39160965b9" title="gibt eine Zeichenkette an der aktuellen Position aus " alt="" coords="339,107,471,133"/>
+<area shape="rect" id="node8" href="$classCGA__Screen.html#a6dfbfb197371c461938cfcc9c5d70187" title="print a character to a specific position " alt="" coords="525,56,664,83"/>
+<area shape="rect" id="node9" href="$classCGA__Screen.html#a3808a301813e3e1b6368ab75a94ea652" title="das aktuelle Display wird eine Zeile nach oben gescrollt " alt="" coords="519,107,671,133"/>
+<area shape="rect" id="node10" href="$cgascr_8cc.html#a6e6bcac2e080fd8066ffd4b46cc64db0" title="memcpy" alt="" coords="756,56,828,83"/>
+<area shape="rect" id="node11" href="$cgascr_8cc.html#a9138eaf62e2ebaff35fe90d676b94126" title="memset" alt="" coords="757,107,827,133"/>
+<area shape="rect" id="node13" href="$classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer " alt="" coords="347,309,462,336"/>
+<area shape="rect" id="node14" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen " alt="" coords="532,284,657,311"/>
+</map>

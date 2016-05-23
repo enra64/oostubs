@@ -12,7 +12,7 @@ DOCGEN=doxygen
 
 CFLAGS+=-fno-exceptions -m32 -fno-stack-protector
 CXXFLAGS+=${CFLAGS} -fno-rtti -nostdinc++
-LDFLAGS=-e entry -T misc/sections -melf_i386 -l stdc++
+LDFLAGS=-e entry -T misc/sections -melf_i386
 ASMFLAGS=--32
 
 OBJDUMPFLAGS=-Cxd

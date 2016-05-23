@@ -70,4 +70,7 @@ void Task3B::action(){
   unsigned int ende[]={0xEEEEEEEE, 0x11111111, 0xDDDDDDDD, 0xEEEEEEEE};
   
   doTask3BAction(ende);
+  
+  
+  int stop = 0;
 }

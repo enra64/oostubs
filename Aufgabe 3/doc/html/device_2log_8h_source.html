@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>OOStuBS - Technische Informatik II (TI-II): include/device/log.h Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">OOStuBS - Technische Informatik II (TI-II)
+   &#160;<span id="projectnumber">2.4</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.11 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_00639e50a5e06ba932c41b2ae621276d.html">device</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">log.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="device_2log_8h.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *                                 Technische Informatik II                                      *</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *                                                                                               *</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *                                          L O G                                                *</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *                                                                                               *</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef __log_include__</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define __log_include__</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="o__stream_8h.html">common/o_stream.h</a>&quot;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="serial_8h.html">machine/serial.h</a>&quot;</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classLog.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLog.html">Log</a> : <span class="keyword">public</span> <a class="code" href="classO__Stream.html">O_Stream</a>, <span class="keyword">public</span> <a class="code" href="classSerial.html">Serial</a> {</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keyword">public</span>:</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classLog.html#a48b8faa1f9d2590c6fb650f1004e73c9">flush</a>();</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    </div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classLog.html#a8af17a5dec5e6f5071bb5e0370671cbb">setAttributes</a>(<span class="keywordtype">int</span> <a class="code" href="classO__Stream.html#a0d8b6853d8d92d8da6ac68382bc801de">fgColor</a>, <span class="keywordtype">int</span> <a class="code" href="classO__Stream.html#ab18e01037e78b3dd987a8b13462864ca">bgColor</a>, <span class="keywordtype">bool</span> <a class="code" href="classO__Stream.html#a60ae8df3294b9c008097282737211bc6">blink</a>);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="classLog_html_a8af17a5dec5e6f5071bb5e0370671cbb"><div class="ttname"><a href="classLog.html#a8af17a5dec5e6f5071bb5e0370671cbb">Log::setAttributes</a></div><div class="ttdeci">virtual void setAttributes(int fgColor, int bgColor, bool blink)</div><div class="ttdoc">does nothing, since coloring is not available over the serial console </div><div class="ttdef"><b>Definition:</b> <a href="log_8cc_source.html#l00016">log.cc:16</a></div></div>
+<div class="ttc" id="classLog_html"><div class="ttname"><a href="classLog.html">Log</a></div><div class="ttdoc">Logging facility for debug messages. </div><div class="ttdef"><b>Definition:</b> <a href="device_2log_8h_source.html#l00020">log.h:20</a></div></div>
+<div class="ttc" id="classO__Stream_html_a0d8b6853d8d92d8da6ac68382bc801de"><div class="ttname"><a href="classO__Stream.html#a0d8b6853d8d92d8da6ac68382bc801de">O_Stream::fgColor</a></div><div class="ttdeci">int fgColor</div><div class="ttdef"><b>Definition:</b> <a href="o__stream_8h_source.html#l00094">o_stream.h:94</a></div></div>
+<div class="ttc" id="o__stream_8h_html"><div class="ttname"><a href="o__stream_8h.html">o_stream.h</a></div></div>
+<div class="ttc" id="serial_8h_html"><div class="ttname"><a href="serial_8h.html">serial.h</a></div></div>
+<div class="ttc" id="classO__Stream_html_a60ae8df3294b9c008097282737211bc6"><div class="ttname"><a href="classO__Stream.html#a60ae8df3294b9c008097282737211bc6">O_Stream::blink</a></div><div class="ttdeci">bool blink</div><div class="ttdef"><b>Definition:</b> <a href="o__stream_8h_source.html#l00100">o_stream.h:100</a></div></div>
+<div class="ttc" id="classLog_html_a48b8faa1f9d2590c6fb650f1004e73c9"><div class="ttname"><a href="classLog.html#a48b8faa1f9d2590c6fb650f1004e73c9">Log::flush</a></div><div class="ttdeci">virtual void flush()</div><div class="ttdoc">flush the content of the internal buffer </div><div class="ttdef"><b>Definition:</b> <a href="log_8cc_source.html#l00011">log.cc:11</a></div></div>
+<div class="ttc" id="classSerial_html"><div class="ttname"><a href="classSerial.html">Serial</a></div><div class="ttdef"><b>Definition:</b> <a href="serial_8h_source.html#l00018">serial.h:18</a></div></div>
+<div class="ttc" id="classO__Stream_html"><div class="ttname"><a href="classO__Stream.html">O_Stream</a></div><div class="ttdoc">Manipulation class providing formatted output support. </div><div class="ttdef"><b>Definition:</b> <a href="o__stream_8h_source.html#l00090">o_stream.h:90</a></div></div>
+<div class="ttc" id="classO__Stream_html_ab18e01037e78b3dd987a8b13462864ca"><div class="ttname"><a href="classO__Stream.html#ab18e01037e78b3dd987a8b13462864ca">O_Stream::bgColor</a></div><div class="ttdeci">int bgColor</div><div class="ttdef"><b>Definition:</b> <a href="o__stream_8h_source.html#l00097">o_stream.h:97</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Fre Mai 20 2016 19:05:20 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

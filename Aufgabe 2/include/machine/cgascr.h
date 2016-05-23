@@ -87,6 +87,8 @@ class CGA_Screen {
      * @param attribute display attributes
      */
     void show(unsigned short x, unsigned short y, char character, unsigned char attribute);
+
+    void show(unsigned short x, unsigned short y, char character);
     
     /** 
      * \~german

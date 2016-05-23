@@ -92,6 +92,7 @@ class InterruptStorage {
   protected:
      InterruptHandler* mHandlers[48];
   private:
+     int mCurrentInterrupt;
      Panic mPanic;
   };
 

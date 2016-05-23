@@ -1,0 +1,7 @@
+<map id="include/device/interruptmanager.h" name="include/device/interruptmanager.h">
+<area shape="rect" id="node2" href="$imanager_8h.html" title="include/object/imanager.h" alt="" coords="95,80,265,107"/>
+<area shape="rect" id="node5" href="$interruptmanager_8cc.html" title="src/device/interruptmanager.cc" alt="" coords="290,80,491,107"/>
+<area shape="rect" id="node6" href="$main_8cc.html" title="Grunddatei von OOStuBS. " alt="" coords="516,80,607,107"/>
+<area shape="rect" id="node3" href="$keyboard_8cc.html" title="src/device/keyboard.cc" alt="" coords="5,155,163,181"/>
+<area shape="rect" id="node4" href="$exceptions_8cc.html" title="Interrupt&#45;Behandlungsfunktionen. " alt="" coords="187,155,365,181"/>
+</map>

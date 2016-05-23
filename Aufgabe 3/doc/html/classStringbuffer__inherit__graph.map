@@ -1,0 +1,5 @@
+<map id="Stringbuffer" name="Stringbuffer">
+<area shape="rect" id="node2" href="$classO__Stream.html" title="Manipulation class providing formatted output support. " alt="" coords="63,80,144,107"/>
+<area shape="rect" id="node3" href="$classCGA__Stream.html" title="CGA basierte Ausgabe, ählich zu std::cout von C++. " alt="" coords="5,155,105,181"/>
+<area shape="rect" id="node4" href="$classLog.html" title="Logging facility for debug messages. " alt="" coords="130,155,173,181"/>
+</map>

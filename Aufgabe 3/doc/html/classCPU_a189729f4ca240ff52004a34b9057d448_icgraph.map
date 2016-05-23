@@ -1,0 +1,5 @@
+<map id="CPU::halt" name="CPU::halt">
+<area shape="rect" id="node2" href="$classPanic.html#a2b509a675cded39f5422ef625261c6ba" title="behandelt unbekannte oder nicht&#45;registrierte Interrupts " alt="" coords="137,5,235,32"/>
+<area shape="rect" id="node3" href="$exceptions_8cc.html#aa9be12416ab5fcc6ced0ea49ff7825de" title="printException" alt="" coords="133,56,239,83"/>
+<area shape="rect" id="node4" href="$exceptions_8cc.html#a17ac45e3213989a19bb1472093ca30e6" title="Entry point for exceptions. " alt="" coords="287,56,365,83"/>
+</map>

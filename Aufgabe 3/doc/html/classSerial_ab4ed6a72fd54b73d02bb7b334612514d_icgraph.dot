@@ -1,0 +1,14 @@
+digraph "Serial::status"
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Serial::status",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Serial::print",height=0.2,width=0.4,color="black",URL="$classSerial.html#a2ebc6cf48988c16d87b2584b47261ea1",tooltip="gibt eine Zeichenkette an der aktuellen Position aus "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Log::flush",height=0.2,width=0.4,color="black",URL="$classLog.html#a48b8faa1f9d2590c6fb650f1004e73c9",tooltip="flush the content of the internal buffer "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Serial::~Serial",height=0.2,width=0.4,color="black",URL="$classSerial.html#a5b32c394c0ff923a4ef1c13cfb20a6ba",tooltip="Destructor. "];
+}

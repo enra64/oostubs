@@ -26,15 +26,10 @@ void Keyboard::plugin(){
 
 void Keyboard::trigger(){
     Key k = keyboard.key_hit();
-    unsigned short x,y;
     if(k.valid()){
-      if(k.ctrl() && k.alt() && (((char)k) == 'q')){
+      if(k.ctrl() && k.alt() && (((char)k) == 'q'))
         reboot();
-      }
-      kout.getpos(x, y);
-      kout.setpos(KEYBOARD_X, KEYBOARD_Y);
-      kout << k.ascii();
-      kout.flush();
-      kout.setpos(x, y);
+      
+      kout.show(KEYBOARD_X, KEYBOARD_Y, k.ascii());
     }
 }

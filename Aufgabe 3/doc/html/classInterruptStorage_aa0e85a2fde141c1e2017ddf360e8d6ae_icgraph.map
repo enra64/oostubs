@@ -1,0 +1,6 @@
+<map id="InterruptStorage::assign" name="InterruptStorage::assign">
+<area shape="rect" id="node2" href="$classInterruptStorage.html#a18d808074e430c8e62efe0b6acb77d97" title="Standardkonstruktor. " alt="" coords="215,5,385,47"/>
+<area shape="rect" id="node3" href="$classInterruptManager.html#a6b6f24b03cad03d67d2a7889ce2ae926" title="Assign a handler to an interrupt. " alt="" coords="217,71,383,98"/>
+<area shape="rect" id="node4" href="$classKeyboard.html#a6d362a122a7c417ff1a5c60152746d61" title="aktiviert den Interruptmechanismus für die Tastatur " alt="" coords="433,71,552,98"/>
+<area shape="rect" id="node5" href="$classTask2.html#a4adb42b6119375dfec56808c158dd7dc" title="Default constructor. " alt="" coords="600,71,703,98"/>
+</map>

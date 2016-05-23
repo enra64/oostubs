@@ -48,6 +48,8 @@ void Task3A::action(){
   asm("ud2");
   unsigned int i=20;
   while(i){
+    if(i == 1)
+        break;
     kout << "now: "  << 1000/--i << endl;
   }
 }

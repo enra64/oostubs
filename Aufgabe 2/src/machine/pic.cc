@@ -97,7 +97,12 @@ void PIC::forbid(Interrupts interrupt){
 }
 
 void PIC::ack(Interrupts interrupt){
-  // get appropriate io_port
-  IO_Port maskPort(interrupt < 40 ? 0x20 : 0xa0);
-  maskPort.outb(0x20);
+  IO_Port masterPort(0x20);
+  masterPort.outb(0x20);
+  // because slave interrupts trigger an interrupt on master, we have to ack
+  // on both master and slave in that case
+  if(interrupt >= 40){
+    IO_Port slavePort(0xa0);
+    slavePort.outb(0x20);
+  }
 }

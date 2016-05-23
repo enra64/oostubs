@@ -43,6 +43,7 @@
      *  \param handler a reference to the Handler object
      **/
     void assign(int iNum, InterruptHandler& handler);
+    void ack(int iNum);
  };
 
 #endif

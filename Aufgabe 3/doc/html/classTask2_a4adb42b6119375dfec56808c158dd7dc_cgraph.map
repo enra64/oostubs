@@ -1,0 +1,11 @@
+<map id="Task2::Task2" name="Task2::Task2">
+<area shape="rect" id="node2" href="$classCGA__Screen.html#a346b7ccc05356f76e738a76a24510e33" title="set the cursor position " alt="" coords="333,5,479,32"/>
+<area shape="rect" id="node4" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline " alt="" coords="192,95,239,121"/>
+<area shape="rect" id="node7" href="$classKeyboard.html#a6d362a122a7c417ff1a5c60152746d61" title="aktiviert den Interruptmechanismus für die Tastatur " alt="" coords="156,145,275,172"/>
+<area shape="rect" id="node3" href="$classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port. " alt="" coords="747,81,847,108"/>
+<area shape="rect" id="node5" href="$classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer " alt="" coords="349,56,463,83"/>
+<area shape="rect" id="node6" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen " alt="" coords="555,56,681,83"/>
+<area shape="rect" id="node8" href="$classInterruptManager.html#a6b6f24b03cad03d67d2a7889ce2ae926" title="Assign a handler to an interrupt. " alt="" coords="323,157,489,184"/>
+<area shape="rect" id="node9" href="$classInterruptStorage.html#aa0e85a2fde141c1e2017ddf360e8d6ae" title="bindet ein InterruptHandler Objekt an einen speziellen Interrupt " alt="" coords="537,107,699,133"/>
+<area shape="rect" id="node10" href="$classPIC.html#a62ac9996c8ecfca65e2529655050b26b" title="Erlaubt einen speziellen Interrupt von einem Peripheriegerät. " alt="" coords="577,157,659,184"/>
+</map>

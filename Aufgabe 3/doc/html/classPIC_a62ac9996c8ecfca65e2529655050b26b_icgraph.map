@@ -1,0 +1,5 @@
+<map id="PIC::allow" name="PIC::allow">
+<area shape="rect" id="node2" href="$classInterruptManager.html#a6b6f24b03cad03d67d2a7889ce2ae926" title="Assign a handler to an interrupt. " alt="" coords="136,5,303,32"/>
+<area shape="rect" id="node3" href="$classKeyboard.html#a6d362a122a7c417ff1a5c60152746d61" title="aktiviert den Interruptmechanismus für die Tastatur " alt="" coords="351,5,469,32"/>
+<area shape="rect" id="node4" href="$classTask2.html#a4adb42b6119375dfec56808c158dd7dc" title="Default constructor. " alt="" coords="517,5,620,32"/>
+</map>
