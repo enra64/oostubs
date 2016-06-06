@@ -32,6 +32,8 @@ private:
 
   /** \brief flag set upon start of scheduler **/
     bool started;
+    
+    int mQueueSize = 0;
 
 
 public:

@@ -68,12 +68,11 @@ void Task4::action(){
 	scheduler.insert(counter1);
   log << "Inserting Counter 2 in Scheduler" << endl;
 	scheduler.insert(counter2);
-
-	// todo
-	// add never ending loop to verify first context is properly set
-	// remove it afterwards
-	while(1)
-        scheduler.yield();
+  
+  exit();
+  
+  //enableCoop();
+  //while(1) scheduler.yield();
 }
 
 void Task4::enableCoop(){

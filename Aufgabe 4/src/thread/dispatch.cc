@@ -11,6 +11,7 @@
 \* * * * * * * * * * * * * * * * * * * * * * * * */
 
 #include "thread/dispatch.h"
+#include "object/log.h"
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *\
 #                   METHODS                       #
@@ -25,4 +26,5 @@ void Dispatcher::dispatch(Thread& next){
  	Thread* oldThread = current;
  	current = &next;
  	oldThread->context.swap(next.context);
+  log << "dispatch, swapped contexts" << endl;
 }
