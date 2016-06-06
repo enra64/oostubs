@@ -1,0 +1,46 @@
+<map id="IO_Port::inb" name="IO_Port::inb">
+<area shape="rect" id="node2" href="$classCGA__Screen.html#a6f47426c0cf0662b6835d64e08cf929e" title="get the cursor position " alt="" coords="145,156,292,183"/>
+<area shape="rect" id="node27" href="$classKeyboard__Controller.html#a13a0e454bd8c6ee99182d05770d7c44a" title="Default constructor, turns all LEDs off and set speed and delay maximal. " alt="" coords="349,283,497,325"/>
+<area shape="rect" id="node28" href="$classKeyboard__Controller.html#a686dd47e66ae9c2d9ccf1b9f84d3e99d" title="reboots the computer " alt="" coords="761,338,901,379"/>
+<area shape="rect" id="node29" href="$classKeyboard__Controller.html#a78cf6859d88097a0f2b6945fc86c1d21" title="get the last pressed key " alt="" coords="761,403,901,445"/>
+<area shape="rect" id="node30" href="$classKeyboard__Controller.html#aa213c738efd52d7986fb925e6aaa7d95" title="set the speed and delay of repeats of the keyboard. " alt="" coords="149,283,289,325"/>
+<area shape="rect" id="node31" href="$classKeyboard__Controller.html#a36dfc2c73c4031c8662e37159238d5b0" title="switch the specified LED of the keyboard on or off. " alt="" coords="149,401,289,442"/>
+<area shape="rect" id="node33" href="$classPIC.html#a62ac9996c8ecfca65e2529655050b26b" title="Erlaubt einen speziellen Interrupt von einem Peripheriegerät. " alt="" coords="177,517,260,544"/>
+<area shape="rect" id="node37" href="$classPIC.html#a62503865c7a32537d9cc3e71d4c439cd" title="verbietet einen speziellen Interrupt eines Peripheriegerätes " alt="" coords="176,568,261,595"/>
+<area shape="rect" id="node38" href="$classSerial.html#ab4ed6a72fd54b73d02bb7b334612514d" title="Serial::status" alt="" coords="169,619,268,645"/>
+<area shape="rect" id="node42" href="$classSerial.html#a9981486edd9ae1be487bd054f341c771" title="Serial::control" alt="" coords="167,669,270,696"/>
+<area shape="rect" id="node44" href="$classSerial.html#a503bb1a19820b192724c76d43268e6d2" title="Serial::baudRate" alt="" coords="364,720,483,747"/>
+<area shape="rect" id="node3" href="$classCGA__Screen.html#a6c295831093cab87c3944e39160965b9" title="gibt eine Zeichenkette an der aktuellen Position aus " alt="" coords="555,181,687,208"/>
+<area shape="rect" id="node16" href="$classTask1.html#a48ca608ac9cdc03ab6614a4f61e2448e" title="test the functionality of the Kout object " alt="" coords="1002,5,1117,32"/>
+<area shape="rect" id="node18" href="$classTask1.html#a587ce3fad20f9ec4ec88beefd08db49e" title="test the functionality of the Keyboard_Controller object " alt="" coords="988,309,1131,336"/>
+<area shape="rect" id="node19" href="$classTask2.html#aa5de17846032b02d6d0819cdc78b1b3e" title="prints the line " alt="" coords="1009,56,1110,83"/>
+<area shape="rect" id="node26" href="$classCGA__Screen.html#a3808a301813e3e1b6368ab75a94ea652" title="das aktuelle Display wird eine Zeile nach oben gescrollt " alt="" coords="347,131,499,157"/>
+<area shape="rect" id="node4" href="$classCGA__Stream.html#a73572f5377a28f09ee9dc3af7b5a65b9" title="ausgeben des Inhaltes des internen Puffers " alt="" coords="763,131,899,157"/>
+<area shape="rect" id="node25" href="$classCGA__Screen.html#a8bfd69c9fc770359fb8d6e3a02cbdd1e" title="Destructor. " alt="" coords="735,181,927,208"/>
+<area shape="rect" id="node5" href="$classKeyboard.html#a0d0359a4df20db7eb38dd769e2322353" title="einen auftretenden Tastaturinterrupt behandeln " alt="" coords="999,360,1120,387"/>
+<area shape="rect" id="node6" href="$exceptions_8cc.html#aa9be12416ab5fcc6ced0ea49ff7825de" title="printException" alt="" coords="1007,107,1112,133"/>
+<area shape="rect" id="node8" href="$analyse_8cc.html#adab0ef21ad15eeca2d4b96b98b59b356" title="Diese Funktion dient der Analyse des Prozedurstacks. " alt="" coords="979,208,1139,235"/>
+<area shape="rect" id="node20" href="$classTask4_1_1RotCursor.html#a33e3fee3981896223823f4b396339f40" title="start outputting the symbol " alt="" coords="975,157,1144,184"/>
+<area shape="rect" id="node24" href="$classTask4_1_1Counter.html#a93c77e391d4d89cf0c34c47b9521d464" title="start outputting and incrementing the counter value " alt="" coords="982,259,1137,285"/>
+<area shape="rect" id="node7" href="$exceptions_8cc.html#a17ac45e3213989a19bb1472093ca30e6" title="Entry point for exceptions. " alt="" coords="1254,107,1333,133"/>
+<area shape="rect" id="node9" href="$task3B_8cc.html#a1140e1f1ebb85d5c7103af6e0b522c22" title="printStack" alt="" coords="1253,360,1334,387"/>
+<area shape="rect" id="node10" href="$task3B_8cc.html#a4205b075c53452d0a4cb9966fe2bf855" title="runFib" alt="" coords="1481,309,1539,336"/>
+<area shape="rect" id="node11" href="$task3B_8cc.html#ad1b3bc944aac0dbdd041cc180ff8c37a" title="fib" alt="" coords="1625,360,1664,387"/>
+<area shape="rect" id="node12" href="$task3B_8cc.html#a5874bf2c7fd779b0760c4d5f16bb2d08" title="doTask3BAction" alt="" coords="1712,411,1831,437"/>
+<area shape="rect" id="node13" href="$classTask3B.html#aa803f35a028d2dc338d20d69ab592f20" title="prints the line " alt="" coords="1879,411,1989,437"/>
+<area shape="rect" id="node14" href="$main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point " alt="" coords="2037,436,2095,463"/>
+<area shape="rect" id="node15" href="$main_8cc.html#a9f9d2ea101dcc6e3cd7011dccc4331e0" title="Wait for user input via keyboard to select sub task. " alt="" coords="2143,436,2235,463"/>
+<area shape="rect" id="node17" href="$classTask1.html#a0d4029a13591e70af436c0ead066ea5c" title="parse and print multiboot information " alt="" coords="1243,31,1344,57"/>
+<area shape="rect" id="node21" href="$classTask4_1_1RotCursor.html#aa317aab41cd3e8f579df5dfeb1b99108" title="Task4::RotCursor::enableCoop" alt="" coords="1192,208,1395,235"/>
+<area shape="rect" id="node23" href="$classTask4_1_1Counter.html#a23b32a250857ab5e8fdc0b4fb5a0ee43" title="Task4::Counter::enableCoop" alt="" coords="1199,157,1388,184"/>
+<area shape="rect" id="node22" href="$classTask4.html#a5ec390882239e7957f43edaf891156eb" title="switch sub tasks to cooperative scheduling " alt="" coords="1443,208,1577,235"/>
+<area shape="rect" id="node32" href="$classKeyboard__Controller.html#aa517065c0ed4059b477dfb481539b1b2" title="interpret the reveived scancode and modifier bits " alt="" coords="353,401,493,442"/>
+<area shape="rect" id="node34" href="$classInterruptManager.html#a6b6f24b03cad03d67d2a7889ce2ae926" title="Assign a handler to an interrupt. " alt="" coords="340,517,507,544"/>
+<area shape="rect" id="node35" href="$classKeyboard.html#a6d362a122a7c417ff1a5c60152746d61" title="aktiviert den Interruptmechanismus für die Tastatur " alt="" coords="561,517,680,544"/>
+<area shape="rect" id="node36" href="$classTask2.html#a4adb42b6119375dfec56808c158dd7dc" title="Default constructor. " alt="" coords="779,469,882,496"/>
+<area shape="rect" id="node39" href="$classSerial.html#a2ebc6cf48988c16d87b2584b47261ea1" title="gibt eine Zeichenkette an der aktuellen Position aus " alt="" coords="379,619,467,645"/>
+<area shape="rect" id="node40" href="$classLog.html#a48b8faa1f9d2590c6fb650f1004e73c9" title="flush the content of the internal buffer " alt="" coords="581,568,660,595"/>
+<area shape="rect" id="node41" href="$classSerial.html#a5b32c394c0ff923a4ef1c13cfb20a6ba" title="Destructor. " alt="" coords="569,619,673,645"/>
+<area shape="rect" id="node43" href="$classSerial.html#a3667c3137f2df94716b5193f9fb736ab" title="Constructor. " alt="" coords="573,669,669,696"/>
+<area shape="rect" id="node45" href="$classSerial.html#a23dd45934b6bcfeabd44b78cb035fae7" title="Serial::baudRate" alt="" coords="561,720,680,747"/>
+</map>

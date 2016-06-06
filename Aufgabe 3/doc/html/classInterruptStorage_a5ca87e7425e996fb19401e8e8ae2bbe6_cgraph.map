@@ -1,4 +1,0 @@
-<map id="InterruptStorage::handle" name="InterruptStorage::handle">
-<area shape="rect" id="node2" href="$classPanic.html#a69453fad5bb859c074803eac9465285f" title="Sets the currently handled interrupt. " alt="" coords="219,5,369,32"/>
-<area shape="rect" id="node3" href="$classInterruptHandler.html#a876028e059219f65808f1f3946c7210b" title="abstrakte Funktion zur Interruptbehandlung " alt="" coords="215,56,373,83"/>
-</map>

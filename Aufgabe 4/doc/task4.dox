@@ -1,0 +1,202 @@
+/**
+ * \page task4 Aufgabe 4 - Threads
+ * \tableofcontents
+ * 
+ 
+ * Das Ziel dieser Aufgabe ist die Vermittlung einer der wichtigsten Abstraktionen moderner Betriebssysteme: Threads
+ * und deren Scheduling. Hierfür wird das bestehende System um folgende Klassen erweitert.
+ 
+  \dot
+  digraph task1 {
+    size="5.9,5.5";
+    node [shape=box, style="solid,filled", fillcolor=white];
+    
+    
+    kernel [label="kernel(...)", shape=oval, URL="\ref kernel"];
+    
+    subgraph cluster_subuser {
+      rank="source";
+      style=filled;
+      color=lightgray;
+      label = "user";
+      labeljust=l;
+      task4 [label="Task4", URL="\ref Task4"];
+      rotcursor [label="RotCursor", URL="\ref Task4::RotCursor"];
+      counter [label="Counter", URL="\ref Task4::Counter"];
+      appl [label="Application", URL="\ref Application"];
+    }
+    
+    subgraph cluster_submachine {
+      style=filled;
+      color=lightgray;
+      label = "machine";
+      labeljust=r;
+      pit       [label="PIT", URL="\ref PIT", color=blue];
+      context   [label="Context", URL="\ref Context"];
+    }
+
+    subgraph cluster_subcommon {
+      style=filled;
+      color=lightgray;
+      label = "common";
+      labeljust=c;
+      queue [label="Queue", URL="\ref Queue"];
+      elem  [label="Queue::Element", URL="\ref Queue::Element"];
+    }
+    
+    subgraph cluster_subdevice {
+      style=filled;
+      color=lightgray;
+      label = "device";
+      labeljust=c;
+      watch [label="Watch", URL="\ref Watch", color=blue];
+      log   [label="Log", URL="\ref Log"]
+    }
+
+    subgraph cluster_subthread {
+      style=filled;
+      color=lightgray;
+      label = "thread";
+      labeljust=c;
+      thread [label="Thread", URL="\ref Thread", color=blue];
+      dispatcher [label="Dispatcher", URL="\ref Dispatcher", color=blue];
+      schedulerC [label="Scheduler", URL="\ref Scheduler", color=blue];
+    }
+
+    subgraph cluster_sublocking {
+      style=filled;
+      color=lightgray;
+      label = "locking";
+      labeljust=c;
+      interruptlock [label="InterruptLock", URL="\ref InterruptLock"];
+      scopedlock [label="ScopedLock", URL="\ref ScopedLock"];
+    }
+
+    subgraph cluster_subobject{
+      style=filled;
+      color=lightgray;
+      label = "object";
+      labeljust=c;
+      lock [label="lock", URL="\ref lock"];
+      schedulerO [label="scheduler", URL="\ref scheduler"];
+    }
+    
+    watch -> pit [arrowhead="empty"];
+    lock -> interruptlock [dir="none"];
+    scopedlock -> lock [arrowhead="open"];
+    schedulerC -> dispatcher [arrowhead="empty"];
+    schedulerC -> queue [dir="none"];
+    schedulerC -> thread [dir="none"];
+    schedulerO -> schedulerC [arrowhead="open"];
+    thread -> context [dir="none"];
+    kernel -> schedulerO [arrowhead="open"];
+    watch -> schedulerO [arrowhead="open"];
+    schedulerC -> scopedlock [dir="none"];
+    thread -> lock [arrowhead="open"];
+    thread -> elem [arrowhead="empty"];
+    queue -> elem [dir="none"];
+    task4 -> appl [arrowhead="empty"];
+    appl -> thread [arrowhead="empty"];
+    rotcursor -> appl [arrowhead="empty"];
+    counter -> appl [arrowhead="empty"];
+    task4 -> rotcursor [dir="none"];
+    task4 -> counter [dir="none"];
+    }
+    \enddot
+
+ * Die Einbindung der Klassen sowie deren Implementierung kann in 2 Unteraufgaben unterteilt werden:
+ 
+ 
+ * \section task4_a Aufgabe A - Kooperatives Scheduling
+ *
+ 
+ * Diese Aufgabe befasst sich mit kooperativen Scheduling. Daher muss jeder
+ * Thread individuell die Aktivität an andere Threads übergeben, es findet kein
+ * preemptives Scheduling statt.
+ 
+ 
+ * Die Klasse \ref Task4 initialisiert in \ref Task4::action zum Testen der
+ * entsprechenden Funktionen drei Applikationen \ref Task4::counter1, \ref
+ * Task4::counter2 und \ref Task4::rotCursor. Diese Unterapplikationen werden in \ref
+ * Task4::action dem Scheduler als bereite Threads übergeben (Funktion \ref
+ * Scheduler::insert). Das Applikationen-Interface \ref Application wurde so erweitert, dass es von \ref Thread erbt.
+ * Daher sind von nun an alle Applikationen auch Threads. Bei der Erstellung einer Applikation wird diese sofort im
+ * Scheduler als bereiter Thread eingetragen. Daher können alle vorhergehenden Funktionen nun auch durch den Scheduler
+ * aufgerufen werden. 
+
+ * Der Scheduler legt die Anwendungen in seiner Ready-Queue ab, die dann
+ * sequentiell durchlaufen wird. Wir verwenden dafür eine spezielle \ref Queue, die ohne Speicherverwaltung auskommt.
+
+ * Das Umschalten zwischen den verschiedenen Threads geschiet durch die
+ * Scheduler Funktion \ref Scheduler::yield oder \ref Scheduler::exit. Diese
+ * sind zur leichter Benutzbarkeit bereits in Thread als \ref Thread::yield bzw. \ref Thread::exit vorgesehen.
+ * Da alle Applikationen von Thread erben, sind diese Funktionen damit im Kontext aller Applikationen verfügbar.
+ 
+ * Der eigentliche Kontextwechsel wird dann durch den \ref Dispatcher
+ * vorgenommen. Dieser soll hierfür die gespeicherten \ref Context der Threads umschalten. Hierfür bietet der \ref
+ * Context zwei Funktionen \ref Context::set um den ersten Thread des Systems zu starten und \ref Context::swap um
+ * zwischen 2 Threads zu wechseln.
+ 
+ * Das Starten des ersten Threads des Systems, Task4, geschieht durch anlegen desselben und anschließenden Aufruf von
+ * \ref Scheduler::start. Diese Funktion wird am Ende von \ref kernel aufgerufen und kehrt nie zurück!
+ 
+ * \subsection task4_a_steps Vorgeschlagenes Vorgehen zum Lösen von Teil A
+ *   \li Implementieren Sie die Methode \ref Scheduler::start und \ref Scheduler::insert mit den
+ *   Abhängigkeiten des Dispatchers. Ebenso müssen Sie die statische Methode \ref Thread::kickoff implementieren um die
+ *   Ausführung von Thread::action einzuleiten.
+ *
+ *   \li Verifizieren Sie den initialen Kontextwechsel Task4::action, indem Sie verhindern, dass Task4 endet. Hierzu
+ *   sollten Sie eine Endlossschleife am Ende von \ref Task4::action einfügen
+ *
+ *   \li Implementieren Sie \ref Scheduler::yield, die den neuen Task lädt und
+ *   den alten in der Queue abspeichert. Zudem muss der Dispatcher aufgerufen
+ *   werden \ref Dispatcher::dispatch. Erweitern Sie ihre Endlosschleife am Ende von \ref Task4::action durch eine
+ *   Aufruf von \ref Thread::yield
+ *
+ *   \li Füllen Sie die Methode \ref Scheduler::exit (Beenden und Löschen des
+ *   aktuellen Threads) und \ref Scheduler::kill (Löschen eines
+ *   nicht-aktiven Threads) mit Ihrem Code. 
+ *
+ *   \li Entfernen Sie die Endlosschleife am Ende von \ref Task4::action und testen Sie die Aufgabe.
+
+ * \section task4_b Aufgabe B - Preemptives Scheduling
+ *
+ * Preemtives Scheduling erweitert das kooperative Scheduling um einen
+ * periodischen asynchronen Aufruf von \ref Scheduler::preempt.
+ 
+ * Hierdurch wird einerseits ein interaktiverer Betrieb ermöglicht,
+ * andererseits muss aber der Umschaltvorgang an sich geschützt werden um die
+ * Konsistenz der beteiligten Datenstrukturen sicherzustellen.  In unserem
+ * Beispiel muss lediglich der Zugriff auf die Warteschlange als kritischer
+ * Abschnitt geschützt werden. Dazu wird ein globaler Lock \ref lock bereitgestellt.
+ 
+ * \note \ref InterruptLock darf nicht geschachtelt benutzt werden. D.h. \ref InterruptLock::lock und \ref InterruptLock::unlock dürfen nicht doppelt hinter einander aufgerufen werden, da der Lock sonst einen unbestimmten Zustand gerät. Zum Vermeiden dieses Umstandes, werden Warnungen ausgegeben, sobald dies auftreten sollte. Durch einen Breakpoint an der Stelle der Warnungen kann man in solch einem Fall herausfinden, wodurch dies aufgetreten ist. 
+
+ * Dieses Objekt der Klasse \ref InterruptLock sperrt und entsperrt die globalen Interrupts.
+ * Einerseits können die Funktionen des Locks \ref InterruptLock::lock und \ref InterruptLock::unlock direkt aufgerufen werden,
+ * was jedoch fehleranfällig ist, oder sie können über einen \ref ScopedLock and die Existenz eines Objektes gebunden werden.
+ * \ref ScopedLock kann auch verschachtelt genutzt werden. Wird ein ScopedLock zu einem Zeitpunkt erstellt, zu dem der globale
+ * Lock bereits gelockt war, hat der neue ScopedLock keine Auswirkungen. Die Aufhebung des Locks liegt in der Verantwortung desjenigen
+ * der den Lock erstmalig gelockt hat.
+ * \code 
+{
+  ScopedLock scopedLock(lock);
+  ...
+}\endcode
+
+ * Dieses Code Fragment erzeugt eine kritischen Abschnitt innerhalb des durch
+ * geschweifte Klammern markierten Bereichs.
+
+ * Um ein periodisches Umschalten der Tasks zu erreichen, ohne das diese von sich aus Thread::yield aufrufen, wird der
+ * Hardware-Timer der x86-Architektur verwendet. Dieser Programmable Interval Timer (\ref PIT) erzeugt konfigurierbar die
+ * periodisch Interrupts.
+ 
+ * Die Klasse \ref Watch behandelt diese Interrupts indem sie die Scheduler Methode \ref Scheduler::preempt aufruft.
+
+ * \subsection task4_b_steps Vorgeschlagenes Vorgehen zur Lösung von Teil B
+ *   \li Implementieren Sie die Methoden der Klasse Watch.
+ *   \li Evaluieren Sie die Richtigkeit durch periodische Textausgaben.
+ *   \li Implementieren Sie den Aufruf von Scheduler::preempt in der Watch::trigger und sichern Sie die Zugriffe auf die Queue.
+ *
+ **/
+

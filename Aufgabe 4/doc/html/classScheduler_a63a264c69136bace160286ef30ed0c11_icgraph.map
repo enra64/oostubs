@@ -1,0 +1,4 @@
+<map id="Scheduler::start" name="Scheduler::start">
+<area shape="rect" id="node2" href="$main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point " alt="" coords="168,5,225,32"/>
+<area shape="rect" id="node3" href="$main_8cc.html#a9f9d2ea101dcc6e3cd7011dccc4331e0" title="Wait for user input via keyboard to select sub task. " alt="" coords="273,5,365,32"/>
+</map>

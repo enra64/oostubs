@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>OOStuBS - Technische Informatik II (TI-II): src/thread/thread.cc Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">OOStuBS - Technische Informatik II (TI-II)
+   &#160;<span id="projectnumber">2.4</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.11 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_bfedb72b9d87795234454f6223b9ab1e.html">thread</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">thread.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="thread_8cc.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *                                 Technische Informatik II                                      *</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *                                                                                               *</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *                                         T H R E A D                                           *</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *                                                                                               *</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * *\</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">#                   INCLUDES                      #</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * */</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="thread_8h.html">thread/thread.h</a>&quot;</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="object_2lock_8h.html">object/lock.h</a>&quot;</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="object_2scheduler_8h.html">object/scheduler.h</a>&quot;</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="object_2log_8h.html">object/log.h</a>&quot;</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * *\</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">#                   METHODS                       #</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * */</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classThread.html#acbe0a6de445c1c2dbe20e8741a9ed531">   22</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classThread.html#acbe0a6de445c1c2dbe20e8741a9ed531">Thread::kickoff</a>(<a class="code" href="classThread.html">Thread</a>* thread){</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="comment">// todo</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classThread.html#a95c703fb8f2f27cb64f475a8c940864a">   26</a></span>&#160;<a class="code" href="classThread.html#a95c703fb8f2f27cb64f475a8c940864a">Thread::Thread</a>() : <a class="code" href="classThread.html#afc67f44523add7c441916b61bb509170">context</a>(this){}</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classThread.html#a37d9edd3a1a776cbc27dedff949c9726">   28</a></span>&#160;<a class="code" href="classThread.html#a37d9edd3a1a776cbc27dedff949c9726">Thread::~Thread</a>(){</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classThread.html#a89750f9023df256c125c79048f217562">exit</a>();</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classThread.html#a51beecba775ba0562eb48873aabd5397">   32</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classThread.html#a51beecba775ba0562eb48873aabd5397">Thread::yield</a>(){</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="object_2scheduler_8h.html#a7714de4b56e9edd12c75f4781688edef">scheduler</a>.<a class="code" href="classScheduler.html#ac9772d8cae96fa2d4473378497689eb4">yield</a>();</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classThread.html#a89750f9023df256c125c79048f217562">   36</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classThread.html#a89750f9023df256c125c79048f217562">Thread::exit</a>(){</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="object_2scheduler_8h.html#a7714de4b56e9edd12c75f4781688edef">scheduler</a>.<a class="code" href="classScheduler.html#a7648753bdb11886d5d8ae560b7d0e52b">exit</a>();</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div><div class="ttc" id="object_2scheduler_8h_html"><div class="ttname"><a href="object_2scheduler_8h.html">scheduler.h</a></div></div>
+<div class="ttc" id="classThread_html_acbe0a6de445c1c2dbe20e8741a9ed531"><div class="ttname"><a href="classThread.html#acbe0a6de445c1c2dbe20e8741a9ed531">Thread::kickoff</a></div><div class="ttdeci">static void kickoff(Thread *thread)</div><div class="ttdoc">Kickoff function to initiate thread action. </div><div class="ttdef"><b>Definition:</b> <a href="thread_8cc_source.html#l00022">thread.cc:22</a></div></div>
+<div class="ttc" id="classThread_html_a51beecba775ba0562eb48873aabd5397"><div class="ttname"><a href="classThread.html#a51beecba775ba0562eb48873aabd5397">Thread::yield</a></div><div class="ttdeci">void yield()</div><div class="ttdef"><b>Definition:</b> <a href="thread_8cc_source.html#l00032">thread.cc:32</a></div></div>
+<div class="ttc" id="thread_8h_html"><div class="ttname"><a href="thread_8h.html">thread.h</a></div></div>
+<div class="ttc" id="classThread_html_afc67f44523add7c441916b61bb509170"><div class="ttname"><a href="classThread.html#afc67f44523add7c441916b61bb509170">Thread::context</a></div><div class="ttdeci">Context context</div><div class="ttdoc">Thread context for the specific architecture. </div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00039">thread.h:39</a></div></div>
+<div class="ttc" id="classThread_html_a37d9edd3a1a776cbc27dedff949c9726"><div class="ttname"><a href="classThread.html#a37d9edd3a1a776cbc27dedff949c9726">Thread::~Thread</a></div><div class="ttdeci">~Thread()</div><div class="ttdef"><b>Definition:</b> <a href="thread_8cc_source.html#l00028">thread.cc:28</a></div></div>
+<div class="ttc" id="object_2log_8h_html"><div class="ttname"><a href="object_2log_8h.html">log.h</a></div></div>
+<div class="ttc" id="object_2scheduler_8h_html_a7714de4b56e9edd12c75f4781688edef"><div class="ttname"><a href="object_2scheduler_8h.html#a7714de4b56e9edd12c75f4781688edef">scheduler</a></div><div class="ttdeci">Scheduler scheduler</div><div class="ttdoc">Scheduler of all Threads. </div><div class="ttdef"><b>Definition:</b> <a href="main_8cc_source.html#l00041">main.cc:41</a></div></div>
+<div class="ttc" id="classThread_html"><div class="ttname"><a href="classThread.html">Thread</a></div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00035">thread.h:35</a></div></div>
+<div class="ttc" id="object_2lock_8h_html"><div class="ttname"><a href="object_2lock_8h.html">lock.h</a></div></div>
+<div class="ttc" id="classScheduler_html_ac9772d8cae96fa2d4473378497689eb4"><div class="ttname"><a href="classScheduler.html#ac9772d8cae96fa2d4473378497689eb4">Scheduler::yield</a></div><div class="ttdeci">void yield()</div><div class="ttdoc">Yield to another ready thread. </div><div class="ttdef"><b>Definition:</b> <a href="scheduler_8cc_source.html#l00059">scheduler.cc:59</a></div></div>
+<div class="ttc" id="classThread_html_a89750f9023df256c125c79048f217562"><div class="ttname"><a href="classThread.html#a89750f9023df256c125c79048f217562">Thread::exit</a></div><div class="ttdeci">void exit()</div><div class="ttdef"><b>Definition:</b> <a href="thread_8cc_source.html#l00036">thread.cc:36</a></div></div>
+<div class="ttc" id="classThread_html_a95c703fb8f2f27cb64f475a8c940864a"><div class="ttname"><a href="classThread.html#a95c703fb8f2f27cb64f475a8c940864a">Thread::Thread</a></div><div class="ttdeci">Thread()</div><div class="ttdef"><b>Definition:</b> <a href="thread_8cc_source.html#l00026">thread.cc:26</a></div></div>
+<div class="ttc" id="classScheduler_html_a7648753bdb11886d5d8ae560b7d0e52b"><div class="ttname"><a href="classScheduler.html#a7648753bdb11886d5d8ae560b7d0e52b">Scheduler::exit</a></div><div class="ttdeci">void exit()</div><div class="ttdoc">Remove the currently active thread from the queue. </div><div class="ttdef"><b>Definition:</b> <a href="scheduler_8cc_source.html#l00048">scheduler.cc:48</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Mon Mai 30 2016 20:33:15 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

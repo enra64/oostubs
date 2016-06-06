@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>OOStuBS - Technische Informatik II (TI-II): include/common/interruptstorage.h Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">OOStuBS - Technische Informatik II (TI-II)
+   &#160;<span id="projectnumber">2.4</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.11 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_0966d06610f72609fd9aa4979c2b5a92.html">common</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">interruptstorage.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="interruptstorage_8h.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *                                   Technische Informatik II                                    * </span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * </span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *                                                                                               * </span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *                               I N T E R R U P T _ S T O R A G E                               * </span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *                                                                                               * </span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef __interrupt_storage_include__</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define __interrupt_storage_include__</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * *\</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">#                    INCLUDES                     #</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * */</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="interrupthandler_8h.html">common/interrupthandler.h</a>&quot;</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="panic_8h.html">common/panic.h</a>&quot;</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="config_8h.html">config.h</a>&quot;</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * *\</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">#                    CLASSES                      #</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * */</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="interruptstorage_8h.html#a3a11ee02c84b7258bf41057cce4036ce">   24</a></span>&#160;<span class="preprocessor">#define N_INTERRUPTS (MAX_INTERRUPT_NUMBER - MIN_INTERRUPT_NUMBER)</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classInterruptStorage.html">   40</a></span>&#160;<span class="keyword">class </span><a class="code" href="classInterruptStorage.html">InterruptStorage</a> {  </div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">protected</span>:</div><div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classInterruptStorage.html#a81046c96734436dec18bf6c7af895564">   42</a></span>&#160;    <a class="code" href="classPanic.html">Panic</a> <a class="code" href="classInterruptStorage.html#a81046c96734436dec18bf6c7af895564">panic</a>;</div><div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classInterruptStorage.html#a7b4ecbcae3eadb16bc821e12b632bee3">   43</a></span>&#160;    <a class="code" href="classInterruptHandler.html">InterruptHandler</a> *<a class="code" href="classInterruptStorage.html#a7b4ecbcae3eadb16bc821e12b632bee3">handlers</a>[<a class="code" href="interruptstorage_8h.html#a3a11ee02c84b7258bf41057cce4036ce">N_INTERRUPTS</a>];</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">public</span>:</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classInterruptStorage.html#a18d808074e430c8e62efe0b6acb77d97">InterruptStorage</a> ();</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    </div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classInterruptStorage.html#aa0e85a2fde141c1e2017ddf360e8d6ae">assign</a>(<span class="keywordtype">int</span> iNum, <a class="code" href="classInterruptHandler.html">InterruptHandler</a>&amp; handler) ;</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    </div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classInterruptStorage.html#a5ca87e7425e996fb19401e8e8ae2bbe6">handle</a>(<span class="keywordtype">int</span> iNum);</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;     <span class="keywordtype">bool</span> <a class="code" href="classInterruptStorage.html#a9f9d0c28d7fefa590e7850027d765ebe">currentInterrupt</a>(<span class="keywordtype">int</span>&amp; iNum);</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  };</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="classInterruptStorage_html_a9f9d0c28d7fefa590e7850027d765ebe"><div class="ttname"><a href="classInterruptStorage.html#a9f9d0c28d7fefa590e7850027d765ebe">InterruptStorage::currentInterrupt</a></div><div class="ttdeci">bool currentInterrupt(int &amp;iNum)</div><div class="ttdoc">Fetch the currently active interrupt if there is one. </div></div>
+<div class="ttc" id="classInterruptStorage_html_a7b4ecbcae3eadb16bc821e12b632bee3"><div class="ttname"><a href="classInterruptStorage.html#a7b4ecbcae3eadb16bc821e12b632bee3">InterruptStorage::handlers</a></div><div class="ttdeci">InterruptHandler * handlers[N_INTERRUPTS]</div><div class="ttdef"><b>Definition:</b> <a href="interruptstorage_8h_source.html#l00043">interruptstorage.h:43</a></div></div>
+<div class="ttc" id="interrupthandler_8h_html"><div class="ttname"><a href="interrupthandler_8h.html">interrupthandler.h</a></div></div>
+<div class="ttc" id="classInterruptStorage_html_aa0e85a2fde141c1e2017ddf360e8d6ae"><div class="ttname"><a href="classInterruptStorage.html#aa0e85a2fde141c1e2017ddf360e8d6ae">InterruptStorage::assign</a></div><div class="ttdeci">void assign(int iNum, InterruptHandler &amp;handler)</div><div class="ttdoc">bindet ein InterruptHandler Objekt an einen speziellen Interrupt </div><div class="ttdef"><b>Definition:</b> <a href="interruptstorage_8cc_source.html#l00027">interruptstorage.cc:27</a></div></div>
+<div class="ttc" id="config_8h_html"><div class="ttname"><a href="config_8h.html">config.h</a></div><div class="ttdoc">verschiedene defines für Einstellungen </div></div>
+<div class="ttc" id="interruptstorage_8h_html_a3a11ee02c84b7258bf41057cce4036ce"><div class="ttname"><a href="interruptstorage_8h.html#a3a11ee02c84b7258bf41057cce4036ce">N_INTERRUPTS</a></div><div class="ttdeci">#define N_INTERRUPTS</div><div class="ttdef"><b>Definition:</b> <a href="interruptstorage_8h_source.html#l00024">interruptstorage.h:24</a></div></div>
+<div class="ttc" id="classInterruptStorage_html_a5ca87e7425e996fb19401e8e8ae2bbe6"><div class="ttname"><a href="classInterruptStorage.html#a5ca87e7425e996fb19401e8e8ae2bbe6">InterruptStorage::handle</a></div><div class="ttdeci">void handle(int iNum)</div><div class="ttdoc">Führt den Handler für einen speziellen Interrupt aus. </div><div class="ttdef"><b>Definition:</b> <a href="interruptstorage_8cc_source.html#l00031">interruptstorage.cc:31</a></div></div>
+<div class="ttc" id="classInterruptStorage_html_a18d808074e430c8e62efe0b6acb77d97"><div class="ttname"><a href="classInterruptStorage.html#a18d808074e430c8e62efe0b6acb77d97">InterruptStorage::InterruptStorage</a></div><div class="ttdeci">InterruptStorage()</div><div class="ttdoc">Standardkonstruktor. </div><div class="ttdef"><b>Definition:</b> <a href="interruptstorage_8cc_source.html#l00020">interruptstorage.cc:20</a></div></div>
+<div class="ttc" id="classPanic_html"><div class="ttname"><a href="classPanic.html">Panic</a></div><div class="ttdoc">Standardinterruptbehandlungsroutine. </div><div class="ttdef"><b>Definition:</b> <a href="panic_8h_source.html#l00034">panic.h:34</a></div></div>
+<div class="ttc" id="classInterruptStorage_html"><div class="ttname"><a href="classInterruptStorage.html">InterruptStorage</a></div><div class="ttdoc">Administrationseinheit für die Interruptweitergabe. </div><div class="ttdef"><b>Definition:</b> <a href="interruptstorage_8h_source.html#l00040">interruptstorage.h:40</a></div></div>
+<div class="ttc" id="panic_8h_html"><div class="ttname"><a href="panic_8h.html">panic.h</a></div></div>
+<div class="ttc" id="classInterruptHandler_html"><div class="ttname"><a href="classInterruptHandler.html">InterruptHandler</a></div><div class="ttdoc">Basisklasse für die Interruptbehandlung. </div><div class="ttdef"><b>Definition:</b> <a href="interrupthandler_8h_source.html#l00025">interrupthandler.h:25</a></div></div>
+<div class="ttc" id="classInterruptStorage_html_a81046c96734436dec18bf6c7af895564"><div class="ttname"><a href="classInterruptStorage.html#a81046c96734436dec18bf6c7af895564">InterruptStorage::panic</a></div><div class="ttdeci">Panic panic</div><div class="ttdef"><b>Definition:</b> <a href="interruptstorage_8h_source.html#l00042">interruptstorage.h:42</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Mon Mai 30 2016 20:33:15 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<map id="Task4::Counter::enableCoop" name="Task4::Counter::enableCoop">
+<area shape="rect" id="node2" href="$classTask4_1_1RotCursor.html#a33e3fee3981896223823f4b396339f40" title="start outputting the symbol " alt="" coords="243,309,412,336"/>
+<area shape="rect" id="node3" href="$classInterruptLock.html#abec995c19d83605ff0b910163878505f" title="InterruptLock::lock" alt="" coords="467,309,597,336"/>
+<area shape="rect" id="node8" href="$classCGA__Stream.html#a73572f5377a28f09ee9dc3af7b5a65b9" title="ausgeben des Inhaltes des internen Puffers " alt="" coords="464,183,600,209"/>
+<area shape="rect" id="node14" href="$classCGA__Screen.html#a346b7ccc05356f76e738a76a24510e33" title="set the cursor position " alt="" coords="1032,196,1179,223"/>
+<area shape="rect" id="node18" href="$classInterruptLock.html#ad98e2cfdac315b8d37072e03f8d31766" title="InterruptLock::unlock" alt="" coords="460,360,604,387"/>
+<area shape="rect" id="node20" href="$classThread.html#a51beecba775ba0562eb48873aabd5397" title="Thread::yield" alt="" coords="483,436,581,463"/>
+<area shape="rect" id="node4" href="$classCPU.html#ac6fb3ac4a286728ae0deb78628b98b2d" title="CPU::disable_int" alt="" coords="657,309,779,336"/>
+<area shape="rect" id="node5" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline " alt="" coords="695,360,741,387"/>
+<area shape="rect" id="node6" href="$classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer " alt="" coords="851,385,965,412"/>
+<area shape="rect" id="node7" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen " alt="" coords="1043,360,1168,387"/>
+<area shape="rect" id="node9" href="$classCGA__Screen.html#a6c295831093cab87c3944e39160965b9" title="gibt eine Zeichenkette an der aktuellen Position aus " alt="" coords="652,157,784,184"/>
+<area shape="rect" id="node10" href="$classCGA__Screen.html#a6f47426c0cf0662b6835d64e08cf929e" title="get the cursor position " alt="" coords="1032,107,1179,133"/>
+<area shape="rect" id="node13" href="$classCGA__Screen.html#a6dfbfb197371c461938cfcc9c5d70187" title="print a character to a specific position " alt="" coords="839,157,977,184"/>
+<area shape="rect" id="node15" href="$classCGA__Screen.html#a3808a301813e3e1b6368ab75a94ea652" title="das aktuelle Display wird eine Zeile nach oben gescrollt " alt="" coords="832,56,984,83"/>
+<area shape="rect" id="node11" href="$classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port. " alt="" coords="1227,171,1327,197"/>
+<area shape="rect" id="node12" href="$classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port. " alt="" coords="1231,107,1323,133"/>
+<area shape="rect" id="node16" href="$cgascr_8cc.html#a6e6bcac2e080fd8066ffd4b46cc64db0" title="memcpy" alt="" coords="1069,56,1141,83"/>
+<area shape="rect" id="node17" href="$cgascr_8cc.html#a9138eaf62e2ebaff35fe90d676b94126" title="memset" alt="" coords="1071,5,1140,32"/>
+<area shape="rect" id="node19" href="$classCPU.html#ab5e5a2260ef84a433c181786f11c4609" title="CPU::enable_int" alt="" coords="659,411,777,437"/>
+<area shape="rect" id="node21" href="$classScheduler.html#ac9772d8cae96fa2d4473378497689eb4" title="Yield to another ready thread. " alt="" coords="661,461,775,488"/>
+</map>

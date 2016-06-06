@@ -1,0 +1,25 @@
+<map id="include/machine/context.h" name="include/machine/context.h">
+<area shape="rect" id="node2" href="$thread_8h.html" title="include/thread/thread.h" alt="" coords="1322,80,1477,107"/>
+<area shape="rect" id="node24" href="$context_8cc.html" title="src/machine/context.cc" alt="" coords="1437,155,1596,181"/>
+<area shape="rect" id="node3" href="$dispatch_8h.html" title="include/thread/dispatch.h" alt="" coords="1191,155,1357,181"/>
+<area shape="rect" id="node7" href="$thread_8cc.html" title="src/thread/thread.cc" alt="" coords="1330,379,1469,405"/>
+<area shape="rect" id="node12" href="$appl_8h.html" title="Grundklasse für Anwendungen, für die einzelnen Aufgaben benötigt. " alt="" coords="527,155,658,181"/>
+<area shape="rect" id="node4" href="$thread_2scheduler_8h.html" title="include/thread/scheduler.h" alt="" coords="1187,229,1361,256"/>
+<area shape="rect" id="node11" href="$dispatch_8cc.html" title="src/thread/dispatch.cc" alt="" coords="1012,229,1163,256"/>
+<area shape="rect" id="node5" href="$object_2scheduler_8h.html" title="include/object/scheduler.h" alt="" coords="1187,304,1361,331"/>
+<area shape="rect" id="node9" href="$main_8cc.html" title="Grunddatei von OOStuBS. " alt="" coords="587,304,678,331"/>
+<area shape="rect" id="node10" href="$scheduler_8cc.html" title="src/thread/scheduler.cc" alt="" coords="1004,304,1163,331"/>
+<area shape="rect" id="node6" href="$watch_8cc.html" title="src/device/watch.cc" alt="" coords="1167,379,1306,405"/>
+<area shape="rect" id="node8" href="$task4_8cc.html" title="src/user/task4.cc" alt="" coords="755,379,878,405"/>
+<area shape="rect" id="node13" href="$task1_8h.html" title="Klassendeklaration für erste Aufgabe. " alt="" coords="686,229,825,256"/>
+<area shape="rect" id="node15" href="$task2_8h.html" title="include/user/task2.h" alt="" coords="849,229,987,256"/>
+<area shape="rect" id="node17" href="$task3A_8h.html" title="include/user/task3A.h" alt="" coords="5,229,153,256"/>
+<area shape="rect" id="node19" href="$task3B_8h.html" title="include/user/task3B.h" alt="" coords="177,229,325,256"/>
+<area shape="rect" id="node21" href="$task3C_8h.html" title="include/user/task3C.h" alt="" coords="350,229,499,256"/>
+<area shape="rect" id="node23" href="$task4_8h.html" title="include/user/task4.h" alt="" coords="523,229,662,256"/>
+<area shape="rect" id="node14" href="$task1_8cc.html" title="src/user/task1.cc" alt="" coords="702,304,825,331"/>
+<area shape="rect" id="node16" href="$task2_8cc.html" title="src/user/task2.cc" alt="" coords="857,304,979,331"/>
+<area shape="rect" id="node18" href="$task3A_8cc.html" title="src/user/task3A.cc" alt="" coords="13,304,145,331"/>
+<area shape="rect" id="node20" href="$task3B_8cc.html" title="src/user/task3B.cc" alt="" coords="185,304,317,331"/>
+<area shape="rect" id="node22" href="$task3C_8cc.html" title="src/user/task3C.cc" alt="" coords="358,304,491,331"/>
+</map>

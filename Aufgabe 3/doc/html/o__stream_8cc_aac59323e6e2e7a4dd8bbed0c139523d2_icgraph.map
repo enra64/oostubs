@@ -1,7 +1,0 @@
-<map id="bin" name="bin">
-<area shape="rect" id="node2" href="$exceptions_8cc.html#aa9be12416ab5fcc6ced0ea49ff7825de" title="printException" alt="" coords="113,5,219,32"/>
-<area shape="rect" id="node4" href="$classTask1.html#af4e3f3b3085e350a5e939da4dba2738d" title="parse and print the multiboot information " alt="" coords="92,56,240,83"/>
-<area shape="rect" id="node3" href="$exceptions_8cc.html#a17ac45e3213989a19bb1472093ca30e6" title="Entry point for exceptions. " alt="" coords="299,5,378,32"/>
-<area shape="rect" id="node5" href="$classTask1.html#a0d4029a13591e70af436c0ead066ea5c" title="parse and print multiboot information " alt="" coords="288,56,389,83"/>
-<area shape="rect" id="node6" href="$main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point " alt="" coords="437,56,495,83"/>
-</map>

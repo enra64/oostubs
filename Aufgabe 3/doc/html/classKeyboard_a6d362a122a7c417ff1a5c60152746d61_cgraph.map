@@ -1,6 +1,0 @@
-<map id="Keyboard::plugin" name="Keyboard::plugin">
-<area shape="rect" id="node2" href="$classInterruptManager.html#a6b6f24b03cad03d67d2a7889ce2ae926" title="Assign a handler to an interrupt. " alt="" coords="172,31,339,57"/>
-<area shape="rect" id="node3" href="$classInterruptStorage.html#aa0e85a2fde141c1e2017ddf360e8d6ae" title="bindet ein InterruptHandler Objekt an einen speziellen Interrupt " alt="" coords="387,5,548,32"/>
-<area shape="rect" id="node4" href="$classPIC.html#a62ac9996c8ecfca65e2529655050b26b" title="Erlaubt einen speziellen Interrupt von einem Peripheriegerät. " alt="" coords="426,56,509,83"/>
-<area shape="rect" id="node5" href="$classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port. " alt="" coords="596,56,696,83"/>
-</map>

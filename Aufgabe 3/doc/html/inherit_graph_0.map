@@ -1,8 +1,0 @@
-<map id="Grafische Darstellung der Klassenhierarchie" name="Grafische Darstellung der Klassenhierarchie">
-<area shape="rect" id="node1" href="$classApplication.html" title="Basis of OOStuBs&#45;Applications. " alt="" coords="5,107,92,133"/>
-<area shape="rect" id="node2" href="$classTask1.html" title="Erste Testanwendung. " alt="" coords="145,5,203,32"/>
-<area shape="rect" id="node3" href="$classTask2.html" title="Second test application. " alt="" coords="145,56,203,83"/>
-<area shape="rect" id="node4" href="$classTask3A.html" title="Third test application, part 1. " alt="" coords="141,107,207,133"/>
-<area shape="rect" id="node5" href="$classTask3B.html" title="Third test application, part 2. " alt="" coords="141,157,207,184"/>
-<area shape="rect" id="node6" href="$classTask3C.html" title="Third test application, part 3. " alt="" coords="140,208,208,235"/>
-</map>

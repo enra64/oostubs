@@ -1,0 +1,7 @@
+<map id="include/user/task1.h" name="include/user/task1.h">
+<area shape="rect" id="node2" href="$multiboot_8h.html" title="machine/multiboot.h" alt="" coords="5,80,144,107"/>
+<area shape="rect" id="node4" href="$appl_8h.html" title="Grundklasse für Anwendungen, für die einzelnen Aufgaben benötigt. " alt="" coords="219,80,306,107"/>
+<area shape="rect" id="node5" href="$thread_8h.html" title="thread/thread.h" alt="" coords="208,155,317,181"/>
+<area shape="rect" id="node6" href="$context_8h.html" title="machine/context.h" alt="" coords="123,229,253,256"/>
+<area shape="rect" id="node7" href="$queue_8h.html" title="common/queue.h" alt="" coords="277,229,400,256"/>
+</map>

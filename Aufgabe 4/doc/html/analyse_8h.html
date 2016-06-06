@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>OOStuBS - Technische Informatik II (TI-II): include/user/analyse.h-Dateireferenz</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">OOStuBS - Technische Informatik II (TI-II)
+   &#160;<span id="projectnumber">2.4</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.11 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_2da6b4920bffa0d563fb54046b25229a.html">user</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funktionen</a>  </div>
+  <div class="headertitle">
+<div class="title">analyse.h-Dateireferenz</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><div class="dynheader">
+Dieser Graph zeigt, welche Datei direkt oder indirekt diese Datei enthält:</div>
+<div class="dyncontent">
+<div class="center"><img src="analyse_8h__dep__incl.png" border="0" usemap="#include_2user_2analyse_8hdep" alt=""/></div>
+<map name="include_2user_2analyse_8hdep" id="include_2user_2analyse_8hdep">
+<area shape="rect" id="node2" href="analyse_8cc.html" title="src/user/analyse.cc" alt="" coords="5,80,141,107"/>
+<area shape="rect" id="node3" href="task3B_8cc.html" title="src/user/task3B.cc" alt="" coords="166,80,298,107"/>
+</map>
+</div>
+</div>
+<p><a href="analyse_8h_source.html">gehe zum Quellcode dieser Datei</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funktionen</h2></td></tr>
+<tr class="memitem:a779cba6565d75b0b5d78aa3304adc280"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="analyse_8h.html#a779cba6565d75b0b5d78aa3304adc280">analyseProcedureStack</a> (void **esp, const char *func) __attribute__((noinline))</td></tr>
+<tr class="memdesc:a779cba6565d75b0b5d78aa3304adc280"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diese Funktion dient der Analyse des Prozedurstacks.  <a href="#a779cba6565d75b0b5d78aa3304adc280">Mehr ...</a><br /></td></tr>
+<tr class="separator:a779cba6565d75b0b5d78aa3304adc280"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentation der Funktionen</h2>
+<a class="anchor" id="a779cba6565d75b0b5d78aa3304adc280"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void analyseProcedureStack </td>
+          <td>(</td>
+          <td class="paramtype">void **&#160;</td>
+          <td class="paramname"><em>esp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>func</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Diese Funktion dient der Analyse des Prozedurstacks. </p>
+<p>Es werden die ersten 60 32-Bit-Worte vom Stack ausgegeben. Dabei erscheinen je vier der Worte in einer Zeile.</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">esp</td><td>Dis ist ein Zeiger auf den Anfang des Stacks. Der Frame der Funktion <a class="el" href="task3B_8cc.html#a1140e1f1ebb85d5c7103af6e0b522c22">printStack</a> ist nicht sichtbar.</td></tr>
+  </table>
+  </dd>
+</dl>
+<ul>
+<li><dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">func</td><td>Name der aufrufenden Funktion </td></tr>
+  </table>
+  </dd>
+</dl>
+</li>
+</ul>
+
+<p>Definiert in Zeile <a class="el" href="analyse_8cc_source.html#l00026">26</a> der Datei <a class="el" href="analyse_8cc_source.html">analyse.cc</a>.</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="analyse_8h_a779cba6565d75b0b5d78aa3304adc280_cgraph.png" border="0" usemap="#analyse_8h_a779cba6565d75b0b5d78aa3304adc280_cgraph" alt=""/></div>
+<map name="analyse_8h_a779cba6565d75b0b5d78aa3304adc280_cgraph" id="analyse_8h_a779cba6565d75b0b5d78aa3304adc280_cgraph">
+<area shape="rect" id="node2" href="o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline " alt="" coords="258,56,305,83"/>
+<area shape="rect" id="node5" href="analyse_8cc.html#aeaf44bcb41af369300bf80a3bb46dd31" title="printFormatted" alt="" coords="228,107,335,133"/>
+<area shape="rect" id="node7" href="classCGA__Stream.html#a73572f5377a28f09ee9dc3af7b5a65b9" title="ausgeben des Inhaltes des internen Puffers " alt="" coords="213,157,349,184"/>
+<area shape="rect" id="node17" href="o__stream_8h.html#a143762d59413d6d7cae38fb25104c5c4" title="switch basis of o_stream to decimal " alt="" coords="260,208,303,235"/>
+<area shape="rect" id="node3" href="classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer " alt="" coords="406,56,521,83"/>
+<area shape="rect" id="node4" href="classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen " alt="" coords="591,5,716,32"/>
+<area shape="rect" id="node6" href="o__stream_8h.html#ac9bf4a3a6b7a2f0105d73ce270f5e69d" title="switch basis of o_stream to hexadecimal " alt="" coords="442,107,485,133"/>
+<area shape="rect" id="node8" href="classCGA__Screen.html#a6c295831093cab87c3944e39160965b9" title="gibt eine Zeichenkette an der aktuellen Position aus " alt="" coords="397,157,529,184"/>
+<area shape="rect" id="node9" href="classCGA__Screen.html#a6f47426c0cf0662b6835d64e08cf929e" title="get the cursor position " alt="" coords="777,233,924,260"/>
+<area shape="rect" id="node12" href="classCGA__Screen.html#a6dfbfb197371c461938cfcc9c5d70187" title="print a character to a specific position " alt="" coords="584,183,723,209"/>
+<area shape="rect" id="node13" href="classCGA__Screen.html#a346b7ccc05356f76e738a76a24510e33" title="set the cursor position " alt="" coords="777,81,924,108"/>
+<area shape="rect" id="node14" href="classCGA__Screen.html#a3808a301813e3e1b6368ab75a94ea652" title="das aktuelle Display wird eine Zeile nach oben gescrollt " alt="" coords="577,132,729,159"/>
+<area shape="rect" id="node10" href="classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port. " alt="" coords="972,132,1072,159"/>
+<area shape="rect" id="node11" href="classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port. " alt="" coords="976,233,1068,260"/>
+<area shape="rect" id="node15" href="cgascr_8cc.html#a6e6bcac2e080fd8066ffd4b46cc64db0" title="memcpy" alt="" coords="815,183,887,209"/>
+<area shape="rect" id="node16" href="cgascr_8cc.html#a9138eaf62e2ebaff35fe90d676b94126" title="memset" alt="" coords="816,132,885,159"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="analyse_8h_a779cba6565d75b0b5d78aa3304adc280_icgraph.png" border="0" usemap="#analyse_8h_a779cba6565d75b0b5d78aa3304adc280_icgraph" alt=""/></div>
+<map name="analyse_8h_a779cba6565d75b0b5d78aa3304adc280_icgraph" id="analyse_8h_a779cba6565d75b0b5d78aa3304adc280_icgraph">
+<area shape="rect" id="node2" href="task3B_8cc.html#a1140e1f1ebb85d5c7103af6e0b522c22" title="printStack" alt="" coords="213,56,295,83"/>
+<area shape="rect" id="node3" href="task3B_8cc.html#a4205b075c53452d0a4cb9966fe2bf855" title="runFib" alt="" coords="343,5,401,32"/>
+<area shape="rect" id="node4" href="task3B_8cc.html#ad1b3bc944aac0dbdd041cc180ff8c37a" title="fib" alt="" coords="449,56,488,83"/>
+<area shape="rect" id="node5" href="task3B_8cc.html#a5874bf2c7fd779b0760c4d5f16bb2d08" title="doTask3BAction" alt="" coords="536,81,655,108"/>
+<area shape="rect" id="node6" href="classTask3B.html#aa803f35a028d2dc338d20d69ab592f20" title="prints the line " alt="" coords="703,81,813,108"/>
+<area shape="rect" id="node7" href="main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point " alt="" coords="861,81,919,108"/>
+<area shape="rect" id="node8" href="main_8cc.html#a9f9d2ea101dcc6e3cd7011dccc4331e0" title="Wait for user input via keyboard to select sub task. " alt="" coords="967,81,1059,108"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Mon Mai 30 2016 20:33:15 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

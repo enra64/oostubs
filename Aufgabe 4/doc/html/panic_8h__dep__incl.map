@@ -1,0 +1,12 @@
+<map id="include/common/panic.h" name="include/common/panic.h">
+<area shape="rect" id="node2" href="$interruptstorage_8h.html" title="include/common/interruptstorage.h" alt="" coords="473,80,695,107"/>
+<area shape="rect" id="node11" href="$panic_8cc.html" title="src/common/panic.cc" alt="" coords="720,80,867,107"/>
+<area shape="rect" id="node3" href="$interruptmanager_8h.html" title="include/device/interruptmanager.h" alt="" coords="358,155,575,181"/>
+<area shape="rect" id="node10" href="$interruptstorage_8cc.html" title="src/common/interruptstorage.cc" alt="" coords="599,155,806,181"/>
+<area shape="rect" id="node4" href="$imanager_8h.html" title="include/object/imanager.h" alt="" coords="171,229,341,256"/>
+<area shape="rect" id="node8" href="$interruptmanager_8cc.html" title="src/device/interruptmanager.cc" alt="" coords="366,229,567,256"/>
+<area shape="rect" id="node9" href="$main_8cc.html" title="Grunddatei von OOStuBS. " alt="" coords="592,229,683,256"/>
+<area shape="rect" id="node5" href="$keyboard_8cc.html" title="src/device/keyboard.cc" alt="" coords="5,304,163,331"/>
+<area shape="rect" id="node6" href="$watch_8cc.html" title="src/device/watch.cc" alt="" coords="187,304,325,331"/>
+<area shape="rect" id="node7" href="$exceptions_8cc.html" title="Interrupt&#45;Behandlungsfunktionen. " alt="" coords="349,304,528,331"/>
+</map>

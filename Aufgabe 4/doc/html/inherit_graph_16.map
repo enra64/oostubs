@@ -1,0 +1,8 @@
+<map id="Grafische Darstellung der Klassenhierarchie" name="Grafische Darstellung der Klassenhierarchie">
+<area shape="rect" id="node1" href="$classInterruptHandler.html" title="Basisklasse für die Interruptbehandlung. " alt="" coords="18,56,133,83"/>
+<area shape="rect" id="node2" href="$classKeyboard.html" title="Treiber für die Tastatur, incl. Interruptunterstützung. " alt="" coords="193,5,271,32"/>
+<area shape="rect" id="node3" href="$classPanic.html" title="Standardinterruptbehandlungsroutine. " alt="" coords="205,56,259,83"/>
+<area shape="rect" id="node4" href="$classWatch.html" title="Watch" alt="" coords="202,107,262,133"/>
+<area shape="rect" id="node5" href="$classKeyboard__Controller.html" title="(PS/2) Tastaturtreiber " alt="" coords="5,5,145,32"/>
+<area shape="rect" id="node6" href="$classPIT.html" title="PIT" alt="" coords="54,107,97,133"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="include/machine/pic.h" name="include/machine/pic.h">
+<area shape="rect" id="node2" href="$interruptmanager_8h.html" title="include/device/interruptmanager.h" alt="" coords="358,80,575,107"/>
+<area shape="rect" id="node9" href="$interruptstorage_8cc.html" title="src/common/interruptstorage.cc" alt="" coords="599,80,806,107"/>
+<area shape="rect" id="node10" href="$pic_8cc.html" title="src/machine/pic.cc" alt="" coords="830,80,962,107"/>
+<area shape="rect" id="node3" href="$imanager_8h.html" title="include/object/imanager.h" alt="" coords="171,155,341,181"/>
+<area shape="rect" id="node7" href="$interruptmanager_8cc.html" title="src/device/interruptmanager.cc" alt="" coords="366,155,567,181"/>
+<area shape="rect" id="node8" href="$main_8cc.html" title="Grunddatei von OOStuBS. " alt="" coords="592,155,683,181"/>
+<area shape="rect" id="node4" href="$keyboard_8cc.html" title="src/device/keyboard.cc" alt="" coords="5,229,163,256"/>
+<area shape="rect" id="node5" href="$watch_8cc.html" title="src/device/watch.cc" alt="" coords="187,229,325,256"/>
+<area shape="rect" id="node6" href="$exceptions_8cc.html" title="Interrupt&#45;Behandlungsfunktionen. " alt="" coords="349,229,528,256"/>
+</map>

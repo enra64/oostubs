@@ -1,0 +1,11 @@
+<map id="include/object/kout.h" name="include/object/kout.h">
+<area shape="rect" id="node2" href="$panic_8cc.html" title="src/common/panic.cc" alt="" coords="5,80,152,107"/>
+<area shape="rect" id="node3" href="$keyboard_8cc.html" title="src/device/keyboard.cc" alt="" coords="176,80,333,107"/>
+<area shape="rect" id="node4" href="$exceptions_8cc.html" title="Interrupt&#45;Behandlungsfunktionen. " alt="" coords="357,80,536,107"/>
+<area shape="rect" id="node5" href="$analyse_8cc.html" title="src/user/analyse.cc" alt="" coords="560,80,696,107"/>
+<area shape="rect" id="node6" href="$task2_8cc.html" title="src/user/task2.cc" alt="" coords="720,80,843,107"/>
+<area shape="rect" id="node7" href="$task3A_8cc.html" title="src/user/task3A.cc" alt="" coords="867,80,999,107"/>
+<area shape="rect" id="node8" href="$task3B_8cc.html" title="src/user/task3B.cc" alt="" coords="1023,80,1155,107"/>
+<area shape="rect" id="node9" href="$task3C_8cc.html" title="src/user/task3C.cc" alt="" coords="1180,80,1313,107"/>
+<area shape="rect" id="node10" href="$task4_8cc.html" title="src/user/task4.cc" alt="" coords="1337,80,1460,107"/>
+</map>

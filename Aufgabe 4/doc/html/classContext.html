@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>OOStuBS - Technische Informatik II (TI-II): Context Klassenreferenz</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">OOStuBS - Technische Informatik II (TI-II)
+   &#160;<span id="projectnumber">2.4</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.11 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Klassen</span></a></li>
+      <li><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Auflistung&#160;der&#160;Klassen</span></a></li>
+      <li><a href="classes.html"><span>Klassen-Verzeichnis</span></a></li>
+      <li><a href="inherits.html"><span>Klassenhierarchie</span></a></li>
+      <li><a href="functions.html"><span>Klassen-Elemente</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Öffentliche Methoden</a> &#124;
+<a href="#pri-types">Private Typen</a> &#124;
+<a href="#pri-attribs">Private Attribute</a> &#124;
+<a href="classContext-members.html">Aufstellung aller Elemente</a>  </div>
+  <div class="headertitle">
+<div class="title">Context Klassenreferenz</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Storage for current context of thread.  
+ <a href="classContext.html#details">Mehr ...</a></p>
+
+<p><code>#include &lt;<a class="el" href="context_8h_source.html">context.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Öffentliche Methoden</h2></td></tr>
+<tr class="memitem:a05f5674a102c7a306bf4200fac9c9066"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContext.html#a05f5674a102c7a306bf4200fac9c9066">Context</a> (<a class="el" href="classThread.html">Thread</a> *thread)</td></tr>
+<tr class="memdesc:a05f5674a102c7a306bf4200fac9c9066"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classContext.html" title="Storage for current context of thread. ">Context</a> creation.  <a href="#a05f5674a102c7a306bf4200fac9c9066">Mehr ...</a><br /></td></tr>
+<tr class="separator:a05f5674a102c7a306bf4200fac9c9066"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac60d77b1d5b0671f9311d19429489fa8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContext.html#ac60d77b1d5b0671f9311d19429489fa8">set</a> ()</td></tr>
+<tr class="memdesc:ac60d77b1d5b0671f9311d19429489fa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">replaces the currently running context with this one  <a href="#ac60d77b1d5b0671f9311d19429489fa8">Mehr ...</a><br /></td></tr>
+<tr class="separator:ac60d77b1d5b0671f9311d19429489fa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d3a3968f1a2f40ef48d1a38bc576a28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContext.html#a0d3a3968f1a2f40ef48d1a38bc576a28">swap</a> (<a class="el" href="classContext.html">Context</a> &amp;next)</td></tr>
+<tr class="memdesc:a0d3a3968f1a2f40ef48d1a38bc576a28"><td class="mdescLeft">&#160;</td><td class="mdescRight">swaps the currently running context with the specified one  <a href="#a0d3a3968f1a2f40ef48d1a38bc576a28">Mehr ...</a><br /></td></tr>
+<tr class="separator:a0d3a3968f1a2f40ef48d1a38bc576a28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
+Private Typen</h2></td></tr>
+<tr class="memitem:a3d13d3a37cb2bbd279ab323e9a731bbd"><td class="memItemLeft" align="right" valign="top">typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContext.html#a3d13d3a37cb2bbd279ab323e9a731bbd">Register</a></td></tr>
+<tr class="memdesc:a3d13d3a37cb2bbd279ab323e9a731bbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition of a storage type able to hold <a class="el" href="classCPU.html">CPU</a> register contents.  <a href="#a3d13d3a37cb2bbd279ab323e9a731bbd">Mehr ...</a><br /></td></tr>
+<tr class="separator:a3d13d3a37cb2bbd279ab323e9a731bbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attribute</h2></td></tr>
+<tr class="memitem:a8bcb1352180726abf2164f01404d9043"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classContext.html#a3d13d3a37cb2bbd279ab323e9a731bbd">Register</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContext.html#a8bcb1352180726abf2164f01404d9043">registers</a> [5]</td></tr>
+<tr class="memdesc:a8bcb1352180726abf2164f01404d9043"><td class="mdescLeft">&#160;</td><td class="mdescRight">the non-volatile x86 base registers  <a href="#a8bcb1352180726abf2164f01404d9043">Mehr ...</a><br /></td></tr>
+<tr class="separator:a8bcb1352180726abf2164f01404d9043"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a529ef3efac5210fabdae2c66103ca322"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classContext.html#a3d13d3a37cb2bbd279ab323e9a731bbd">Register</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContext.html#a529ef3efac5210fabdae2c66103ca322">stack</a> [1024]</td></tr>
+<tr class="memdesc:a529ef3efac5210fabdae2c66103ca322"><td class="mdescLeft">&#160;</td><td class="mdescRight">Local 1K stack of this thread.  <a href="#a529ef3efac5210fabdae2c66103ca322">Mehr ...</a><br /></td></tr>
+<tr class="separator:a529ef3efac5210fabdae2c66103ca322"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
+<div class="textblock"><p>Storage for current context of thread. </p>
+<p>This class contains all information needed to represent a thread of execution. It may be used to stop, switch and continue currently running threads. </p>
+
+<p>Definiert in Zeile <a class="el" href="context_8h_source.html#l00024">24</a> der Datei <a class="el" href="context_8h_source.html">context.h</a>.</p>
+</div><h2 class="groupheader">Dokumentation der benutzerdefinierten Datentypen</h2>
+<a class="anchor" id="a3d13d3a37cb2bbd279ab323e9a731bbd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void* <a class="el" href="classContext.html#a3d13d3a37cb2bbd279ab323e9a731bbd">Context::Register</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition of a storage type able to hold <a class="el" href="classCPU.html">CPU</a> register contents. </p>
+
+<p>Definiert in Zeile <a class="el" href="context_8h_source.html#l00027">27</a> der Datei <a class="el" href="context_8h_source.html">context.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentation der Aufzählungstypen</h2>
+<a class="anchor" id="acb46b499862970fdaa216f9967350839"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classContext.html#acb46b499862970fdaa216f9967350839">Context::RegisterIndices</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Index enumeration mapping registers to indices of the registers array. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Aufzählungswerte</th></tr><tr><td class="fieldname"><a class="anchor" id="acb46b499862970fdaa216f9967350839a6cabf5d0969e4d8513ac6535d93b0f62"></a>ebx&#160;</td><td class="fielddoc">
+<p>General purpose register </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="acb46b499862970fdaa216f9967350839a4b4226bcd40fea732a4ca194934da7eb"></a>esi&#160;</td><td class="fielddoc">
+<p>General purpose register </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="acb46b499862970fdaa216f9967350839ae6d8f512f1b0df2ab24ff267624a497c"></a>edi&#160;</td><td class="fielddoc">
+<p>General purpose register </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="acb46b499862970fdaa216f9967350839a463f5c8bfbe6f0af5b98f81385d946f3"></a>esp&#160;</td><td class="fielddoc">
+<p>Stack pointer </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="acb46b499862970fdaa216f9967350839a510de95ff65659380faa7d839be8831b"></a>ebp&#160;</td><td class="fielddoc">
+<p>Base pointer </p>
+</td></tr>
+</table>
+
+<p>Definiert in Zeile <a class="el" href="context_8h_source.html#l00030">30</a> der Datei <a class="el" href="context_8h_source.html">context.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
+<a class="anchor" id="a05f5674a102c7a306bf4200fac9c9066"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Context::Context </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classThread.html">Thread</a> *&#160;</td>
+          <td class="paramname"><em>thread</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classContext.html" title="Storage for current context of thread. ">Context</a> creation. </p>
+<p>On construction of the context the <a class="el" href="classCPU.html">CPU</a> registers will be filled with appropriate information, to start the thread on its first scheduling</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">thread</td><td>pointer to thread object </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definiert in Zeile <a class="el" href="context_8cc_source.html#l00004">4</a> der Datei <a class="el" href="context_8cc_source.html">context.cc</a>.</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="classContext_a05f5674a102c7a306bf4200fac9c9066_cgraph.png" border="0" usemap="#classContext_a05f5674a102c7a306bf4200fac9c9066_cgraph" alt=""/></div>
+<map name="classContext_a05f5674a102c7a306bf4200fac9c9066_cgraph" id="classContext_a05f5674a102c7a306bf4200fac9c9066_cgraph">
+<area shape="rect" id="node2" href="classThread.html#acbe0a6de445c1c2dbe20e8741a9ed531" title="Kickoff function to initiate thread action. " alt="" coords="176,5,285,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
+<a class="anchor" id="ac60d77b1d5b0671f9311d19429489fa8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Context::set </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>replaces the currently running context with this one </p>
+<p>This method does not preserve the old context. Therefore the current execution state of the originating thread is lost. </p>
+
+<p>Definiert in Zeile <a class="el" href="context_8cc_source.html#l00011">11</a> der Datei <a class="el" href="context_8cc_source.html">context.cc</a>.</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="classContext_ac60d77b1d5b0671f9311d19429489fa8_icgraph.png" border="0" usemap="#classContext_ac60d77b1d5b0671f9311d19429489fa8_icgraph" alt=""/></div>
+<map name="classContext_ac60d77b1d5b0671f9311d19429489fa8_icgraph" id="classContext_ac60d77b1d5b0671f9311d19429489fa8_icgraph">
+<area shape="rect" id="node2" href="classDispatcher.html#a2495464a8b4352282f62ad39c8a00cc8" title="Starts the scheduling. " alt="" coords="148,5,267,32"/>
+<area shape="rect" id="node3" href="classDispatcher.html#a1bd5ef08a829632075b6ccc7c81b1609" title="Dispatcher::Dispatcher" alt="" coords="315,5,471,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0d3a3968f1a2f40ef48d1a38bc576a28"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Context::swap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classContext.html">Context</a> &amp;&#160;</td>
+          <td class="paramname"><em>next</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>swaps the currently running context with the specified one </p>
+<p>During the swap process the registers of the currently active context will be updated with the actualk values contained in the <a class="el" href="classCPU.html">CPU</a>.</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">next</td><td>the next context to be run by the <a class="el" href="classCPU.html">CPU</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definiert in Zeile <a class="el" href="context_8cc_source.html#l00022">22</a> der Datei <a class="el" href="context_8cc_source.html">context.cc</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentation der Datenelemente</h2>
+<a class="anchor" id="a8bcb1352180726abf2164f01404d9043"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classContext.html#a3d13d3a37cb2bbd279ab323e9a731bbd">Register</a> Context::registers[5]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>the non-volatile x86 base registers </p>
+
+<p>Definiert in Zeile <a class="el" href="context_8h_source.html#l00039">39</a> der Datei <a class="el" href="context_8h_source.html">context.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a529ef3efac5210fabdae2c66103ca322"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classContext.html#a3d13d3a37cb2bbd279ab323e9a731bbd">Register</a> Context::stack[1024]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Local 1K stack of this thread. </p>
+
+<p>Definiert in Zeile <a class="el" href="context_8h_source.html#l00042">42</a> der Datei <a class="el" href="context_8h_source.html">context.h</a>.</p>
+
+</div>
+</div>
+<hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:<ul>
+<li>include/machine/<a class="el" href="context_8h_source.html">context.h</a></li>
+<li>src/machine/<a class="el" href="context_8cc_source.html">context.cc</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Mon Mai 30 2016 20:33:15 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

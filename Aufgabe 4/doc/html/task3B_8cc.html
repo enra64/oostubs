@@ -1,0 +1,424 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>OOStuBS - Technische Informatik II (TI-II): src/user/task3B.cc-Dateireferenz</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">OOStuBS - Technische Informatik II (TI-II)
+   &#160;<span id="projectnumber">2.4</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.11 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_8b0164eb0fb74115683f9812cb2f78f0.html">user</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funktionen</a>  </div>
+  <div class="headertitle">
+<div class="title">task3B.cc-Dateireferenz</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="task3B_8h_source.html">user/task3B.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="analyse_8h_source.html">user/analyse.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="kout_8h_source.html">object/kout.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="object_2cpu_8h_source.html">object/cpu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="object_2keyboard_8h_source.html">object/keyboard.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include-Abhängigkeitsdiagramm für task3B.cc:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3B_8cc__incl.png" border="0" usemap="#src_2user_2task3B_8cc" alt=""/></div>
+<map name="src_2user_2task3B_8cc" id="src_2user_2task3B_8cc">
+<area shape="rect" id="node2" href="task3B_8h.html" title="user/task3B.h" alt="" coords="164,80,267,107"/>
+<area shape="rect" id="node7" href="analyse_8h.html" title="user/analyse.h" alt="" coords="291,80,398,107"/>
+<area shape="rect" id="node8" href="kout_8h.html" title="alles notwendige zum nutzen der in main.cc deklarierten globalen Variable kout " alt="" coords="423,80,520,107"/>
+<area shape="rect" id="node16" href="object_2cpu_8h.html" title="alles notwendige zum nutzen der in main.cc deklarierten globalen Variable cpu " alt="" coords="545,80,638,107"/>
+<area shape="rect" id="node18" href="object_2keyboard_8h.html" title="object/keyboard.h" alt="" coords="666,80,791,107"/>
+<area shape="rect" id="node3" href="appl_8h.html" title="Grundklasse für Anwendungen, für die einzelnen Aufgaben benötigt. " alt="" coords="172,155,259,181"/>
+<area shape="rect" id="node4" href="thread_8h.html" title="thread/thread.h" alt="" coords="161,229,270,256"/>
+<area shape="rect" id="node5" href="context_8h.html" title="machine/context.h" alt="" coords="5,304,135,331"/>
+<area shape="rect" id="node6" href="queue_8h.html" title="common/queue.h" alt="" coords="159,304,282,331"/>
+<area shape="rect" id="node9" href="cgastr_8h.html" title="device/cgastr.h" alt="" coords="403,155,513,181"/>
+<area shape="rect" id="node10" href="o__stream_8h.html" title="common/o_stream.h" alt="" coords="310,229,451,256"/>
+<area shape="rect" id="node14" href="cgascr_8h.html" title="machine/cgascr.h" alt="" coords="475,229,601,256"/>
+<area shape="rect" id="node11" href="strbuf_8h.html" title="common/strbuf.h" alt="" coords="311,304,431,331"/>
+<area shape="rect" id="node13" href="colors_8h.html" title="common/colors.h" alt="" coords="455,304,578,331"/>
+<area shape="rect" id="node12" href="config_8h.html" title="verschiedene defines für Einstellungen " alt="" coords="337,379,405,405"/>
+<area shape="rect" id="node15" href="io__port_8h.html" title="machine/io_port.h" alt="" coords="602,304,727,331"/>
+<area shape="rect" id="node17" href="machine_2cpu_8h.html" title="machine/cpu.h" alt="" coords="538,155,645,181"/>
+<area shape="rect" id="node19" href="device_2keyboard_8h.html" title="device/keyboard.h" alt="" coords="669,155,797,181"/>
+<area shape="rect" id="node20" href="keyctrl_8h.html" title="machine/keyctrl.h" alt="" coords="639,229,765,256"/>
+<area shape="rect" id="node22" href="interrupthandler_8h.html" title="common/interrupthandler.h" alt="" coords="789,229,965,256"/>
+<area shape="rect" id="node21" href="key_8h.html" title="machine/key.h" alt="" coords="751,304,858,331"/>
+</map>
+</div>
+</div>
+<p><a href="task3B_8cc_source.html">gehe zum Quellcode dieser Datei</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funktionen</h2></td></tr>
+<tr class="memitem:a5874bf2c7fd779b0760c4d5f16bb2d08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task3B_8cc.html#a5874bf2c7fd779b0760c4d5f16bb2d08">doTask3BAction</a> (unsigned int *ende)</td></tr>
+<tr class="separator:a5874bf2c7fd779b0760c4d5f16bb2d08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1b3bc944aac0dbdd041cc180ff8c37a"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task3B_8cc.html#ad1b3bc944aac0dbdd041cc180ff8c37a">fib</a> (unsigned int n)</td></tr>
+<tr class="separator:ad1b3bc944aac0dbdd041cc180ff8c37a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1140e1f1ebb85d5c7103af6e0b522c22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task3B_8cc.html#a1140e1f1ebb85d5c7103af6e0b522c22">printStack</a> (const char *func)</td></tr>
+<tr class="separator:a1140e1f1ebb85d5c7103af6e0b522c22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4205b075c53452d0a4cb9966fe2bf855"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task3B_8cc.html#a4205b075c53452d0a4cb9966fe2bf855">runFib</a> (unsigned int fib_1, unsigned int fib_2, unsigned int n)</td></tr>
+<tr class="separator:a4205b075c53452d0a4cb9966fe2bf855"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentation der Funktionen</h2>
+<a class="anchor" id="a5874bf2c7fd779b0760c4d5f16bb2d08"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void doTask3BAction </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int *&#160;</td>
+          <td class="paramname"><em>ende</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="task3B_8cc_source.html#l00060">60</a> der Datei <a class="el" href="task3B_8cc_source.html">task3B.cc</a>.</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3B_8cc_a5874bf2c7fd779b0760c4d5f16bb2d08_cgraph.png" border="0" usemap="#task3B_8cc_a5874bf2c7fd779b0760c4d5f16bb2d08_cgraph" alt=""/></div>
+<map name="task3B_8cc_a5874bf2c7fd779b0760c4d5f16bb2d08_cgraph" id="task3B_8cc_a5874bf2c7fd779b0760c4d5f16bb2d08_cgraph">
+<area shape="rect" id="node2" href="task3B_8cc.html#a1140e1f1ebb85d5c7103af6e0b522c22" title="printStack" alt="" coords="365,157,447,184"/>
+<area shape="rect" id="node4" href="o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline " alt="" coords="747,56,794,83"/>
+<area shape="rect" id="node35" href="task3B_8cc.html#ad1b3bc944aac0dbdd041cc180ff8c37a" title="fib" alt="" coords="172,132,211,159"/>
+<area shape="rect" id="node3" href="analyse_8h.html#a779cba6565d75b0b5d78aa3304adc280" title="Diese Funktion dient der Analyse des Prozedurstacks. " alt="" coords="495,157,655,184"/>
+<area shape="rect" id="node20" href="classKeyboard__Controller.html#a78cf6859d88097a0f2b6945fc86c1d21" title="get the last pressed key " alt="" coords="887,251,1027,293"/>
+<area shape="rect" id="node31" href="classKey.html#abb65ed9de2b4a8c24f557416b484df34" title="set ascii value " alt="" coords="1485,847,1565,873"/>
+<area shape="rect" id="node34" href="classKey.html#a4292f24b142a697e610fb7780a0dc9d5" title="test for validity. " alt="" coords="535,107,615,133"/>
+<area shape="rect" id="node7" href="analyse_8cc.html#aeaf44bcb41af369300bf80a3bb46dd31" title="printFormatted" alt="" coords="717,107,824,133"/>
+<area shape="rect" id="node9" href="classCGA__Stream.html#a73572f5377a28f09ee9dc3af7b5a65b9" title="ausgeben des Inhaltes des internen Puffers " alt="" coords="703,157,839,184"/>
+<area shape="rect" id="node19" href="o__stream_8h.html#a143762d59413d6d7cae38fb25104c5c4" title="switch basis of o_stream to decimal " alt="" coords="749,208,792,235"/>
+<area shape="rect" id="node5" href="classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer " alt="" coords="899,56,1014,83"/>
+<area shape="rect" id="node6" href="classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen " alt="" coords="1088,5,1213,32"/>
+<area shape="rect" id="node8" href="o__stream_8h.html#ac9bf4a3a6b7a2f0105d73ce270f5e69d" title="switch basis of o_stream to hexadecimal " alt="" coords="935,107,978,133"/>
+<area shape="rect" id="node10" href="classCGA__Screen.html#a6c295831093cab87c3944e39160965b9" title="gibt eine Zeichenkette an der aktuellen Position aus " alt="" coords="891,157,1023,184"/>
+<area shape="rect" id="node11" href="classCGA__Screen.html#a6f47426c0cf0662b6835d64e08cf929e" title="get the cursor position " alt="" coords="1275,208,1421,235"/>
+<area shape="rect" id="node14" href="classCGA__Screen.html#a6dfbfb197371c461938cfcc9c5d70187" title="print a character to a specific position " alt="" coords="1081,208,1220,235"/>
+<area shape="rect" id="node15" href="classCGA__Screen.html#a346b7ccc05356f76e738a76a24510e33" title="set the cursor position " alt="" coords="1275,56,1421,83"/>
+<area shape="rect" id="node16" href="classCGA__Screen.html#a3808a301813e3e1b6368ab75a94ea652" title="das aktuelle Display wird eine Zeile nach oben gescrollt " alt="" coords="1075,107,1227,133"/>
+<area shape="rect" id="node12" href="classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port. " alt="" coords="1475,208,1575,235"/>
+<area shape="rect" id="node13" href="classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port. " alt="" coords="1479,259,1571,285"/>
+<area shape="rect" id="node17" href="cgascr_8cc.html#a6e6bcac2e080fd8066ffd4b46cc64db0" title="memcpy" alt="" coords="1312,107,1384,133"/>
+<area shape="rect" id="node18" href="cgascr_8cc.html#a9138eaf62e2ebaff35fe90d676b94126" title="memset" alt="" coords="1313,157,1383,184"/>
+<area shape="rect" id="node21" href="classKeyboard__Controller.html#aa517065c0ed4059b477dfb481539b1b2" title="interpret the reveived scancode and modifier bits " alt="" coords="1081,521,1221,562"/>
+<area shape="rect" id="node22" href="classKey.html#a62e735f4121d8984d994a508bdd6a74b" title="Key::shift" alt="" coords="1486,684,1565,711"/>
+<area shape="rect" id="node23" href="classKey.html#af4fa809960860523573abd695e3f8fbe" title="Key::alt_right" alt="" coords="1476,792,1575,819"/>
+<area shape="rect" id="node24" href="classKey.html#ab1199ecfd588b567053543b6715ba19a" title="Key::alt_left" alt="" coords="1302,427,1394,453"/>
+<area shape="rect" id="node25" href="classKey.html#a90ea541bc6d1286a517eaccd700c4ba0" title="Key::ctrl_right" alt="" coords="1297,477,1399,504"/>
+<area shape="rect" id="node26" href="classKey.html#af1c7ef33119f0c10909a2de246de7854" title="Key::ctrl_left" alt="" coords="1300,528,1396,555"/>
+<area shape="rect" id="node27" href="classKey.html#a45fb60e270f30b9f23e28259e851b14a" title="Key::caps_lock" alt="" coords="1469,465,1581,492"/>
+<area shape="rect" id="node28" href="classKeyboard__Controller.html#a36dfc2c73c4031c8662e37159238d5b0" title="switch the specified LED of the keyboard on or off. " alt="" coords="1278,310,1418,351"/>
+<area shape="rect" id="node29" href="classKey.html#af3d96c346d2e6088cafbc94fe7c783ef" title="Key::scroll_lock" alt="" coords="1291,629,1405,656"/>
+<area shape="rect" id="node30" href="classKeyboard__Controller.html#ac2b33ffe1e2794c81249861aa792513a" title="convert the received scancode and modfier bits to an ascii char " alt="" coords="1278,731,1418,773"/>
+<area shape="rect" id="node33" href="classKey.html#a4a8da77b0cb57bf89bffa3903c2f79ce" title="Key::num_lock" alt="" coords="1471,605,1580,632"/>
+<area shape="rect" id="node32" href="classKey.html#ae67075af1a5c0a7f585e8e61fc8515f8" title="set scancode value " alt="" coords="1471,739,1580,765"/>
+<area shape="rect" id="node36" href="task3B_8cc.html#a4205b075c53452d0a4cb9966fe2bf855" title="runFib" alt="" coords="259,107,317,133"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3B_8cc_a5874bf2c7fd779b0760c4d5f16bb2d08_icgraph.png" border="0" usemap="#task3B_8cc_a5874bf2c7fd779b0760c4d5f16bb2d08_icgraph" alt=""/></div>
+<map name="task3B_8cc_a5874bf2c7fd779b0760c4d5f16bb2d08_icgraph" id="task3B_8cc_a5874bf2c7fd779b0760c4d5f16bb2d08_icgraph">
+<area shape="rect" id="node2" href="classTask3B.html#aa803f35a028d2dc338d20d69ab592f20" title="prints the line " alt="" coords="172,5,283,32"/>
+<area shape="rect" id="node3" href="main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point " alt="" coords="331,5,388,32"/>
+<area shape="rect" id="node4" href="main_8cc.html#a9f9d2ea101dcc6e3cd7011dccc4331e0" title="Wait for user input via keyboard to select sub task. " alt="" coords="436,5,528,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad1b3bc944aac0dbdd041cc180ff8c37a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int fib </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="task3B_8cc_source.html#l00053">53</a> der Datei <a class="el" href="task3B_8cc_source.html">task3B.cc</a>.</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3B_8cc_ad1b3bc944aac0dbdd041cc180ff8c37a_cgraph.png" border="0" usemap="#task3B_8cc_ad1b3bc944aac0dbdd041cc180ff8c37a_cgraph" alt=""/></div>
+<map name="task3B_8cc_ad1b3bc944aac0dbdd041cc180ff8c37a_cgraph" id="task3B_8cc_ad1b3bc944aac0dbdd041cc180ff8c37a_cgraph">
+<area shape="rect" id="node2" href="task3B_8cc.html#a1140e1f1ebb85d5c7103af6e0b522c22" title="printStack" alt="" coords="199,663,280,689"/>
+<area shape="rect" id="node35" href="task3B_8cc.html#a4205b075c53452d0a4cb9966fe2bf855" title="runFib" alt="" coords="92,688,151,715"/>
+<area shape="rect" id="node3" href="analyse_8h.html#a779cba6565d75b0b5d78aa3304adc280" title="Diese Funktion dient der Analyse des Prozedurstacks. " alt="" coords="328,247,488,273"/>
+<area shape="rect" id="node20" href="classKeyboard__Controller.html#a78cf6859d88097a0f2b6945fc86c1d21" title="get the last pressed key " alt="" coords="720,521,860,562"/>
+<area shape="rect" id="node31" href="classKey.html#abb65ed9de2b4a8c24f557416b484df34" title="set ascii value " alt="" coords="1319,821,1399,848"/>
+<area shape="rect" id="node34" href="classKey.html#a4292f24b142a697e610fb7780a0dc9d5" title="test for validity. " alt="" coords="368,873,448,900"/>
+<area shape="rect" id="node4" href="o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline " alt="" coords="581,247,627,273"/>
+<area shape="rect" id="node7" href="analyse_8cc.html#aeaf44bcb41af369300bf80a3bb46dd31" title="printFormatted" alt="" coords="551,297,657,324"/>
+<area shape="rect" id="node9" href="classCGA__Stream.html#a73572f5377a28f09ee9dc3af7b5a65b9" title="ausgeben des Inhaltes des internen Puffers " alt="" coords="536,120,672,147"/>
+<area shape="rect" id="node19" href="o__stream_8h.html#a143762d59413d6d7cae38fb25104c5c4" title="switch basis of o_stream to decimal " alt="" coords="583,196,625,223"/>
+<area shape="rect" id="node5" href="classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer " alt="" coords="733,196,847,223"/>
+<area shape="rect" id="node6" href="classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen " alt="" coords="921,208,1047,235"/>
+<area shape="rect" id="node8" href="o__stream_8h.html#ac9bf4a3a6b7a2f0105d73ce270f5e69d" title="switch basis of o_stream to hexadecimal " alt="" coords="769,297,811,324"/>
+<area shape="rect" id="node10" href="classCGA__Screen.html#a6c295831093cab87c3944e39160965b9" title="gibt eine Zeichenkette an der aktuellen Position aus " alt="" coords="724,107,856,133"/>
+<area shape="rect" id="node11" href="classCGA__Screen.html#a6f47426c0cf0662b6835d64e08cf929e" title="get the cursor position " alt="" coords="1108,157,1255,184"/>
+<area shape="rect" id="node14" href="classCGA__Screen.html#a6dfbfb197371c461938cfcc9c5d70187" title="print a character to a specific position " alt="" coords="915,157,1053,184"/>
+<area shape="rect" id="node15" href="classCGA__Screen.html#a346b7ccc05356f76e738a76a24510e33" title="set the cursor position " alt="" coords="1108,5,1255,32"/>
+<area shape="rect" id="node16" href="classCGA__Screen.html#a3808a301813e3e1b6368ab75a94ea652" title="das aktuelle Display wird eine Zeile nach oben gescrollt " alt="" coords="908,56,1060,83"/>
+<area shape="rect" id="node12" href="classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port. " alt="" coords="1309,157,1409,184"/>
+<area shape="rect" id="node13" href="classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port. " alt="" coords="1313,233,1405,260"/>
+<area shape="rect" id="node17" href="cgascr_8cc.html#a6e6bcac2e080fd8066ffd4b46cc64db0" title="memcpy" alt="" coords="1145,56,1217,83"/>
+<area shape="rect" id="node18" href="cgascr_8cc.html#a9138eaf62e2ebaff35fe90d676b94126" title="memset" alt="" coords="1147,107,1216,133"/>
+<area shape="rect" id="node21" href="classKeyboard__Controller.html#aa517065c0ed4059b477dfb481539b1b2" title="interpret the reveived scancode and modifier bits " alt="" coords="914,521,1054,562"/>
+<area shape="rect" id="node22" href="classKey.html#a62e735f4121d8984d994a508bdd6a74b" title="Key::shift" alt="" coords="1319,659,1398,685"/>
+<area shape="rect" id="node23" href="classKey.html#af4fa809960860523573abd695e3f8fbe" title="Key::alt_right" alt="" coords="1309,767,1408,793"/>
+<area shape="rect" id="node24" href="classKey.html#ab1199ecfd588b567053543b6715ba19a" title="Key::alt_left" alt="" coords="1135,401,1227,428"/>
+<area shape="rect" id="node25" href="classKey.html#a90ea541bc6d1286a517eaccd700c4ba0" title="Key::ctrl_right" alt="" coords="1130,452,1233,479"/>
+<area shape="rect" id="node26" href="classKey.html#af1c7ef33119f0c10909a2de246de7854" title="Key::ctrl_left" alt="" coords="1133,503,1229,529"/>
+<area shape="rect" id="node27" href="classKey.html#a45fb60e270f30b9f23e28259e851b14a" title="Key::caps_lock" alt="" coords="1303,440,1415,467"/>
+<area shape="rect" id="node28" href="classKeyboard__Controller.html#a36dfc2c73c4031c8662e37159238d5b0" title="switch the specified LED of the keyboard on or off. " alt="" coords="1111,285,1251,326"/>
+<area shape="rect" id="node29" href="classKey.html#af3d96c346d2e6088cafbc94fe7c783ef" title="Key::scroll_lock" alt="" coords="1124,604,1239,631"/>
+<area shape="rect" id="node30" href="classKeyboard__Controller.html#ac2b33ffe1e2794c81249861aa792513a" title="convert the received scancode and modfier bits to an ascii char " alt="" coords="1111,706,1251,747"/>
+<area shape="rect" id="node33" href="classKey.html#a4a8da77b0cb57bf89bffa3903c2f79ce" title="Key::num_lock" alt="" coords="1304,580,1413,607"/>
+<area shape="rect" id="node32" href="classKey.html#ae67075af1a5c0a7f585e8e61fc8515f8" title="set scancode value " alt="" coords="1304,713,1413,740"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3B_8cc_ad1b3bc944aac0dbdd041cc180ff8c37a_icgraph.png" border="0" usemap="#task3B_8cc_ad1b3bc944aac0dbdd041cc180ff8c37a_icgraph" alt=""/></div>
+<map name="task3B_8cc_ad1b3bc944aac0dbdd041cc180ff8c37a_icgraph" id="task3B_8cc_ad1b3bc944aac0dbdd041cc180ff8c37a_icgraph">
+<area shape="rect" id="node2" href="task3B_8cc.html#a5874bf2c7fd779b0760c4d5f16bb2d08" title="doTask3BAction" alt="" coords="92,5,211,32"/>
+<area shape="rect" id="node3" href="classTask3B.html#aa803f35a028d2dc338d20d69ab592f20" title="prints the line " alt="" coords="259,5,369,32"/>
+<area shape="rect" id="node4" href="main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point " alt="" coords="417,5,475,32"/>
+<area shape="rect" id="node5" href="main_8cc.html#a9f9d2ea101dcc6e3cd7011dccc4331e0" title="Wait for user input via keyboard to select sub task. " alt="" coords="523,5,615,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1140e1f1ebb85d5c7103af6e0b522c22"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printStack </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>func</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="task3B_8cc_source.html#l00033">33</a> der Datei <a class="el" href="task3B_8cc_source.html">task3B.cc</a>.</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3B_8cc_a1140e1f1ebb85d5c7103af6e0b522c22_cgraph.png" border="0" usemap="#task3B_8cc_a1140e1f1ebb85d5c7103af6e0b522c22_cgraph" alt=""/></div>
+<map name="task3B_8cc_a1140e1f1ebb85d5c7103af6e0b522c22_cgraph" id="task3B_8cc_a1140e1f1ebb85d5c7103af6e0b522c22_cgraph">
+<area shape="rect" id="node2" href="analyse_8h.html#a779cba6565d75b0b5d78aa3304adc280" title="Diese Funktion dient der Analyse des Prozedurstacks. " alt="" coords="135,247,295,273"/>
+<area shape="rect" id="node19" href="classKeyboard__Controller.html#a78cf6859d88097a0f2b6945fc86c1d21" title="get the last pressed key " alt="" coords="527,521,667,562"/>
+<area shape="rect" id="node30" href="classKey.html#abb65ed9de2b4a8c24f557416b484df34" title="set ascii value " alt="" coords="1125,821,1205,848"/>
+<area shape="rect" id="node33" href="classKey.html#a4292f24b142a697e610fb7780a0dc9d5" title="test for validity. " alt="" coords="175,873,255,900"/>
+<area shape="rect" id="node3" href="o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline " alt="" coords="387,247,434,273"/>
+<area shape="rect" id="node6" href="analyse_8cc.html#aeaf44bcb41af369300bf80a3bb46dd31" title="printFormatted" alt="" coords="357,297,464,324"/>
+<area shape="rect" id="node8" href="classCGA__Stream.html#a73572f5377a28f09ee9dc3af7b5a65b9" title="ausgeben des Inhaltes des internen Puffers " alt="" coords="343,120,479,147"/>
+<area shape="rect" id="node18" href="o__stream_8h.html#a143762d59413d6d7cae38fb25104c5c4" title="switch basis of o_stream to decimal " alt="" coords="389,196,432,223"/>
+<area shape="rect" id="node4" href="classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer " alt="" coords="539,196,654,223"/>
+<area shape="rect" id="node5" href="classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen " alt="" coords="728,208,853,235"/>
+<area shape="rect" id="node7" href="o__stream_8h.html#ac9bf4a3a6b7a2f0105d73ce270f5e69d" title="switch basis of o_stream to hexadecimal " alt="" coords="575,297,618,324"/>
+<area shape="rect" id="node9" href="classCGA__Screen.html#a6c295831093cab87c3944e39160965b9" title="gibt eine Zeichenkette an der aktuellen Position aus " alt="" coords="531,107,663,133"/>
+<area shape="rect" id="node10" href="classCGA__Screen.html#a6f47426c0cf0662b6835d64e08cf929e" title="get the cursor position " alt="" coords="915,157,1061,184"/>
+<area shape="rect" id="node13" href="classCGA__Screen.html#a6dfbfb197371c461938cfcc9c5d70187" title="print a character to a specific position " alt="" coords="721,157,860,184"/>
+<area shape="rect" id="node14" href="classCGA__Screen.html#a346b7ccc05356f76e738a76a24510e33" title="set the cursor position " alt="" coords="915,5,1061,32"/>
+<area shape="rect" id="node15" href="classCGA__Screen.html#a3808a301813e3e1b6368ab75a94ea652" title="das aktuelle Display wird eine Zeile nach oben gescrollt " alt="" coords="715,56,867,83"/>
+<area shape="rect" id="node11" href="classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port. " alt="" coords="1115,157,1215,184"/>
+<area shape="rect" id="node12" href="classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port. " alt="" coords="1119,233,1211,260"/>
+<area shape="rect" id="node16" href="cgascr_8cc.html#a6e6bcac2e080fd8066ffd4b46cc64db0" title="memcpy" alt="" coords="952,56,1024,83"/>
+<area shape="rect" id="node17" href="cgascr_8cc.html#a9138eaf62e2ebaff35fe90d676b94126" title="memset" alt="" coords="953,107,1023,133"/>
+<area shape="rect" id="node20" href="classKeyboard__Controller.html#aa517065c0ed4059b477dfb481539b1b2" title="interpret the reveived scancode and modifier bits " alt="" coords="721,521,861,562"/>
+<area shape="rect" id="node21" href="classKey.html#a62e735f4121d8984d994a508bdd6a74b" title="Key::shift" alt="" coords="1126,659,1205,685"/>
+<area shape="rect" id="node22" href="classKey.html#af4fa809960860523573abd695e3f8fbe" title="Key::alt_right" alt="" coords="1116,767,1215,793"/>
+<area shape="rect" id="node23" href="classKey.html#ab1199ecfd588b567053543b6715ba19a" title="Key::alt_left" alt="" coords="942,401,1034,428"/>
+<area shape="rect" id="node24" href="classKey.html#a90ea541bc6d1286a517eaccd700c4ba0" title="Key::ctrl_right" alt="" coords="937,452,1039,479"/>
+<area shape="rect" id="node25" href="classKey.html#af1c7ef33119f0c10909a2de246de7854" title="Key::ctrl_left" alt="" coords="940,503,1036,529"/>
+<area shape="rect" id="node26" href="classKey.html#a45fb60e270f30b9f23e28259e851b14a" title="Key::caps_lock" alt="" coords="1109,440,1221,467"/>
+<area shape="rect" id="node27" href="classKeyboard__Controller.html#a36dfc2c73c4031c8662e37159238d5b0" title="switch the specified LED of the keyboard on or off. " alt="" coords="918,285,1058,326"/>
+<area shape="rect" id="node28" href="classKey.html#af3d96c346d2e6088cafbc94fe7c783ef" title="Key::scroll_lock" alt="" coords="931,604,1045,631"/>
+<area shape="rect" id="node29" href="classKeyboard__Controller.html#ac2b33ffe1e2794c81249861aa792513a" title="convert the received scancode and modfier bits to an ascii char " alt="" coords="918,706,1058,747"/>
+<area shape="rect" id="node32" href="classKey.html#a4a8da77b0cb57bf89bffa3903c2f79ce" title="Key::num_lock" alt="" coords="1111,580,1220,607"/>
+<area shape="rect" id="node31" href="classKey.html#ae67075af1a5c0a7f585e8e61fc8515f8" title="set scancode value " alt="" coords="1111,713,1220,740"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3B_8cc_a1140e1f1ebb85d5c7103af6e0b522c22_icgraph.png" border="0" usemap="#task3B_8cc_a1140e1f1ebb85d5c7103af6e0b522c22_icgraph" alt=""/></div>
+<map name="task3B_8cc_a1140e1f1ebb85d5c7103af6e0b522c22_icgraph" id="task3B_8cc_a1140e1f1ebb85d5c7103af6e0b522c22_icgraph">
+<area shape="rect" id="node2" href="task3B_8cc.html#a4205b075c53452d0a4cb9966fe2bf855" title="runFib" alt="" coords="135,5,193,32"/>
+<area shape="rect" id="node3" href="task3B_8cc.html#ad1b3bc944aac0dbdd041cc180ff8c37a" title="fib" alt="" coords="241,56,280,83"/>
+<area shape="rect" id="node4" href="task3B_8cc.html#a5874bf2c7fd779b0760c4d5f16bb2d08" title="doTask3BAction" alt="" coords="328,81,447,108"/>
+<area shape="rect" id="node5" href="classTask3B.html#aa803f35a028d2dc338d20d69ab592f20" title="prints the line " alt="" coords="495,81,605,108"/>
+<area shape="rect" id="node6" href="main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point " alt="" coords="653,81,711,108"/>
+<area shape="rect" id="node7" href="main_8cc.html#a9f9d2ea101dcc6e3cd7011dccc4331e0" title="Wait for user input via keyboard to select sub task. " alt="" coords="759,81,851,108"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4205b075c53452d0a4cb9966fe2bf855"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int runFib </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>fib_1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>fib_2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="task3B_8cc_source.html#l00044">44</a> der Datei <a class="el" href="task3B_8cc_source.html">task3B.cc</a>.</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3B_8cc_a4205b075c53452d0a4cb9966fe2bf855_cgraph.png" border="0" usemap="#task3B_8cc_a4205b075c53452d0a4cb9966fe2bf855_cgraph" alt=""/></div>
+<map name="task3B_8cc_a4205b075c53452d0a4cb9966fe2bf855_cgraph" id="task3B_8cc_a4205b075c53452d0a4cb9966fe2bf855_cgraph">
+<area shape="rect" id="node2" href="task3B_8cc.html#a1140e1f1ebb85d5c7103af6e0b522c22" title="printStack" alt="" coords="112,731,193,757"/>
+<area shape="rect" id="node3" href="analyse_8h.html#a779cba6565d75b0b5d78aa3304adc280" title="Diese Funktion dient der Analyse des Prozedurstacks. " alt="" coords="241,247,401,273"/>
+<area shape="rect" id="node20" href="classKeyboard__Controller.html#a78cf6859d88097a0f2b6945fc86c1d21" title="get the last pressed key " alt="" coords="633,521,773,562"/>
+<area shape="rect" id="node31" href="classKey.html#abb65ed9de2b4a8c24f557416b484df34" title="set ascii value " alt="" coords="1232,821,1312,848"/>
+<area shape="rect" id="node34" href="classKey.html#a4292f24b142a697e610fb7780a0dc9d5" title="test for validity. " alt="" coords="281,873,361,900"/>
+<area shape="rect" id="node4" href="o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline " alt="" coords="494,247,541,273"/>
+<area shape="rect" id="node7" href="analyse_8cc.html#aeaf44bcb41af369300bf80a3bb46dd31" title="printFormatted" alt="" coords="464,297,571,324"/>
+<area shape="rect" id="node9" href="classCGA__Stream.html#a73572f5377a28f09ee9dc3af7b5a65b9" title="ausgeben des Inhaltes des internen Puffers " alt="" coords="449,120,585,147"/>
+<area shape="rect" id="node19" href="o__stream_8h.html#a143762d59413d6d7cae38fb25104c5c4" title="switch basis of o_stream to decimal " alt="" coords="496,196,539,223"/>
+<area shape="rect" id="node5" href="classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer " alt="" coords="646,196,761,223"/>
+<area shape="rect" id="node6" href="classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen " alt="" coords="835,208,960,235"/>
+<area shape="rect" id="node8" href="o__stream_8h.html#ac9bf4a3a6b7a2f0105d73ce270f5e69d" title="switch basis of o_stream to hexadecimal " alt="" coords="682,297,725,324"/>
+<area shape="rect" id="node10" href="classCGA__Screen.html#a6c295831093cab87c3944e39160965b9" title="gibt eine Zeichenkette an der aktuellen Position aus " alt="" coords="637,107,769,133"/>
+<area shape="rect" id="node11" href="classCGA__Screen.html#a6f47426c0cf0662b6835d64e08cf929e" title="get the cursor position " alt="" coords="1021,157,1168,184"/>
+<area shape="rect" id="node14" href="classCGA__Screen.html#a6dfbfb197371c461938cfcc9c5d70187" title="print a character to a specific position " alt="" coords="828,157,967,184"/>
+<area shape="rect" id="node15" href="classCGA__Screen.html#a346b7ccc05356f76e738a76a24510e33" title="set the cursor position " alt="" coords="1021,5,1168,32"/>
+<area shape="rect" id="node16" href="classCGA__Screen.html#a3808a301813e3e1b6368ab75a94ea652" title="das aktuelle Display wird eine Zeile nach oben gescrollt " alt="" coords="821,56,973,83"/>
+<area shape="rect" id="node12" href="classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port. " alt="" coords="1222,157,1322,184"/>
+<area shape="rect" id="node13" href="classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port. " alt="" coords="1226,233,1318,260"/>
+<area shape="rect" id="node17" href="cgascr_8cc.html#a6e6bcac2e080fd8066ffd4b46cc64db0" title="memcpy" alt="" coords="1059,56,1131,83"/>
+<area shape="rect" id="node18" href="cgascr_8cc.html#a9138eaf62e2ebaff35fe90d676b94126" title="memset" alt="" coords="1060,107,1129,133"/>
+<area shape="rect" id="node21" href="classKeyboard__Controller.html#aa517065c0ed4059b477dfb481539b1b2" title="interpret the reveived scancode and modifier bits " alt="" coords="827,521,967,562"/>
+<area shape="rect" id="node22" href="classKey.html#a62e735f4121d8984d994a508bdd6a74b" title="Key::shift" alt="" coords="1233,659,1311,685"/>
+<area shape="rect" id="node23" href="classKey.html#af4fa809960860523573abd695e3f8fbe" title="Key::alt_right" alt="" coords="1223,767,1321,793"/>
+<area shape="rect" id="node24" href="classKey.html#ab1199ecfd588b567053543b6715ba19a" title="Key::alt_left" alt="" coords="1049,401,1141,428"/>
+<area shape="rect" id="node25" href="classKey.html#a90ea541bc6d1286a517eaccd700c4ba0" title="Key::ctrl_right" alt="" coords="1043,452,1146,479"/>
+<area shape="rect" id="node26" href="classKey.html#af1c7ef33119f0c10909a2de246de7854" title="Key::ctrl_left" alt="" coords="1047,503,1143,529"/>
+<area shape="rect" id="node27" href="classKey.html#a45fb60e270f30b9f23e28259e851b14a" title="Key::caps_lock" alt="" coords="1216,440,1328,467"/>
+<area shape="rect" id="node28" href="classKeyboard__Controller.html#a36dfc2c73c4031c8662e37159238d5b0" title="switch the specified LED of the keyboard on or off. " alt="" coords="1025,285,1165,326"/>
+<area shape="rect" id="node29" href="classKey.html#af3d96c346d2e6088cafbc94fe7c783ef" title="Key::scroll_lock" alt="" coords="1037,604,1152,631"/>
+<area shape="rect" id="node30" href="classKeyboard__Controller.html#ac2b33ffe1e2794c81249861aa792513a" title="convert the received scancode and modfier bits to an ascii char " alt="" coords="1025,706,1165,747"/>
+<area shape="rect" id="node33" href="classKey.html#a4a8da77b0cb57bf89bffa3903c2f79ce" title="Key::num_lock" alt="" coords="1217,580,1327,607"/>
+<area shape="rect" id="node32" href="classKey.html#ae67075af1a5c0a7f585e8e61fc8515f8" title="set scancode value " alt="" coords="1217,713,1327,740"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3B_8cc_a4205b075c53452d0a4cb9966fe2bf855_icgraph.png" border="0" usemap="#task3B_8cc_a4205b075c53452d0a4cb9966fe2bf855_icgraph" alt=""/></div>
+<map name="task3B_8cc_a4205b075c53452d0a4cb9966fe2bf855_icgraph" id="task3B_8cc_a4205b075c53452d0a4cb9966fe2bf855_icgraph">
+<area shape="rect" id="node2" href="task3B_8cc.html#ad1b3bc944aac0dbdd041cc180ff8c37a" title="fib" alt="" coords="112,5,151,32"/>
+<area shape="rect" id="node3" href="task3B_8cc.html#a5874bf2c7fd779b0760c4d5f16bb2d08" title="doTask3BAction" alt="" coords="199,5,317,32"/>
+<area shape="rect" id="node4" href="classTask3B.html#aa803f35a028d2dc338d20d69ab592f20" title="prints the line " alt="" coords="365,5,476,32"/>
+<area shape="rect" id="node5" href="main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point " alt="" coords="524,5,581,32"/>
+<area shape="rect" id="node6" href="main_8cc.html#a9f9d2ea101dcc6e3cd7011dccc4331e0" title="Wait for user input via keyboard to select sub task. " alt="" coords="629,5,721,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Mon Mai 30 2016 20:33:15 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

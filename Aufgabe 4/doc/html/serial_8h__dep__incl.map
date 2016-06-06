@@ -1,0 +1,11 @@
+<map id="include/machine/serial.h" name="include/machine/serial.h">
+<area shape="rect" id="node2" href="$device_2log_8h.html" title="include/device/log.h" alt="" coords="461,80,599,107"/>
+<area shape="rect" id="node10" href="$serial_8cc.html" title="src/machine/serial.cc" alt="" coords="623,80,770,107"/>
+<area shape="rect" id="node3" href="$object_2log_8h.html" title="include/object/log.h" alt="" coords="311,155,445,181"/>
+<area shape="rect" id="node8" href="$log_8cc.html" title="src/device/log.cc" alt="" coords="469,155,591,181"/>
+<area shape="rect" id="node9" href="$main_8cc.html" title="Grunddatei von OOStuBS. " alt="" coords="615,155,706,181"/>
+<area shape="rect" id="node4" href="$interruptLock_8cc.html" title="src/locking/interruptLock.cc" alt="" coords="5,229,188,256"/>
+<area shape="rect" id="node5" href="$scheduler_8cc.html" title="src/thread/scheduler.cc" alt="" coords="212,229,371,256"/>
+<area shape="rect" id="node6" href="$thread_8cc.html" title="src/thread/thread.cc" alt="" coords="395,229,534,256"/>
+<area shape="rect" id="node7" href="$task4_8cc.html" title="src/user/task4.cc" alt="" coords="558,229,681,256"/>
+</map>

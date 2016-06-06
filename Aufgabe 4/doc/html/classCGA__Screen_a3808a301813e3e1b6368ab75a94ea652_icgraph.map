@@ -1,0 +1,25 @@
+<map id="CGA_Screen::scrollup" name="CGA_Screen::scrollup">
+<area shape="rect" id="node2" href="$classCGA__Screen.html#a6c295831093cab87c3944e39160965b9" title="gibt eine Zeichenkette an der aktuellen Position aus " alt="" coords="205,208,337,235"/>
+<area shape="rect" id="node3" href="$classCGA__Stream.html#a73572f5377a28f09ee9dc3af7b5a65b9" title="ausgeben des Inhaltes des internen Puffers " alt="" coords="413,183,549,209"/>
+<area shape="rect" id="node24" href="$classCGA__Screen.html#a8bfd69c9fc770359fb8d6e3a02cbdd1e" title="Destructor. " alt="" coords="385,233,577,260"/>
+<area shape="rect" id="node4" href="$classKeyboard.html#a0d0359a4df20db7eb38dd769e2322353" title="einen auftretenden Tastaturinterrupt behandeln " alt="" coords="649,5,771,32"/>
+<area shape="rect" id="node5" href="$exceptions_8cc.html#aa9be12416ab5fcc6ced0ea49ff7825de" title="printException" alt="" coords="657,56,763,83"/>
+<area shape="rect" id="node7" href="$analyse_8cc.html#adab0ef21ad15eeca2d4b96b98b59b356" title="Diese Funktion dient der Analyse des Prozedurstacks. " alt="" coords="630,107,790,133"/>
+<area shape="rect" id="node15" href="$classTask1.html#a48ca608ac9cdc03ab6614a4f61e2448e" title="test the functionality of the Kout object " alt="" coords="653,157,767,184"/>
+<area shape="rect" id="node17" href="$classTask1.html#a587ce3fad20f9ec4ec88beefd08db49e" title="test the functionality of the Keyboard_Controller object " alt="" coords="639,208,781,235"/>
+<area shape="rect" id="node18" href="$classTask2.html#aa5de17846032b02d6d0819cdc78b1b3e" title="prints the line " alt="" coords="659,259,761,285"/>
+<area shape="rect" id="node19" href="$classTask4_1_1RotCursor.html#a33e3fee3981896223823f4b396339f40" title="start outputting the symbol " alt="" coords="625,309,795,336"/>
+<area shape="rect" id="node23" href="$classTask4_1_1Counter.html#a93c77e391d4d89cf0c34c47b9521d464" title="start outputting and incrementing the counter value " alt="" coords="633,360,787,387"/>
+<area shape="rect" id="node6" href="$exceptions_8cc.html#a17ac45e3213989a19bb1472093ca30e6" title="Entry point for exceptions. " alt="" coords="905,56,983,83"/>
+<area shape="rect" id="node8" href="$task3B_8cc.html#a1140e1f1ebb85d5c7103af6e0b522c22" title="printStack" alt="" coords="903,119,985,145"/>
+<area shape="rect" id="node9" href="$task3B_8cc.html#a4205b075c53452d0a4cb9966fe2bf855" title="runFib" alt="" coords="1131,88,1190,115"/>
+<area shape="rect" id="node10" href="$task3B_8cc.html#ad1b3bc944aac0dbdd041cc180ff8c37a" title="fib" alt="" coords="1276,139,1315,165"/>
+<area shape="rect" id="node11" href="$task3B_8cc.html#a5874bf2c7fd779b0760c4d5f16bb2d08" title="doTask3BAction" alt="" coords="1363,189,1481,216"/>
+<area shape="rect" id="node12" href="$classTask3B.html#aa803f35a028d2dc338d20d69ab592f20" title="prints the line " alt="" coords="1529,195,1640,221"/>
+<area shape="rect" id="node13" href="$main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point " alt="" coords="1688,223,1745,249"/>
+<area shape="rect" id="node14" href="$main_8cc.html#a9f9d2ea101dcc6e3cd7011dccc4331e0" title="Wait for user input via keyboard to select sub task. " alt="" coords="1793,223,1885,249"/>
+<area shape="rect" id="node16" href="$classTask1.html#a0d4029a13591e70af436c0ead066ea5c" title="parse and print multiboot information " alt="" coords="893,195,995,221"/>
+<area shape="rect" id="node20" href="$classTask4_1_1RotCursor.html#aa317aab41cd3e8f579df5dfeb1b99108" title="Task4::RotCursor::enableCoop" alt="" coords="843,259,1045,285"/>
+<area shape="rect" id="node22" href="$classTask4_1_1Counter.html#a23b32a250857ab5e8fdc0b4fb5a0ee43" title="Task4::Counter::enableCoop" alt="" coords="849,309,1039,336"/>
+<area shape="rect" id="node21" href="$classTask4.html#a5ec390882239e7957f43edaf891156eb" title="switch sub tasks to cooperative scheduling " alt="" coords="1093,259,1228,285"/>
+</map>

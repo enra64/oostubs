@@ -1,0 +1,7 @@
+<map id="Task4::RotCursor::action" name="Task4::RotCursor::action">
+<area shape="rect" id="node2" href="$classTask4_1_1RotCursor.html#aa317aab41cd3e8f579df5dfeb1b99108" title="Task4::RotCursor::enableCoop" alt="" coords="223,5,425,32"/>
+<area shape="rect" id="node6" href="$classTask4_1_1Counter.html#a23b32a250857ab5e8fdc0b4fb5a0ee43" title="Task4::Counter::enableCoop" alt="" coords="229,56,419,83"/>
+<area shape="rect" id="node3" href="$classTask4.html#a5ec390882239e7957f43edaf891156eb" title="switch sub tasks to cooperative scheduling " alt="" coords="473,31,608,57"/>
+<area shape="rect" id="node4" href="$main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point " alt="" coords="656,31,713,57"/>
+<area shape="rect" id="node5" href="$main_8cc.html#a9f9d2ea101dcc6e3cd7011dccc4331e0" title="Wait for user input via keyboard to select sub task. " alt="" coords="761,31,853,57"/>
+</map>

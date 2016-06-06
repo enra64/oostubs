@@ -1,0 +1,15 @@
+<map id="include/user/appl.h" name="include/user/appl.h">
+<area shape="rect" id="node2" href="$task1_8h.html" title="Klassendeklaration für erste Aufgabe. " alt="" coords="859,80,997,107"/>
+<area shape="rect" id="node5" href="$task2_8h.html" title="include/user/task2.h" alt="" coords="15,80,153,107"/>
+<area shape="rect" id="node7" href="$task3A_8h.html" title="include/user/task3A.h" alt="" coords="178,80,326,107"/>
+<area shape="rect" id="node9" href="$task3B_8h.html" title="include/user/task3B.h" alt="" coords="350,80,498,107"/>
+<area shape="rect" id="node11" href="$task3C_8h.html" title="include/user/task3C.h" alt="" coords="523,80,672,107"/>
+<area shape="rect" id="node13" href="$task4_8h.html" title="include/user/task4.h" alt="" coords="696,80,835,107"/>
+<area shape="rect" id="node3" href="$main_8cc.html" title="Grunddatei von OOStuBS. " alt="" coords="465,155,556,181"/>
+<area shape="rect" id="node4" href="$task1_8cc.html" title="src/user/task1.cc" alt="" coords="884,155,1007,181"/>
+<area shape="rect" id="node6" href="$task2_8cc.html" title="src/user/task2.cc" alt="" coords="5,155,128,181"/>
+<area shape="rect" id="node8" href="$task3A_8cc.html" title="src/user/task3A.cc" alt="" coords="153,155,285,181"/>
+<area shape="rect" id="node10" href="$task3B_8cc.html" title="src/user/task3B.cc" alt="" coords="309,155,441,181"/>
+<area shape="rect" id="node12" href="$task3C_8cc.html" title="src/user/task3C.cc" alt="" coords="580,155,713,181"/>
+<area shape="rect" id="node14" href="$task4_8cc.html" title="src/user/task4.cc" alt="" coords="737,155,860,181"/>
+</map>

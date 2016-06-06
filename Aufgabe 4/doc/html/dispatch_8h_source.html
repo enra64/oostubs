@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>OOStuBS - Technische Informatik II (TI-II): include/thread/dispatch.h Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">OOStuBS - Technische Informatik II (TI-II)
+   &#160;<span id="projectnumber">2.4</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.11 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_ca34dfd472e7f8119d5dbfd07bd79aae.html">thread</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">dispatch.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="dispatch_8h.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Operating Systems I                                                       *</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *---------------------------------------------------------------------------*</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *                                                                           *</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *                          D I S P A T C H E R                              *</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *                                                                           *</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *---------------------------------------------------------------------------*/</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef __dispatch_include__</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define __dispatch_include__</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * *\</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">#                    INCLUDES                     #</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * */</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="thread_8h.html">thread/thread.h</a>&quot;</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * *\</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">#                    CLASSES                      #</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * */</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classDispatcher.html">   30</a></span>&#160;<span class="keyword">class </span><a class="code" href="classDispatcher.html">Dispatcher</a> {</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classDispatcher.html#a4ee0e308da39882eea388f22140b1f04">   36</a></span>&#160;   <a class="code" href="classThread.html">Thread</a>* <a class="code" href="classDispatcher.html#a4ee0e308da39882eea388f22140b1f04">current</a>;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  </div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classDispatcher.html#a1bd5ef08a829632075b6ccc7c81b1609">   44</a></span>&#160;  <a class="code" href="classDispatcher.html#a1bd5ef08a829632075b6ccc7c81b1609">Dispatcher</a>() : current(0){}</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classDispatcher.html#a2495464a8b4352282f62ad39c8a00cc8">start</a>(<a class="code" href="classThread.html">Thread</a>&amp; first);</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classDispatcher.html#ae5e8e2d148cd30aa060cab3c410396d1">dispatch</a>(<a class="code" href="classThread.html">Thread</a>&amp; next);</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div><div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classDispatcher.html#ac90194c2cc30bc1941ea4a0244e747f2">   70</a></span>&#160;  <a class="code" href="classThread.html">Thread</a>* <a class="code" href="classDispatcher.html#ac90194c2cc30bc1941ea4a0244e747f2">active</a>()<span class="keyword"> const</span>{</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classDispatcher.html#a4ee0e308da39882eea388f22140b1f04">current</a>;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  }</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="classDispatcher_html"><div class="ttname"><a href="classDispatcher.html">Dispatcher</a></div><div class="ttdoc">Managing currently active threads. </div><div class="ttdef"><b>Definition:</b> <a href="dispatch_8h_source.html#l00030">dispatch.h:30</a></div></div>
+<div class="ttc" id="classDispatcher_html_a1bd5ef08a829632075b6ccc7c81b1609"><div class="ttname"><a href="classDispatcher.html#a1bd5ef08a829632075b6ccc7c81b1609">Dispatcher::Dispatcher</a></div><div class="ttdeci">Dispatcher()</div><div class="ttdef"><b>Definition:</b> <a href="dispatch_8h_source.html#l00044">dispatch.h:44</a></div></div>
+<div class="ttc" id="classDispatcher_html_ae5e8e2d148cd30aa060cab3c410396d1"><div class="ttname"><a href="classDispatcher.html#ae5e8e2d148cd30aa060cab3c410396d1">Dispatcher::dispatch</a></div><div class="ttdeci">void dispatch(Thread &amp;next)</div><div class="ttdoc">Switch to another thread. </div><div class="ttdef"><b>Definition:</b> <a href="dispatch_8cc_source.html#l00024">dispatch.cc:24</a></div></div>
+<div class="ttc" id="thread_8h_html"><div class="ttname"><a href="thread_8h.html">thread.h</a></div></div>
+<div class="ttc" id="classDispatcher_html_ac90194c2cc30bc1941ea4a0244e747f2"><div class="ttname"><a href="classDispatcher.html#ac90194c2cc30bc1941ea4a0244e747f2">Dispatcher::active</a></div><div class="ttdeci">Thread * active() const </div><div class="ttdoc">Returns the currently active thread. </div><div class="ttdef"><b>Definition:</b> <a href="dispatch_8h_source.html#l00070">dispatch.h:70</a></div></div>
+<div class="ttc" id="classThread_html"><div class="ttname"><a href="classThread.html">Thread</a></div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00035">thread.h:35</a></div></div>
+<div class="ttc" id="classDispatcher_html_a2495464a8b4352282f62ad39c8a00cc8"><div class="ttname"><a href="classDispatcher.html#a2495464a8b4352282f62ad39c8a00cc8">Dispatcher::start</a></div><div class="ttdeci">void start(Thread &amp;first)</div><div class="ttdoc">Starts the scheduling. </div><div class="ttdef"><b>Definition:</b> <a href="dispatch_8cc_source.html#l00019">dispatch.cc:19</a></div></div>
+<div class="ttc" id="classDispatcher_html_a4ee0e308da39882eea388f22140b1f04"><div class="ttname"><a href="classDispatcher.html#a4ee0e308da39882eea388f22140b1f04">Dispatcher::current</a></div><div class="ttdeci">Thread * current</div><div class="ttdef"><b>Definition:</b> <a href="dispatch_8h_source.html#l00036">dispatch.h:36</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Mon Mai 30 2016 20:33:15 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

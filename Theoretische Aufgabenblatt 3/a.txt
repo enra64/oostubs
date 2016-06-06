@@ -1,0 +1,31 @@
+1)
+Prozesszustand
+Priorität
+Zeitdauer
+Deadline
+
+Zu bevorzugen:
+Kommt auf Anwendung an, für RTC: deadline
+
+2)
+Round robin
+fifo
+earliest due date
+
+Fifo:
+Prozesse werden nach dem Prinzip der Queue abgearbeitet und neu gespeichert.
+
+5)
+Application Binary Interface
+Das Interface zweier Programme auf der Ebene von Maschinensprache, z.B. zwischen zwei verschiedenen Sprachen.
+
+6)
+Philosophenproblem:
+3 Menschen, 3 Stäbchen, 3 Schüsseln Reis, alle wollen essen.
+
+https://en.wikipedia.org/wiki/Gridlock
+
+8)
+Context switches: dispatcher speichert vorherigen Kontext, lädt neuen Prozess (evtl mit altem Kontext)
+User-mode-switching
+Zu bestimmter Stelle in user program springen

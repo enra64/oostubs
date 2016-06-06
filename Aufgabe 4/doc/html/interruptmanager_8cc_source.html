@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>OOStuBS - Technische Informatik II (TI-II): src/device/interruptmanager.cc Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">OOStuBS - Technische Informatik II (TI-II)
+   &#160;<span id="projectnumber">2.4</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.11 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&#160;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_16dc92632bab467dc50b01bd02b3341a.html">device</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">interruptmanager.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="interruptmanager_8cc.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *                                   Technische Informatik II                                    * </span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * </span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *                                                                                               * </span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *                               I N T E R R U P T _ M A N A G E R                               * </span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *                                                                                               * </span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/* * * * * * * * * * * * * * * * * * * * * * * * *\</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">#                    INCLUDES                     #</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">\* * * * * * * * * * * * * * * * * * * * * * * * */</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="interruptmanager_8h.html">device/interruptmanager.h</a>&gt;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classInterruptManager.html#a6b6f24b03cad03d67d2a7889ce2ae926">   14</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classInterruptManager.html#a6b6f24b03cad03d67d2a7889ce2ae926">InterruptManager::assign</a>(<span class="keywordtype">int</span> iNum, <a class="code" href="classInterruptHandler.html">InterruptHandler</a>&amp; handler){</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="comment">// assign a handler object to the interrupt</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <a class="code" href="classInterruptStorage.html#aa0e85a2fde141c1e2017ddf360e8d6ae">InterruptStorage::assign</a>(iNum, handler);</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="comment">// activate the interrupt</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="classPIC.html#a62ac9996c8ecfca65e2529655050b26b">PIC::allow</a>((<a class="code" href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5a">Interrupts</a>) iNum);</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div><div class="ttc" id="interruptmanager_8h_html"><div class="ttname"><a href="interruptmanager_8h.html">interruptmanager.h</a></div></div>
+<div class="ttc" id="classPIC_html_a62ac9996c8ecfca65e2529655050b26b"><div class="ttname"><a href="classPIC.html#a62ac9996c8ecfca65e2529655050b26b">PIC::allow</a></div><div class="ttdeci">void allow(Interrupts interrupt)</div><div class="ttdoc">Erlaubt einen speziellen Interrupt von einem Peripheriegerät. </div><div class="ttdef"><b>Definition:</b> <a href="pic_8cc_source.html#l00056">pic.cc:56</a></div></div>
+<div class="ttc" id="classInterruptStorage_html_aa0e85a2fde141c1e2017ddf360e8d6ae"><div class="ttname"><a href="classInterruptStorage.html#aa0e85a2fde141c1e2017ddf360e8d6ae">InterruptStorage::assign</a></div><div class="ttdeci">void assign(int iNum, InterruptHandler &amp;handler)</div><div class="ttdoc">bindet ein InterruptHandler Objekt an einen speziellen Interrupt </div><div class="ttdef"><b>Definition:</b> <a href="interruptstorage_8cc_source.html#l00027">interruptstorage.cc:27</a></div></div>
+<div class="ttc" id="classInterruptManager_html_a6b6f24b03cad03d67d2a7889ce2ae926"><div class="ttname"><a href="classInterruptManager.html#a6b6f24b03cad03d67d2a7889ce2ae926">InterruptManager::assign</a></div><div class="ttdeci">void assign(int iNum, InterruptHandler &amp;handler)</div><div class="ttdoc">Assign a handler to an interrupt. </div><div class="ttdef"><b>Definition:</b> <a href="interruptmanager_8cc_source.html#l00014">interruptmanager.cc:14</a></div></div>
+<div class="ttc" id="classInterruptHandler_html"><div class="ttname"><a href="classInterruptHandler.html">InterruptHandler</a></div><div class="ttdoc">Basisklasse für die Interruptbehandlung. </div><div class="ttdef"><b>Definition:</b> <a href="interrupthandler_8h_source.html#l00025">interrupthandler.h:25</a></div></div>
+<div class="ttc" id="classPIC_html_a9a27cccf846ee389bba3265f8cf00d5a"><div class="ttname"><a href="classPIC.html#a9a27cccf846ee389bba3265f8cf00d5a">PIC::Interrupts</a></div><div class="ttdeci">Interrupts</div><div class="ttdoc">externe Interruptquellen </div><div class="ttdef"><b>Definition:</b> <a href="pic_8h_source.html#l00063">pic.h:63</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Mon Mai 30 2016 20:33:15 für OOStuBS - Technische Informatik II (TI-II) von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

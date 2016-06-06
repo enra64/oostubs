@@ -1,0 +1,10 @@
+<map id="include/thread/scheduler.h" name="include/thread/scheduler.h">
+<area shape="rect" id="node2" href="$dispatch_8h.html" title="thread/dispatch.h" alt="" coords="61,80,183,107"/>
+<area shape="rect" id="node5" href="$queue_8h.html" title="common/queue.h" alt="" coords="159,229,282,256"/>
+<area shape="rect" id="node6" href="$watch_8h.html" title="device/watch.h" alt="" coords="291,80,401,107"/>
+<area shape="rect" id="node3" href="$thread_8h.html" title="thread/thread.h" alt="" coords="67,155,177,181"/>
+<area shape="rect" id="node4" href="$context_8h.html" title="machine/context.h" alt="" coords="5,229,135,256"/>
+<area shape="rect" id="node7" href="$interrupthandler_8h.html" title="common/interrupthandler.h" alt="" coords="258,155,434,181"/>
+<area shape="rect" id="node8" href="$pit_8h.html" title="machine/pit.h" alt="" coords="459,155,559,181"/>
+<area shape="rect" id="node10" href="$io__port_8h.html" title="machine/io_port.h" alt="" coords="506,229,631,256"/>
+</map>
