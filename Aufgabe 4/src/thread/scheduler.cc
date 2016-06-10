@@ -30,6 +30,7 @@ Scheduler::~Scheduler(){
 
 void Scheduler::start(){
   if(!threads.empty()){
+    ScopedLock scopedLock(lock);
     started = true;
     Thread* firstThread = static_cast<Thread*>(threads.pop_front());
     mQueueSize--;
@@ -46,7 +47,7 @@ void Scheduler::next()
   mQueueSize--;
   log << "scheduler::Next thread"<< ", queue:" << mQueueSize  << endl;
   if(!next){
-    log << "scheduler::No more threads, finished!"<< ", queue:" << mQueueSize  << endl;
+    log << "scheduler::finished!" << ", queue:" << mQueueSize  << endl;
     cpu.halt();
   }
   Dispatcher::dispatch(*next);
@@ -59,6 +60,8 @@ void Scheduler::insert(Thread& that){
 }
 
 void Scheduler::exit(){
+  // next has queue access -> sl
+  ScopedLock s(lock);
   next();
   log << "scheduler::exit"<< ", queue:" << mQueueSize  << endl;
   if(threads.empty()){
@@ -68,6 +71,7 @@ void Scheduler::exit(){
 }
 
 bool Scheduler::kill(Thread& that){
+  ScopedLock scopedLock(lock);
   bool removed = threads.remove(that);
   if(removed)
     mQueueSize--;
@@ -76,12 +80,14 @@ bool Scheduler::kill(Thread& that){
 }
 
 void Scheduler::yield(){
-  threads.push_back(*active());
-  mQueueSize++;
-  log << "scheduler::yield" << ", queue:" << mQueueSize << endl;
-  next();
+  preempt();
 }
 
 void Scheduler::preempt(){
-  // todo
+  if(!started)
+    return;
+  ScopedLock s(lock);
+  threads.push_back(*active());
+  mQueueSize++;
+  next();
 }

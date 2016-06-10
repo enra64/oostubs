@@ -68,9 +68,10 @@ void Task4::action(){
 	scheduler.insert(counter1);
   log << "Inserting Counter 2 in Scheduler" << endl;
 	scheduler.insert(counter2);
+	
+	
   
-  exit();
-  
+  //exit();
   //enableCoop();
   //while(1) scheduler.yield();
 }

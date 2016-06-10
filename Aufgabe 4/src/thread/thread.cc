@@ -20,7 +20,16 @@
 
 void Thread::kickoff(Thread* thread){
   log << "thread::start" << endl;
+  
+  // unlock after the scheduler locked
+  // for dispatching/context switching 
+  lock.unlock();
+  
+  // execute action
   thread->action();
+  
+  // exit after executing the action
+  thread->exit();
 }
 
 Thread::Thread() : context(this){}
