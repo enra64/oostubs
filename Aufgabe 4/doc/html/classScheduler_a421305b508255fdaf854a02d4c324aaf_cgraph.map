@@ -1,8 +1,0 @@
-<map id="Scheduler::next" name="Scheduler::next">
-<area shape="rect" id="node2" href="$classQueue.html#a2e7a90bce7215eca468ac31776285b6e" title="Queue::pop_front" alt="" coords="177,5,299,32"/>
-<area shape="rect" id="node3" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline " alt="" coords="215,56,261,83"/>
-<area shape="rect" id="node6" href="$classCPU.html#a189729f4ca240ff52004a34b9057d448" title="CPU::halt" alt="" coords="198,107,278,133"/>
-<area shape="rect" id="node7" href="$classDispatcher.html#ae5e8e2d148cd30aa060cab3c410396d1" title="Switch to another thread. " alt="" coords="167,157,309,184"/>
-<area shape="rect" id="node4" href="$classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer " alt="" coords="357,31,472,57"/>
-<area shape="rect" id="node5" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen " alt="" coords="520,56,645,83"/>
-</map>

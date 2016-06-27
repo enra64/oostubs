@@ -1,6 +1,0 @@
-<map id="InterruptManager::assign" name="InterruptManager::assign">
-<area shape="rect" id="node2" href="$classKeyboard.html#a6d362a122a7c417ff1a5c60152746d61" title="aktiviert den Interruptmechanismus für die Tastatur " alt="" coords="220,31,339,57"/>
-<area shape="rect" id="node3" href="$main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point " alt="" coords="409,5,467,32"/>
-<area shape="rect" id="node5" href="$classTask2.html#a4adb42b6119375dfec56808c158dd7dc" title="Default constructor. " alt="" coords="387,56,489,83"/>
-<area shape="rect" id="node4" href="$main_8cc.html#a9f9d2ea101dcc6e3cd7011dccc4331e0" title="Wait for user input via keyboard to select sub task. " alt="" coords="537,5,629,32"/>
-</map>

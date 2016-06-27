@@ -1,9 +1,0 @@
-<map id="CGA_Screen::clear" name="CGA_Screen::clear">
-<area shape="rect" id="node2" href="$exceptions_8cc.html#aa9be12416ab5fcc6ced0ea49ff7825de" title="printException" alt="" coords="197,5,302,32"/>
-<area shape="rect" id="node4" href="$main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point " alt="" coords="221,56,278,83"/>
-<area shape="rect" id="node6" href="$classTask1.html#a0d4029a13591e70af436c0ead066ea5c" title="parse and print multiboot information " alt="" coords="199,107,300,133"/>
-<area shape="rect" id="node7" href="$classTask3C.html#a8f04bccb22d544cb427fd7597ed1bea7" title="Default constructor. " alt="" coords="188,157,311,184"/>
-<area shape="rect" id="node8" href="$classTask4.html#a2a7d07836599ad51be274201cf6c2027" title="start operation " alt="" coords="199,208,300,235"/>
-<area shape="rect" id="node3" href="$exceptions_8cc.html#a17ac45e3213989a19bb1472093ca30e6" title="Entry point for exceptions. " alt="" coords="365,5,444,32"/>
-<area shape="rect" id="node5" href="$main_8cc.html#a9f9d2ea101dcc6e3cd7011dccc4331e0" title="Wait for user input via keyboard to select sub task. " alt="" coords="359,56,451,83"/>
-</map>

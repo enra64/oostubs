@@ -1,8 +1,0 @@
-<map id="Task4" name="Task4">
-<area shape="rect" id="node2" href="$classApplication.html" title="Basis of OOStuBs&#45;Applications. " alt="" coords="147,171,233,197"/>
-<area shape="rect" id="node6" href="$classTask4_1_1Counter.html" title="Counting application. " alt="" coords="134,247,246,273"/>
-<area shape="rect" id="node7" href="$classTask4_1_1RotCursor.html" title="Rotating symbol application " alt="" coords="271,247,397,273"/>
-<area shape="rect" id="node3" href="$classThread.html" title="Thread" alt="" coords="159,95,221,121"/>
-<area shape="rect" id="node4" href="$classQueue_1_1Element.html" title="Queue::Element" alt="" coords="5,5,121,32"/>
-<area shape="rect" id="node5" href="$classContext.html" title="Storage for current context of thread. " alt="" coords="199,5,267,32"/>
-</map>

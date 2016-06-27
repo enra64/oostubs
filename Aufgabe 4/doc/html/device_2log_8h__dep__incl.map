@@ -1,9 +1,0 @@
-<map id="include/device/log.h" name="include/device/log.h">
-<area shape="rect" id="node2" href="$object_2log_8h.html" title="include/object/log.h" alt="" coords="311,80,445,107"/>
-<area shape="rect" id="node7" href="$log_8cc.html" title="src/device/log.cc" alt="" coords="469,80,591,107"/>
-<area shape="rect" id="node8" href="$main_8cc.html" title="Grunddatei von OOStuBS. " alt="" coords="615,80,706,107"/>
-<area shape="rect" id="node3" href="$interruptLock_8cc.html" title="src/locking/interruptLock.cc" alt="" coords="5,155,188,181"/>
-<area shape="rect" id="node4" href="$scheduler_8cc.html" title="src/thread/scheduler.cc" alt="" coords="212,155,371,181"/>
-<area shape="rect" id="node5" href="$thread_8cc.html" title="src/thread/thread.cc" alt="" coords="395,155,534,181"/>
-<area shape="rect" id="node6" href="$task4_8cc.html" title="src/user/task4.cc" alt="" coords="558,155,681,181"/>
-</map>

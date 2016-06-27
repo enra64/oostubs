@@ -1,5 +1,0 @@
-<map id="InterruptHandler" name="InterruptHandler">
-<area shape="rect" id="node2" href="$classKeyboard.html" title="Treiber für die Tastatur, incl. Interruptunterstützung. " alt="" coords="5,80,83,107"/>
-<area shape="rect" id="node3" href="$classPanic.html" title="Standardinterruptbehandlungsroutine. " alt="" coords="107,80,162,107"/>
-<area shape="rect" id="node4" href="$classWatch.html" title="Watch" alt="" coords="186,80,246,107"/>
-</map>

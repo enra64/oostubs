@@ -1,6 +1,0 @@
-<map id="Panic::trigger" name="Panic::trigger">
-<area shape="rect" id="node2" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline " alt="" coords="169,31,215,57"/>
-<area shape="rect" id="node5" href="$classCPU.html#a189729f4ca240ff52004a34b9057d448" title="CPU::halt" alt="" coords="152,81,232,108"/>
-<area shape="rect" id="node3" href="$classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer " alt="" coords="280,5,395,32"/>
-<area shape="rect" id="node4" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen " alt="" coords="443,31,568,57"/>
-</map>

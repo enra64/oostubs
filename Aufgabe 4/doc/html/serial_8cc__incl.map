@@ -1,8 +1,0 @@
-<map id="src/machine/serial.cc" name="src/machine/serial.cc">
-<area shape="rect" id="node2" href="$serial_8h.html" title="machine/serial.h" alt="" coords="41,80,159,107"/>
-<area shape="rect" id="node4" href="$scopedLock_8h.html" title="locking/scopedLock.h" alt="" coords="155,155,303,181"/>
-<area shape="rect" id="node6" href="$object_2lock_8h.html" title="object/lock.h" alt="" coords="311,80,407,107"/>
-<area shape="rect" id="node3" href="$io__port_8h.html" title="machine/io_port.h" alt="" coords="5,155,131,181"/>
-<area shape="rect" id="node5" href="$locking_2lock_8h.html" title="locking/lock.h" alt="" coords="265,229,367,256"/>
-<area shape="rect" id="node7" href="$interruptLock_8h.html" title="locking/interruptLock.h" alt="" coords="327,155,481,181"/>
-</map>

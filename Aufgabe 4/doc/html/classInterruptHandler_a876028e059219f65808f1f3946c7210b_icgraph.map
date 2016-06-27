@@ -1,4 +1,0 @@
-<map id="InterruptHandler::trigger" name="InterruptHandler::trigger">
-<area shape="rect" id="node2" href="$classInterruptStorage.html#a5ca87e7425e996fb19401e8e8ae2bbe6" title="Führt den Handler für einen speziellen Interrupt aus. " alt="" coords="212,5,373,32"/>
-<area shape="rect" id="node3" href="$exceptions_8cc.html#a17ac45e3213989a19bb1472093ca30e6" title="Entry point for exceptions. " alt="" coords="421,5,500,32"/>
-</map>

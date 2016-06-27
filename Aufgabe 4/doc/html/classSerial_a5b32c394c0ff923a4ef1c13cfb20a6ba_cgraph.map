@@ -1,7 +1,0 @@
-<map id="Serial::~Serial" name="Serial::~Serial">
-<area shape="rect" id="node2" href="$classSerial.html#a2ebc6cf48988c16d87b2584b47261ea1" title="gibt eine Zeichenkette an der aktuellen Position aus " alt="" coords="157,31,245,57"/>
-<area shape="rect" id="node3" href="$classSerial.html#a255b654021ff17951942c24ce7b088af" title="Serial::transmit" alt="" coords="293,5,404,32"/>
-<area shape="rect" id="node5" href="$classSerial.html#ab4ed6a72fd54b73d02bb7b334612514d" title="Serial::status" alt="" coords="299,56,398,83"/>
-<area shape="rect" id="node4" href="$classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port. " alt="" coords="452,5,552,32"/>
-<area shape="rect" id="node6" href="$classIO__Port.html#a77b7915e167487c31150a4c4b9a15496" title="read a byte value from the associated port. " alt="" coords="456,56,548,83"/>
-</map>

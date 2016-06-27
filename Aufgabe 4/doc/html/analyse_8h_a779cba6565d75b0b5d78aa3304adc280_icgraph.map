@@ -1,9 +1,0 @@
-<map id="analyseProcedureStack" name="analyseProcedureStack">
-<area shape="rect" id="node2" href="$task3B_8cc.html#a1140e1f1ebb85d5c7103af6e0b522c22" title="printStack" alt="" coords="213,56,295,83"/>
-<area shape="rect" id="node3" href="$task3B_8cc.html#a4205b075c53452d0a4cb9966fe2bf855" title="runFib" alt="" coords="343,5,401,32"/>
-<area shape="rect" id="node4" href="$task3B_8cc.html#ad1b3bc944aac0dbdd041cc180ff8c37a" title="fib" alt="" coords="449,56,488,83"/>
-<area shape="rect" id="node5" href="$task3B_8cc.html#a5874bf2c7fd779b0760c4d5f16bb2d08" title="doTask3BAction" alt="" coords="536,81,655,108"/>
-<area shape="rect" id="node6" href="$classTask3B.html#aa803f35a028d2dc338d20d69ab592f20" title="prints the line " alt="" coords="703,81,813,108"/>
-<area shape="rect" id="node7" href="$main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point " alt="" coords="861,81,919,108"/>
-<area shape="rect" id="node8" href="$main_8cc.html#a9f9d2ea101dcc6e3cd7011dccc4331e0" title="Wait for user input via keyboard to select sub task. " alt="" coords="967,81,1059,108"/>
-</map>

@@ -1,9 +1,0 @@
-<map id="include/object/imanager.h" name="include/object/imanager.h">
-<area shape="rect" id="node2" href="$interruptmanager_8h.html" title="device/interruptmanager.h" alt="" coords="175,80,347,107"/>
-<area shape="rect" id="node3" href="$interruptstorage_8h.html" title="common/interruptstorage.h" alt="" coords="73,155,250,181"/>
-<area shape="rect" id="node7" href="$pic_8h.html" title="machine/pic.h" alt="" coords="311,155,414,181"/>
-<area shape="rect" id="node4" href="$interrupthandler_8h.html" title="common/interrupthandler.h" alt="" coords="5,304,181,331"/>
-<area shape="rect" id="node5" href="$panic_8h.html" title="common/panic.h" alt="" coords="83,229,202,256"/>
-<area shape="rect" id="node6" href="$config_8h.html" title="verschiedene defines für Einstellungen " alt="" coords="226,229,294,256"/>
-<area shape="rect" id="node8" href="$io__port_8h.html" title="machine/io_port.h" alt="" coords="319,229,444,256"/>
-</map>

@@ -1,6 +1,0 @@
-<map id="InterruptLock::lock" name="InterruptLock::lock">
-<area shape="rect" id="node2" href="$classCPU.html#ac6fb3ac4a286728ae0deb78628b98b2d" title="CPU::disable_int" alt="" coords="184,5,305,32"/>
-<area shape="rect" id="node3" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline " alt="" coords="221,56,268,83"/>
-<area shape="rect" id="node4" href="$classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer " alt="" coords="353,31,468,57"/>
-<area shape="rect" id="node5" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen " alt="" coords="516,56,641,83"/>
-</map>

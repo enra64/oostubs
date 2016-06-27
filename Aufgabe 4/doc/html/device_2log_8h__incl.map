@@ -1,8 +1,0 @@
-<map id="include/device/log.h" name="include/device/log.h">
-<area shape="rect" id="node2" href="$o__stream_8h.html" title="common/o_stream.h" alt="" coords="137,80,279,107"/>
-<area shape="rect" id="node6" href="$serial_8h.html" title="machine/serial.h" alt="" coords="303,80,420,107"/>
-<area shape="rect" id="node3" href="$strbuf_8h.html" title="common/strbuf.h" alt="" coords="5,155,125,181"/>
-<area shape="rect" id="node5" href="$colors_8h.html" title="common/colors.h" alt="" coords="149,155,272,181"/>
-<area shape="rect" id="node4" href="$config_8h.html" title="verschiedene defines für Einstellungen " alt="" coords="31,229,99,256"/>
-<area shape="rect" id="node7" href="$io__port_8h.html" title="machine/io_port.h" alt="" coords="299,155,424,181"/>
-</map>

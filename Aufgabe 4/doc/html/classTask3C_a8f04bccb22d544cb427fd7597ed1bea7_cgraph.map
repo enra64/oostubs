@@ -1,9 +1,0 @@
-<map id="Task3C::Task3C" name="Task3C::Task3C">
-<area shape="rect" id="node2" href="$classCGA__Screen.html#a622bc3a2822e3006579167343d639353" title="leert den aktuellen Bildschirm " alt="" coords="176,5,311,32"/>
-<area shape="rect" id="node4" href="$classCGA__Screen.html#a346b7ccc05356f76e738a76a24510e33" title="set the cursor position " alt="" coords="359,56,505,83"/>
-<area shape="rect" id="node6" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline " alt="" coords="220,107,267,133"/>
-<area shape="rect" id="node3" href="$classCGA__Screen.html#a6dfbfb197371c461938cfcc9c5d70187" title="print a character to a specific position " alt="" coords="363,5,501,32"/>
-<area shape="rect" id="node5" href="$classIO__Port.html#a63edbd1cd64f3188c448e32408c2681c" title="write a byte value to the associated port. " alt="" coords="566,56,666,83"/>
-<area shape="rect" id="node7" href="$classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer " alt="" coords="375,107,489,133"/>
-<area shape="rect" id="node8" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen " alt="" coords="553,132,679,159"/>
-</map>

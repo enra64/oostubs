@@ -1,9 +1,0 @@
-<map id="Thread::yield" name="Thread::yield">
-<area shape="rect" id="node2" href="$classTask4_1_1RotCursor.html#a33e3fee3981896223823f4b396339f40" title="start outputting the symbol " alt="" coords="151,31,320,57"/>
-<area shape="rect" id="node8" href="$classTask4_1_1Counter.html#a93c77e391d4d89cf0c34c47b9521d464" title="start outputting and incrementing the counter value " alt="" coords="158,81,313,108"/>
-<area shape="rect" id="node3" href="$classTask4_1_1RotCursor.html#aa317aab41cd3e8f579df5dfeb1b99108" title="Task4::RotCursor::enableCoop" alt="" coords="368,5,571,32"/>
-<area shape="rect" id="node7" href="$classTask4_1_1Counter.html#a23b32a250857ab5e8fdc0b4fb5a0ee43" title="Task4::Counter::enableCoop" alt="" coords="375,56,564,83"/>
-<area shape="rect" id="node4" href="$classTask4.html#a5ec390882239e7957f43edaf891156eb" title="switch sub tasks to cooperative scheduling " alt="" coords="619,31,753,57"/>
-<area shape="rect" id="node5" href="$main_8cc.html#a796315624c9bcf31fd673cb62e4b9819" title="kernel entry point " alt="" coords="801,31,859,57"/>
-<area shape="rect" id="node6" href="$main_8cc.html#a9f9d2ea101dcc6e3cd7011dccc4331e0" title="Wait for user input via keyboard to select sub task. " alt="" coords="907,31,999,57"/>
-</map>

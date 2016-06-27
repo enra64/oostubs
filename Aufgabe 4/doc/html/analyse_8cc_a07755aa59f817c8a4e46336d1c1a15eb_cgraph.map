@@ -1,5 +1,0 @@
-<map id="analyseException" name="analyseException">
-<area shape="rect" id="node2" href="$o__stream_8h.html#a28de23f7cab39bdb0f6a5dc3801b6c6d" title="print buffer after adding a newline " alt="" coords="179,31,225,57"/>
-<area shape="rect" id="node3" href="$classStringbuffer.html#ae497ac75047c4a8d2e35d49b92878480" title="insert a character into the buffer " alt="" coords="273,5,388,32"/>
-<area shape="rect" id="node4" href="$classStringbuffer.html#abfb79178e3d7520f99aec80f996abaac" title="flush the content of the buffer to the screen " alt="" coords="436,31,561,57"/>
-</map>

@@ -1,0 +1,43 @@
+1) Deadlock:
+Ein deadlock ist ein Zustand in dem ein Prozess warten muss, weil ein anderer wartender Prozess eine benötigte Systemressource hält, der wiederum auf eine andere Systemressource wartet.
+
+Bedingungen:
+- Ressourcenzugriff kann nicht unterbrochen werden
+- Prozesse können Ressourcen benötigen _und_ halten
+- Ressourcenzugriff ist exlkusiv
+- Es gibt eine Kreisabhängigkeit zwischen mindestens zwei Prozessen.
+
+2) Verklemmung bei einem Prozess?
+Nein, eine der Bedingungen (4) ist "Es gibt eine Kreisabhängigkeit zwischen mindestens zwei Prozessen."
+
+3) Monitore vs Semaphore
+Monitore setzen gegenseitigen Ausschluss durch (wie z.B. ein Autoparkplatz), ein Semaphor hat eine begrenzte Anzahl an vergebbaren Instanzen der Ressource. (wie z.B. ein Fahrradverleih)
+
+6) Virtueller Speicher:
+Als virtuellen Speicher bezeichnet man Speicher, bei dem die Adressen, die Programmen zur Verfügung gestellt werden, nicht den realen Adressen entsprechen. Die Adressen werden stattdessen so übersetzt, das verschiedene Speichertypen eingebunden werden können, und unfragmentierte Bereiche zur Verfügung gestellt werden können. Die Größe des virtuellen Speichers hängt von der Größe der kombinierten Speicher ab.
+
+7) Seiten- vs Segmentorientierter Speicher:
+Seitenspeicher wird in gleichgroße Blöcke eingeteilt, Segmentspeicher in unterschiedlich große Blöcke.
+
+Für Segmentspeicher werden folgende Daten gespeichert:
+die Segmentnummer
+die Zugriffsrechte
+die Länge des Segments
+ein Valid-Bit, das anzeigt, ob sich das Segment im Hauptspeicher oder auf der Festplatte befindet
+die reale Adresse im Hauptspeicher oder auf der Festplatte
+
+Für Seitenspeicher werden folgende Daten gespeichert:
+die Seitennummer
+die Zugriffsrechte
+R/M-Bits, die gesetzt werden, wenn ein Lese- bzw. Schreibzugriff auf die Seite stattfindet
+ein Valid-Bit, das anzeigt, ob sich das Segment im Hauptspeicher oder auf der Festplatte befindet
+die reale Seitennummer im Hauptspeicher oder Blocknummer auf der Festplatte
+
+8) Speicherzugriff im Rechner:
+Der Prozess fordert eine virtuelle Adresse an, die MMU lädt die reale Adresse. Die Seitentabelle ist die Tabelle, in der Informationen für die Translation gespeichert sind. Mehrstufige Seitentabellen haben Verweise auf Teile der Tabelle, so dass nicht die ganze Tabelle im Speicher liegen muss. Invertierte Seitentabellen speichern die reale und nicht die virtuelle Adresse als Index ab, so dass wesentlich weniger Daten gespeichert werden müssen, wobei dann eine Suche nach der Adresse durchgeführt werden muss.
+
+9) Speicherarten or how not to frame assignments
+Flüchtigen- (RAM) und persistenten Speicher (HDD, SSD). RAM ist schnell, klein und nicht dauerhaft, Langzeitspeicher ist langsam, groß, und dauerhaft.
+
+10) Buddy-System:
+Das Buddy-System ist ein Verfahren zur Zuweisung von Speicher für Prozesse. Dabei wird bei jeder Speicherabfrage zum nächsten 2^n aufgerundet, und ein solcher Speicherbereich durch wiederholte Halbierung (in zwei _Buddys_) des zu Anfang 2^k großen Speichers hergestellt. Interne Fragmentierung bedeutet, dass ein Programm den angeforderten Speicherbereich nicht komplett füllen kann (5 kb angefordet, 8kb bekommen, 3 kb verlust), externe Fragmentierung bezeichnet, dass Blöcke an verschiedenen Stellen alloziiert wurden, und dadurch den noch freien Speicher in viele (zu) kleine Bereiche teilt, so dass bestimmte Speicheranfragen nicht mehr gedeckt werden können.

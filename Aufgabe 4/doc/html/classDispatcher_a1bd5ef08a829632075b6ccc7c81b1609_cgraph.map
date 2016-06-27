@@ -1,5 +1,0 @@
-<map id="Dispatcher::Dispatcher" name="Dispatcher::Dispatcher">
-<area shape="rect" id="node2" href="$classDispatcher.html#a2495464a8b4352282f62ad39c8a00cc8" title="Starts the scheduling. " alt="" coords="221,5,340,32"/>
-<area shape="rect" id="node4" href="$classDispatcher.html#ae5e8e2d148cd30aa060cab3c410396d1" title="Switch to another thread. " alt="" coords="209,56,352,83"/>
-<area shape="rect" id="node3" href="$classContext.html#ac60d77b1d5b0671f9311d19429489fa8" title="replaces the currently running context with this one " alt="" coords="400,5,495,32"/>
-</map>

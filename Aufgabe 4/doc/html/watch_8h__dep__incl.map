@@ -1,9 +1,0 @@
-<map id="include/device/watch.h" name="include/device/watch.h">
-<area shape="rect" id="node2" href="$thread_2scheduler_8h.html" title="include/thread/scheduler.h" alt="" coords="267,80,442,107"/>
-<area shape="rect" id="node4" href="$watch_8cc.html" title="src/device/watch.cc" alt="" coords="409,229,548,256"/>
-<area shape="rect" id="node7" href="$main_8cc.html" title="Grunddatei von OOStuBS. " alt="" coords="447,155,537,181"/>
-<area shape="rect" id="node3" href="$object_2scheduler_8h.html" title="include/object/scheduler.h" alt="" coords="65,155,239,181"/>
-<area shape="rect" id="node8" href="$scheduler_8cc.html" title="src/thread/scheduler.cc" alt="" coords="263,155,422,181"/>
-<area shape="rect" id="node5" href="$thread_8cc.html" title="src/thread/thread.cc" alt="" coords="5,229,144,256"/>
-<area shape="rect" id="node6" href="$task4_8cc.html" title="src/user/task4.cc" alt="" coords="168,229,291,256"/>
-</map>
